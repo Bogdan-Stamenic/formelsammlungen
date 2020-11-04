@@ -7,6 +7,6 @@ template.pdf: template.tex util/*
 	make clean
 
 clean: FORCE
-	rm *.aux *.log *.nvm *.tic *.toc *~
+	rm -r *.aux *.log *.nvm *.tic *.toc .*.un~ settings/.*.un~ util/.*.un~ *~ settings/*~ util/*~
 
 FORCE:
