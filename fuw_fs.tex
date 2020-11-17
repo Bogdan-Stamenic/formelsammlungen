@@ -1,0 +1,34 @@
+\input{util/setup.tex}
+
+\input{customize/customize_fuw_fs.tex}
+
+\begin{document}
+	\title{\FormelsammlungTitel}
+	\author{\FormelsammlungAutor}
+	\date{\today}
+	\begin{multicols}{3}
+		\begin{minipage}{.35\paperheight}
+			\maketitle
+			\tableofcontents
+		\end{minipage}
+		\section{Mathematische Grundgleichungen}
+		\textbf{Kreuzprodukt:}\\
+		{\small%
+		\(\vec{A}\times \left(\vec{B}\times\vec{C}\right) = \left( \vec{A}\cdot\vec{C}\right)\vec{B} - \left(\vec{A}\cdot\vec{B}\right)\vec{C}\)\\
+		\(\left(\vec{A}\times\vec{B}\right) \times\vec{C} = \left( \vec{A}\cdot\vec{C}\right)\vec{B} - \left(\vec{B}\cdot\vec{C}\right)\vec{A}\)
+		}
+
+		\textbf{Dyadische Produkt:}\\
+		{\small%
+		\(\textbf{ab} \equiv \textbf{a} \otimes \textbf{b} \equiv \textbf{ab}^\top\)
+
+		\begin{tabularx}{.33\paperheight}{c|c|c}
+			& Links & Rechts\\
+			\hline
+			Vektorprodukt & \(\textbf{c} \cdot \textbf{(ab)} = (\textbf{c} \cdot \textbf{a})\textbf{b}\) &\
+			\((\textbf{ab}) \cdot \textbf{c} = \textbf{a} (\textbf{b} \cdot \textbf{c})\)\hline
+%			Kreuzprodukt & \(\textbf{c} \times (\textbf{ab} = (c \times a) b\) & \((ab) \times c = a(b \times c)\)
+		\end{tabular}
+		}
+	\end{multicols}
+\end{document}
