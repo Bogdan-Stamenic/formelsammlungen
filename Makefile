@@ -1,5 +1,13 @@
 all:
+	@echo Usage:
+	@echo \"make template.pdf\" for template PDF.
+	@echo \"make fuw\" for Technische Felder und Wellen.
+	@echo
+	@echo \"make a\" to make all of the above.
+
+a:
 	make template.pdf
+	make fuw
 
 fuw: FORCE
 	make fuw_fs.pdf
