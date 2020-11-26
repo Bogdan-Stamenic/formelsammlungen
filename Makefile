@@ -9,7 +9,7 @@ template.pdf: template.tex
 	pdflatex template.tex
 	make clean
 
-fuw_fs.pdf: fuw_fs.tex content/fuw/*
+fuw_fs.pdf: fuw_fs.tex content/fuw/* util/* FORCE
 	pdflatex fuw_fs.tex
 	pdflatex fuw_fs.tex
 	make clean
