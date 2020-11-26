@@ -1,7 +1,7 @@
 all:
 	make template.pdf
 
-fuw: FORCE
+fuw:
 	make fuw_fs.pdf
 
 template.pdf: template.tex
@@ -9,7 +9,7 @@ template.pdf: template.tex
 	pdflatex template.tex
 	make clean
 
-fuw_fs.pdf: fuw_fs.tex
+fuw_fs.pdf: fuw_fs.tex content/fuw/*
 	pdflatex fuw_fs.tex
 	pdflatex fuw_fs.tex
 	make clean
