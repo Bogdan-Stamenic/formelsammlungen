@@ -86,12 +86,49 @@
 	 	\itemsep0pt
 		\item ideale Leiter \(\kappa\to\infty:\: E_{tan} = 0\)\\
 		\(\implies\) nur in einer infitesimal dünnen Schicht existieren Oberflächenströme
-		\item guter Leiter \(\kappa\gg\omega\epsilon\), verlustbehaftet:\\
-		\(\implies\) in einer dünnen Schicht unter der Oberfläche existieren nennenswerte Stromdichten\\
-		\(\implies\) Für die Verluste sind nur die obersten Schichten des Leiters entscheidend
+		\item guter Leiter \(\kappa\gg\omega\epsilon\), verlustbehaftet:
+		\begin{itemize}
+			\itemsep0pt
+			\item in einer dünnen Schicht unter der Oberfläche existieren nennenswerte Stromdichten\\
+			\item Für die Verluste sind nur die obersten Schichten des Leiters entscheidend
+			\item \textbf{Stromverteilung im Leiter:}\\
+			\(J_z = J_z(0)e^{-ky}e^{-jky};\;\;k=\sqrt{\dfrac{\omega\mu\kappa}{2}}\)\\
+			\(\implies \mathrm{\textbf{Eindringtiefe:}}\;\; \delta = \dfrac{1}{k} = \sqrt{\dfrac{2}{\omega\mu\kappa}}\)
+		\end{itemize}
+		\item Joule'sche Verluste: \(P_J = \frac{1}{2}\int\limits_S R_S |H_0|^2\mathrm{d}A\)\\
+		\(\implies\) \textbf{Oberflächenimpedanz:}\\
+		\(Z_S = R_S (1 + j) = (1 + j)\sqrt{\dfrac{\omega\mu}{2\kappa}}\)
 	 \end{itemize}
 	 }
+	 
 	 \subsection{Ebene Wellen}
+	 {\small%
+	 \begin{enumerate}
+	 	\itemsep0pt
+		\item Gute Approximation für reale Wellen \(\to\) Fernfelder von Antennen als lokal ebene Wellen
+		\item Darstellung beliebiger Wellenfelder als Überlagerung ebener Wellen \(\to\) Fourier-Transformation
+		\item Einfach handhabbar, z.B. bei Einfall auf ebene Grenzflächen
+	 \end{enumerate}
+	 \begin{itemize}
+	 	\itemsep0pt
+		\item Phasenfronten sind Ebenen
+		\item Wellenvektor \(\vec{k}\) ist normal zu den Ebenen
+		\item Ausbreitung in z-Richtung: \(\frac{\partial}{\partial x} = \frac{\partial}{\partial y} = 0\)
+		\item (stückweise) homogenes, lineares Medium: \(\mu, \epsilon = \mathrm{const.}\)
+		\item keine freie Ladungen: \(\rho = 0\)
+		\item verschwindende Leitfähigkeit: \(\kappa = 0\)\\
+		\(\implies\) Symmetrie, d.h. Lösung für E-Feld \textit{oder} H-Feld genügt
+		\item ist eine \textbf{TEM-Welle} (nicht-dispersiv, keine longitudinale Komponente)
+		\item 1D-Helmholtz-Gleichung: \(\dfrac{\partial^2e_x}{\partial z^2} - \epsilon\mu \dfrac{\partial^2 e_x}{\partial t^2} = 0\)\\
+		\(\implies\) Lösung:\\
+		\(e_x(z,t) = E_1 f_1\left(t - \dfrac{z}{c}\right) + E_2 f_2\left(t + \dfrac{z}{c}\right)\)\\
+		\(\implies\) Ausbreitungsgeschwindigkeit: \(c = \dfrac{1}{\sqrt{\epsilon\mu}}\)
+		\item \(e_x(z,t) = \sqrt{\dfrac{\mu}{\epsilon}} h_y(z,t) = Z_F\, h_y(z,t) \)\\
+		\(\implies\) \textbf{Wellenwiderstand des Vakuums:}\\
+		\(Z_{F_0} = \sqrt{\dfrac{\mu_0}{\epsilon_0}} \approx 120\pi\,\Omega \approx 377\,\Omega\)
+	 \end{itemize}
+	 }
+	 
 	 \subsection{Reflexion und Brechung}
 	 \subsection{Gauß'scher Strahl}
 	 \subsection{TEM-Leitungen}
