@@ -15,6 +15,9 @@ fuw_fs.pdf: fuw_fs.tex content/fuw/* util/* FORCE
 	make clean
 
 clean: FORCE
-	rm -r *.aux *.log *.nvm *.tic *.toc .*.un~ settings/.*.un~ util/.*.un~ *~ settings/*~ util/*~
+	rm -r *.aux *.log *.nvm *.tic *.toc\
+		*.fdb_latexmk *.fls *.synctex.gz\
+		.*.un~ settings/.*.un~ util/.*.un~\
+		*~ settings/*~ util/*~
 
 FORCE:

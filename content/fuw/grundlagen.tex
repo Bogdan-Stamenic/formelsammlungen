@@ -9,23 +9,23 @@
 		%	& Kartesische Koordinaten & Zylindrische Koordinaten & Kugel-Koordinaten\\
 		%	Kartesisch & \(\begin{pmatrix} x\\ y\\ z\end{pmatrix}\) & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix}q\end{pmatrix}\) \\
 		%	Zylindrisch & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix} \rho\\ \varphi\\ z\end{pmatrix}\) &  \(\begin{pmatrix}q\end{pmatrix}\) \\
-		%	Kugel & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix} r\\ \theta\\ \varphi\end{pmatrix}\)% 
+		%	Kugel & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix} r\\ \theta\\ \varphi\end{pmatrix}\)%
 		%\end{tabularx}
 	 \subsection{Maxwell-Gleichungen}
 	 \subsubsection{Integralform}
-{\small%
-\begin{flalign*}
-& \mathrm{\textbf{Gauß'sche Gesetz:}}\\
-& \iint\limits_{A(V)}\vec{D}_m\cdot\mathrm{d}\vec{A} = \iiint\limits_V\rho\mathrm{d}V = Q\\
-& \mathrm{\textbf{Magnetische Quellenfreiheit:}}\\
-& \iint\limits_{A(V)}\vec{b}\cdot\mathrm{d}\vec{A} = 0\\
- & \mathrm{\textbf{Induktionsgesetz:}}\\
- & \oint\limits_C\vec{e}\cdot\mathrm{d}\vec{s} =%
- -\dfrac{\mathrm{d}}{\mathrm{d}\vec{t}}\iint\limits_A\vec{b}\cdot\mathrm{d}\vec{A} = -\dfrac{\mathrm{d}\Phi_m}{\mathrm{d}t}\\
- & \mathrm{\textbf{Durchflutungsgesetz:}}\\
- & \oint\limits_C\vec{h}\cdot\mathrm{d}\vec{s} = \iint\limits_A\left[\vec{j}+\dfrac{\mathrm{d}\vec{D}_m}{\mathrm{d}t}\right]\cdot\mathrm{d}\vec{A} = i_{ges}\\
- \end{flalign*}
-}
+		{\small%
+		\begin{flalign*}
+			& \mathrm{\textbf{Gauß'sche Gesetz:}}\\
+			& \iint\limits_{A(V)}\vec{D}_m\cdot\mathrm{d}\vec{A} = \iiint\limits_V\rho\mathrm{d}V = Q\\
+			& \mathrm{\textbf{Magnetische Quellenfreiheit:}}\\
+			& \iint\limits_{A(V)}\vec{b}\cdot\mathrm{d}\vec{A} = 0\\
+			& \mathrm{\textbf{Induktionsgesetz:}}\\
+			& \oint\limits_C\vec{e}\cdot\mathrm{d}\vec{s} =%
+			-\dfrac{\mathrm{d}}{\mathrm{d}\vec{t}}\iint\limits_A\vec{b}\cdot\mathrm{d}\vec{A} = -\dfrac{\mathrm{d}\Phi_m}{\mathrm{d}t}\\
+			& \mathrm{\textbf{Durchflutungsgesetz:}}\\
+			& \oint\limits_C\vec{h}\cdot\mathrm{d}\vec{s} = \iint\limits_A\left[\vec{j}+\dfrac{\mathrm{d}\vec{D}_m}{\mathrm{d}t}\right]\cdot\mathrm{d}\vec{A} = i_{ges}\\
+		\end{flalign*}
+		}
 	 \subsubsection{(Zeitfreie) Differentielle Form}
 	 {\small%
 	 \begin{align*}
@@ -38,14 +38,14 @@
 	 }
 	 \subsubsection{Kontinuitätsgleichung des Stroms}
 	 {\small%
-	 \begin{flalign*}
+	 \begin{align*}
 	 	& \mathrm{\textbf{Integrale Form}}\\
 		& \oint\limits_{A(V)}\vec{j}\cdot\mathrm{d}\vec{A} = -\int\limits_v \dfrac{\partial \rho}{\partial t} \mathrm{d}v\\
 		& \mathrm{\textbf{Differentielle Form}}\\
 		& \nabla\cdot\vec{j} = -\dfrac{\partial \rho}{\partial t}\\
 		& \mathrm{\textbf{Zeitfreie Form}}\\
 		& \nabla\cdot\vec{J} = -j\omega\rho
-	 \end{flalign*}
+	 \end{align*}
 	 \subsubsection{Entkopplung der Maxwell-Gleichungen}
 	 \begin{itemize}
 	 	\itemsep0pt
@@ -58,7 +58,7 @@
 		\item \(\nabla\!\times\!\nabla\!\times\!\vec{F} = \mathrm{grad}\;\mathrm{div}\vec{F} - \Delta\vec{F}\)\\
 		\(\implies\) \textbf{Helmholtz-Gleichung:} \(\Delta\vec{E} + k^2\vec{E} = 0\)
 	 \end{itemize}
-	 
+
 	 \subsubsection{Rand- und Stetigkeitsbedingungen}
 	 \begin{itemize}
 	 	\itemsep0pt
@@ -78,7 +78,7 @@
 		\end{itemize}
 	 \end{itemize}
 	 }
-	 
+
 	 \subsection{Skin-Effekt}%
 	 \includegraphics[width=.3\paperheight]{content/fuw/pictures/skin_effect.png}
 	 {\small%
@@ -100,9 +100,10 @@
 		\(Z_S = R_S (1 + j) = (1 + j)\sqrt{\dfrac{\omega\mu}{2\kappa}}\)
 	 \end{itemize}
 	 }
-	 
+
 	 \subsection{Ebene Wellen}
 	 {\small%
+	 \subsubsection{Ebene Wellen mit Ausbreitung in z-Richtung}
 	 \begin{enumerate}
 	 	\itemsep0pt
 		\item Gute Approximation für reale Wellen \(\to\) Fernfelder von Antennen als lokal ebene Wellen
@@ -127,8 +128,45 @@
 		\(\implies\) \textbf{Wellenwiderstand des Vakuums:}\\
 		\(Z_{F_0} = \sqrt{\dfrac{\mu_0}{\epsilon_0}} \approx 120\pi\,\Omega \approx 377\,\Omega\)
 	 \end{itemize}
+	 \subsubsection{Harmonische Ebene Wellen}
+	 \begin{flalign*}
+	 	e_x(z,t) &= E \cos\left[\omega\left(t - \dfrac{z}{c}\right)\right]\\
+		h_y(z,t) &= \dfrac{E}{Z_F} \cos\left[\omega\left(t - \dfrac{z}{c}\right)\right]
+	 \end{flalign*}
+	 \begin{itemize}
+	 	\itemsep0pt
+		\item Periodenabstand/Wellenlänge:\\
+		\(\lambda = \dfrac{2\pi c}{\omega} = \dfrac{c}{f}\)
+		\item \textbf{Phasenkonstante \(\beta\):}\\
+		\(\beta = \dfrac{\omega}{c} = \dfrac{2\pi}{\lambda}\)
+		\item zeitfreie Gleichungen:\\\smallskip
+		\(E_x(z,t) = \mathrm{Re}\left\{E_x(z)e^{j\omega t}\right\}\)\\
+		\(\implies E_x(z) = E e^{-j\beta z}\)\\
+		\(\implies H_y(z) = \dfrac{E}{Z_F} e^{-j\beta z}\)
+	 \end{itemize}
+	 \subsubsection{Polarisation Ebener Wellen}
+	 % TODO: Add screenshot with from Polarization slide
+	 \subsubsection{Phasen-/Gruppengeschwindigkeit}
+	 \begin{itemize}
+	 	\itemsep0pt
+		\item \textbf{Dispersionsfreiheit} \(\implies v_{ph} = \dfrac{\omega}{\beta} = v_g\)
+		\item Wellenlänge (Phasengeschwindigkeit) frequenzabhängig \(\to\) Frequenzkomponenten eines Signals breiten sich unterschiedlich schnell aus
+		\item die Ausbreitungsgeschwindigkeit der Modulation bezeichnet man als \textbf{Gruppengeschwindigkeit:}\\\smallskip
+		\(v_g = \dfrac{1}{\Delta\beta / \Delta\omega} \;\implies v_g = \left(\dfrac{\mathrm{d}\beta}{\mathrm{d}\omega}\right)^{-1}\)
+	 \end{itemize}
+	 \subsubsection{Allgemeine Ebene Wellen}
+	 \begin{itemize}
+	 	\itemsep0pt
+		\item Allgemeiner Ansatz:\\
+		\(\vec{E} = \vec{E}_0\,e^{-j\vec{k}\cdot\vec{r}};\;\;\vec{H} = \vec{H}_0\,e^{-j\vec{k}\cdot\vec{r}}\)
+		\item Wellenzahlvektor:\\
+		\(\vec{k} = k_x\vec{e}_x + k_y\vec{e}_y + k_z\vec{e}_z\)
+		\item Ortsvektor:\\
+		\(\vec{r} = x\vec{e}_x + y\vec{e}_y + z\vec{e}_z\)
+		\item \(\vec{k}\cdot\vec{k} = \beta^2 - \alpha^2 - j2\vec{\alpha}\cdot\vec{\beta} = \omega^2\epsilon\mu\)
+	 \end{itemize}
 	 }
-	 
+
 	 \subsection{Reflexion und Brechung}
 	 \subsection{Gauß'scher Strahl}
 	 \subsection{TEM-Leitungen}
