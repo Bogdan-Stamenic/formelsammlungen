@@ -5,12 +5,31 @@
 		\end{minipage}
 		\section{Grundlagen}
 		\subsection{Mathematik}
-		%\begin{tabularx}{.5\textwidth}{c|X|X|X|}
-		%	& Kartesische Koordinaten & Zylindrische Koordinaten & Kugel-Koordinaten\\
-		%	Kartesisch & \(\begin{pmatrix} x\\ y\\ z\end{pmatrix}\) & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix}q\end{pmatrix}\) \\
-		%	Zylindrisch & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix} \rho\\ \varphi\\ z\end{pmatrix}\) &  \(\begin{pmatrix}q\end{pmatrix}\) \\
-		%	Kugel & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix}q\end{pmatrix}\) & \(\begin{pmatrix} r\\ \theta\\ \varphi\end{pmatrix}\)%
-		%\end{tabularx}
+		\subsubsection{Mehrdimensionale Integrale}
+		\begin{center}
+			\textbf{Kurvenintegrale:}\\%
+			\begin{align*}
+				\int\limits_{\mathcal{C}}f(\vec{r})\mathrm{d}s &= \int\limits_a^b\ f(\vec{r}(t))\,|\vec{r^{\prime}}(t)|\mathrm{d}t;\
+				\quad \vec{r}:[a,b]\to\mathcal{C}\\
+				\int\limits_{\mathcal{C}}\vec{F}(\vec{r})\mathrm{d}s &= \int\limits_a^b\ \vec{F}(\vec{r}(t))\cdot\vec{r^{\prime}}(t)\mathrm{d}t;\
+				\quad \vec{r}:[a,b]\to\mathcal{C}\\
+			\end{align*}
+			\textbf{Oberflächenintegrale:}
+			\begin{align*}
+				\iint\limits_A f \mathrm{d}\vec{a} &= \iint\limits_A f(\vec{x}(s,t))\!\
+				\left\|\dfrac{\partial\vec{x}}{\partial s}\times\dfrac{\partial\vec{x}}{\partial t}\right\|\
+				\mathrm{d}s\mathrm{d}t\\
+				\iint\limits_A \vec{F} \mathrm{d}\vec{a} &= \iint\limits_A \vec{F}(\vec{x}(s,t))\cdot\!\
+				\left( \dfrac{\partial\vec{x}}{\partial s}\times\dfrac{\partial\vec{x}}{\partial t} \right)\
+				\!\mathrm{d}s\mathrm{d}t\\
+			\end{align*}
+			\textbf{Volumenintegrale:}
+			\begin{align*}
+				V &= \iiint\limits_V f(x,y,z)\:\mathrm{d}x\mathrm{d}y\mathrm{d}z\\
+				&= \iiint\limits_V f(\rho,\varphi,z)\,\rho\:\mathrm{d}\rho\mathrm{d}\varphi\mathrm{d}z\\
+				&= \iiint\limits_V f(r,\varphi,\theta)\,r^2\sin\theta\:\mathrm{d}r\mathrm{d}\varphi\mathrm{d}\theta\\
+			\end{align*}
+		\end{center}
 	 \subsection{Maxwell-Gleichungen}
 	 \subsubsection{Integralform}
 		{\small%
