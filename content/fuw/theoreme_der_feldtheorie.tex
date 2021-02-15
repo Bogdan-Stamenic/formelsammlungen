@@ -1,0 +1,81 @@
+\section{Theoreme der Feldtheorie}
+\subsection{Elektromagnetische Energiebilanz}
+\begin{itemize}
+    \itemsep0pt
+    \item \textbf{PEC} (\textit{perfectly electrically conducting}): \(E_{tan} = \vec{n} \times \vec{E} = 0\)
+    \item Komplexe Poynting-Vektor: \(\vec{S} = \dfrac{1}{2} \vec{E} \times \vec{H}^*\)
+    \item Gesamte Verlustleistung: \(P_V = P_\kappa + P_\epsilon + P_\mu\)
+    \item Zeitharmonische Vorgänge in einem abgeschlossenen, quellenfreien Gebiet:\\
+        \[\oiint\limits_{A(V)}\vec{S}\cdot\mathrm{d}\vec{A} = - P_V + 2j\omega\,(\overline{W}_e - \overline{W}_m)\]
+\end{itemize}
+\subsection{Reziprozität}
+\begin{itemize}
+    \item \textbf{Allgemeine Form des Reziprozitätstheorems:}\\
+        \begin{align*}
+            &\iiint\limits_V\left(\vec{E}_1 \cdot \vec{J}_2 - \vec{H}_1 \cdot \vec{M}_2\right)\mathrm{d}v\\
+            &= \iiint\limits_V\left(\vec{E}_2 \cdot \vec{J}_1 - \vec{H}_2 \cdot \vec{M}_1\right)\mathrm{d}v
+        \end{align*}
+\end{itemize}
+\subsection{Elektromagnetische Potentiale}
+\begin{itemize}
+    \itemsep1pt
+    \item Magnetische Vektorpotential \(\vec{B} = \nabla\times\vec{A}\)
+    \item \textit{Helmholtz-Theorem} besagt, dass jede beliebige Vektorfeld im freien Raum geschrieben werden kann als:\\
+        \(\vec{A} = \nabla\times\vec{C} + \nabla\xi\)
+    \item Freiheitsgrad: \(\vec{B} = \nabla\times\vec{A} = \nabla\times\nabla\times\vec{C}\)
+    \item Elektrische Skalarpotential $\varphi$:\\
+        \(\vec{E} = -j\omega\vec{A} - \nabla\varphi\)
+    \item \textbf{Vektorielle Helmholz-Gleichung:}\\
+        \(\Delta\vec{A} + k^2\vec{A}  = -\mu\vec{J}\)
+    \item \textbf{Skalare Helmholz-Gleichung:}\\
+        \(\Delta\varphi + k^2\varphi = -\dfrac{\rho}{\epsilon}\)
+    \item \textbf{Analog:} elektrische Vektorpotential $\vec{F}$ und skalare magnetische Potential $\psi$
+        \begin{align*}
+            \vec{D} &= -\nabla \times \vec{F}\\
+            \vec{H} &= -j\omega\vec{F} - \nabla\psi
+        \end{align*}
+\end{itemize}
+\subsection{Green'sche Funktionen}
+\begin{itemize}
+    \itemsep1pt
+    \item Verhält sich wie ein \textit{Impulsantwort} der Feldlösung einer bestimmten Geometrie
+    \item Poisson-Gleichung: \(\Delta G^\varphi(\vec{r}, \vec{r}^\prime) = -\dfrac{1}{\epsilon}\delta(\vec{r}, \vec{r}^\prime)\)
+    \item Sind die Feldgrößen \textit{Skalare}, so ist die Green'sche Funktion ein \textit{Skalar}\\
+        $\implies$ $\rho$ und $\varphi$ sind Skalare, also ist $G^\varphi$ ein Skalarfeld
+    \item Sind die Feldgrößen \textit{Vektoren}, so ist die Green'sche Funktion eine \textit{Dyade}\\
+        $\implies$ $\vec{J}$ und $\vec{A}$ sind Vektoren, also ist $\dyade{G}^A$ eine Dyade
+        \begin{align*}
+            \vec{A} &= \iiint\limits_V \dyade{G}^A(\vec{r},\vec{r}^\prime) \cdot \vec{J}(\vec{r}^\prime)\:\mathrm{d}v^\prime =\\
+            &= \iiint\limits_V\
+            \begin{pmatrix}\
+                G^A_{xx}(\vec{r},\vec{r}^\prime) & G^A_{xy}(\cdot) & G^A_{xz}(\cdot)\\
+                G^A_{yx}(\cdot) & G^A_{yy}(\cdot) & G^A_{yz}(\cdot)\\
+                G^A_{zx}(\cdot) & G^A_{zy}(\cdot) & G^A_{zz}(\cdot)
+            \end{pmatrix}\
+            \begin{pmatrix}\
+                J_x(\vec{r}^\prime)\\
+                J_y(\vec{r}^\prime)\\
+                J_z(\vec{r}^\prime)
+            \end{pmatrix}\
+            \mathrm{d}v^\prime
+        \end{align*}
+    \item Green'sche Funktionen \textbf{des freien Raumes:}\\
+        \begin{align*}
+            &G(\vec{r},\vec{r}^\prime) = \dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|},\\
+            &\dyade{G}^A(\vec{r},\vec{r}^\prime) = \mu\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\dyade{I},\\
+            &\dyade{G}^F(\vec{r},\vec{r}^\prime) = \epsilon\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\dyade{I}
+        \end{align*}
+    \item Green'sche Funktionen des freien Raumes, bei \textbf{Anregung mit elektrischen Strömen:}\\
+        \begin{align*}
+            &\dyade{G}^E_J(\vec{r},\vec{r}^\prime) = -j\omega\mu\left[\left(\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right) \dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\right]\\
+            &\dyade{G}^H_J(\vec{r},\vec{r}^\prime) = \nabla\;\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|} \times \dyade{I}\\
+        \end{align*}
+    \item Green'sche Funktionen des freien Raumes, bei \textbf{Anregung mit magnetischen Strömen:}\\
+        \begin{align*}
+            &\dyade{G}^E_M(\vec{r},\vec{r}^\prime) = -\nabla\;\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|} \times \dyade{I}\\
+            &\dyade{G}^H_M(\vec{r},\vec{r}^\prime) = -j\omega\epsilon\left[\left(\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right) \dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\right]\\
+        \end{align*}
+
+\end{itemize}
+\subsection{Spiegelungsprinzip}
+\subsection{Huygen'sches Prinzip}
