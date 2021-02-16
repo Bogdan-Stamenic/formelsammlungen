@@ -77,12 +77,13 @@
 \subsection{Betriebsverhalten von Zweitoren}
 \subsubsection{Zweitorverstärkung}
 \begin{itemize}
-    \itemsep3pt
+    \itemsep2pt
     \item Die Übertragungsleistungsverstärkung (Gewinn $G$) ist die Ausgangsleistung bezogen auf die verfügbare Generatorleistung
     \item \(G = \dfrac{1 - |\rho_G|^2}{|1 - \rho_G \rho_E|^2} \cdot |s_{21}|^2 \cdot \dfrac{1 - |\rho_L|^2}{|1 - \rho_{L}s_{22}|^2}\)
     \item Bei Rückwirkungsfreiheit $s_{12} = 0$ ($\rho_E = s_{11}$):\\
         \(G = \dfrac{1 - |\rho_G|^2}{|1 - \rho_G s_{11}|^2} \cdot |s_{21}|^2 \cdot \dfrac{1 - |\rho_L|^2}{|1 - \rho_{L}s_{22}|^2}\)
-    \item \textit{Daumenregel für Rückwirkungsfreiheit}: \(\dfrac{S_{12}}{S_{21}} \ll 1 \implies \dfrac{S_{12}}{S_{21}} \leq 0.1\)
+    \item \textit{Daumenregel für Rückwirkungsfreiheit}:\\
+        \(\dfrac{S_{12}}{S_{21}} \ll 1 \implies \dfrac{S_{12}}{S_{21}} \leq 0.1\)
     \item Maximale (unilaterale für $s_{12} = 0$) Leistungsverstärkung:\\
         \(G_{max} = \dfrac{|s_{21}^2|}{(1 - |s_{11}|^2) (1 - |s_{22}^2|)}\)
 \end{itemize}
@@ -92,7 +93,7 @@
     \item Max. Leistungsverstärkung erfordert Wirkleistungsanpassung am Ein- und Ausgang
     \item Hochfrequenzverstärker (Transistoren) weisen stark reaktive u. frequenzveränderliche Impedanz auf
     \item Diese muss durch geeignete reaktive Netzwerke angepasst werden
-    \item Probleme:\vspace{-.5cm}
+    \item Probleme:
         \begin{itemize}
             \itemsep0pt
             \item Reaktive Anpassung $\to$ schmalbandig
