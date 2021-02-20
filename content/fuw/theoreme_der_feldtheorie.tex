@@ -5,6 +5,7 @@
 \begin{itemize}
     \itemsep0pt
     \item \textbf{PEC} (\textit{perfectly electrically conducting}): \(E_{tan} = \vec{n} \times \vec{E} = 0\)
+    \item \textbf{PMC} (\textit{perfectly magnetically conducting}): \(H_{tan} = \vec{n} \times \vec{H} = 0\)
     \item Komplexe Poynting-Vektor: \(\vec{S} = \dfrac{1}{2} \vec{E} \times \vec{H}^*\)
     \item Gesamte Verlustleistung: \(P_V = P_\kappa + P_\epsilon + P_\mu\)
     \item Zeitharmonische Vorgänge in einem abgeschlossenen, quellenfreien Gebiet:\\
@@ -67,15 +68,19 @@
             &\dyade{G}^A(\vec{r},\vec{r}^\prime) = \mu\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\dyade{I},\\
             &\dyade{G}^F(\vec{r},\vec{r}^\prime) = \epsilon\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\dyade{I}
         \end{align*}
-    \item Green'sche Funktionen des freien Raumes, bei \textbf{Anregung mit elektrischen Strömen:}\\
+    \item EM-Felder des freien Raumes, bei \textbf{Anregung mit elektrischen Strömen:}\\
         \begin{align*}
             &\dyade{G}^E_J(\vec{r},\vec{r}^\prime) = -j\omega\mu\left[\left(\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right) \dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\right]\\
             &\dyade{G}^H_J(\vec{r},\vec{r}^\prime) = \nabla\;\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|} \times \dyade{I}\\
+            &\implies \vec{E} = \dyade{G}^E_J(\vec{r},\vec{r}^\prime) \cdot \vec{A},\
+            \vec{H} = \dyade{G}^H_J(\vec{r},\; \vec{r}^\prime) \cdot \vec{A}
         \end{align*}
-    \item Green'sche Funktionen des freien Raumes, bei \textbf{Anregung mit magnetischen Strömen:}\\
+    \item EM-Felder des freien Raumes, bei \textbf{Anregung mit magnetischen Strömen:}\\
         \begin{align*}
             &\dyade{G}^E_M(\vec{r},\vec{r}^\prime) = -\nabla\;\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|} \times \dyade{I}\\
             &\dyade{G}^H_M(\vec{r},\vec{r}^\prime) = -j\omega\epsilon\left[\left(\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right) \dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\right]\\
+            &\implies \vec{E} = \dyade{G}^E_M(\vec{r},\vec{r}^\prime) \cdot \vec{F},\
+            \vec{H} = \dyade{G}^H_M(\vec{r},\; \vec{r}^\prime) \cdot \vec{F}
         \end{align*}
 
 \end{itemize}
@@ -110,6 +115,7 @@
     \item Fernfeld beginnt, wo die Wellenfronten näherungsweise eben sind und ein rein reeler Poynting-Vektor herrscht
     \item Math. Definition der Fernfeldgrenze mit Antennendurchmesser $D$:\\
         \(D_{FF} = \dfrac{2D}{\lambda}\)
+    \item \textbf{Beobachtungskoordinaten im Fernfeld} (\(r\gg\lambda\)): Kugelkoordinaten
     \item Zwei unterschiedliche Fernfeld-Näherungen:\\
         \begin{itemize}
         \itemsep0pt
