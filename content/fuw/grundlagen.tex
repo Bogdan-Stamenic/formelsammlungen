@@ -190,13 +190,31 @@
 	 \end{itemize}
 
  \subsection{Reflexion und Brechung}
+ \begin{itemize}
+     \itemsep0pt
+     \item Brechungsgesetz von Snellius:\\
+         \(n_1 \sin(\theta_1) = n_2 \sin(\theta_2)\)
+     \item Fresnel-Koeffizienten ($\perp$):\\
+         \begin{align*}
+             \rho_\perp &= \dfrac{Z_{F2} \cos(\theta_1) - Z_{F1}\cos(\theta_2)}{Z_{F2}\cos(\theta_1) + Z_{F1} \cos(\theta_2)},\\
+             \tau_\perp &= \dfrac{2Z_{F2} \cos(\theta_1)}{Z_{F2}\cos(\theta_1) + Z_{F1} \cos(\theta_2)}
+         \end{align*}
+     \item Fresnel-Koeffizienten ($\parallel$):\\
+         \begin{align*}
+             \rho_\parallel &= \dfrac{Z_{F1} \cos(\theta_1) - Z_{F2}\cos(\theta_2)}{Z_{F1}\cos(\theta_1) + Z_{F2} \cos(\theta_2)},\\
+             \tau_\parallel &= \dfrac{2Z_{F2} \cos(\theta_1)}{Z_{F1}\cos(\theta_1) + Z_{F2} \cos(\theta_2)}
+         \end{align*}
+
+ \end{itemize}
  \subsection{Gauß'scher Strahl}
  \subsection{TEM-Leitungen}
+ \includegraphics[width=.25\paperheight]{content/fuw/pictures/fuw_tem_ersatzschaltbild.png}
   \begin{itemize}
      \itemsep0pt
      \item Es existieren immer zwei unabhängige Lösungen, die den beiden möglichen Transportrichtungen entsprechen
      \item \textit{Ausbreitungsgeschwindigkeit} und \textit{Impedanz} sind für beide Lösungen und an allen Orten der Leitung gleich und ausschließlich durch die Leitungsgeometrie und die Materialien festgelegt
-     \item Sämtliche Leitungseigentschaften lassen sich durch eine (quasi-)statische Analyse ermitteln (Kapazitätsbelag und Induktivitätsbelag sind auch für Gleichstrom definiert!)
+     \item Sämtliche Leitungseigentschaften lassen sich durch eine (quasi-)statische Analyse ermitteln (Kapazitätsbelag $C^\prime$ und Induktivitätsbelag $L\prime$ sind auch für Gleichstrom definiert!)
+     \item \textit{Ausbreitungsgeschwindigkeit:} \(c = \dfrac{1}{\sqrt{L^\prime C^\prime}}\)
  \end{itemize}
  \subsection{Planare Leitungen}
  }
