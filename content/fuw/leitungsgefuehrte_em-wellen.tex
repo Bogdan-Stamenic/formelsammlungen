@@ -43,26 +43,31 @@
             \vec{E}(u, v, z) &= \left[ \vec{E}_t(u,v) + \vec{e}_z E_z \right]\mathrm{e}^{-\gamma z}\\
             \vec{H}(u, v, z) &= \left[ \vec{H}_t(u,v) + \vec{e}_z H_z \right]\mathrm{e}^{-\gamma z}
         \end{align*}
-    \item E (TM)-Moden/Feldtypen:
-        \begin{align*}
-            \vec{E} &= \dfrac{1}{j\omega\epsilon\mu} \nabla\times\nabla\times\vec{A} =\
-            -\dfrac{\gamma_E}{j\omega\epsilon\mu}\nabla_t \psi_E - \vec{e}_z \dfrac{\nabla_t^2\psi_E}{j\omega\epsilon\mu}\\
-            \vec{H} &= \dfrac{1}{\mu} \nabla\times\vec{A} =\
-            - \vec{e}_z \dfrac{1}{\mu}\nabla_t \psi_E,\;\
-            H_z = 0
-        \end{align*}
-    \item H (TE)-Moden/Feldtypen:
-        \begin{align*}
-             \vec{H} &= \dfrac{1}{j\omega\epsilon\mu} \nabla\times\nabla\times\vec{F} =\
-            -\dfrac{\gamma_H}{j\omega\epsilon\mu}\nabla_t \psi_H - \vec{e}_z \dfrac{\nabla_t^2\psi_H}{j\omega\epsilon\mu}\\
-            \vec{E} &= -\dfrac{1}{\epsilon} \nabla\times\vec{F} =\
-            \vec{e}_z \dfrac{1}{\epsilon}\nabla_t \psi_H,\;\
-            E_z = 0
-        \end{align*}
     \item Die Kenntnis der z-Komponente reicht, um die restlichen 4 Komponenten zu berechnen
 \end{itemize}
 \subsection{Rechteckhohlleiter}
 \includegraphics[width=.35\paperheight]{content/fuw/pictures/fuw_rechteckhohlleiter.png}
+\begin{itemize}
+    \itemsep0pt
+    \item \(E_{mn}\) (TM)-Moden/Feldtypen im Rechteckhohlleiter \(H_z = 0\):
+        \begin{align*}
+            E_z &= E_0 \sin\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
+            E_y &= -j\dfrac{\beta}{\beta_c^2} \dfrac{m\pi}{a}  E_0\cos\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
+            E_x &= j\dfrac{\beta}{\beta_c^2} \dfrac{n\pi}{b} E_0 \sin\left(\dfrac{m\pi x}{a}\right)\cos\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
+            H_y &= -H_x Z_{FH},\\
+            H_x &= H_y Z_{FH}
+        \end{align*}
+    \item \(H_{mn}\) (TE)-Moden/Feldtypen im Rechteckhohlleiter \(E_z = 0\):
+        \begin{align*}
+            H_z &= H_0 \cos\left(\dfrac{m\pi x}{a}\right)\cos\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
+            H_y &= j\dfrac{\beta}{\beta_c^2} \dfrac{n\pi}{b}  H_0 \cos\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
+            H_x &= j\dfrac{\beta}{\beta_c^2} \dfrac{m\pi}{a} H_0 \sin\left(\dfrac{m\pi x}{a}\right)\cos\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
+            E_y &= -\dfrac{E_y}{Z_{FE}},\\
+            E_x &= \dfrac{E_x}{Z_{FE}}
+        \end{align*}
+    \item Cut-off-Wellenlänge: \(\lambda_c = \dfrac{1}{\sqrt{ \left(\dfrac{m}{2a}\right)^2 + \left(\dfrac{n}{2b}\right)^2 }}\)
+    \item \(\beta_c = \dfrac{2\pi}{\lambda_c}\)
+\end{itemize}
 %\begin{itemize}
 %    \item Verlustleistung:
 %        \begin{align*}
