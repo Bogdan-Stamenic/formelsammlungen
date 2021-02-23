@@ -208,8 +208,8 @@
  \end{itemize}
  \subsection{Gauß'scher Strahl}
  \subsection{TEM-Leitungen}
- \includegraphics[width=.18\paperheight]{content/fuw/pictures/fuw_tem_ersatzschaltbild.png}
- \includegraphics[width=.22\paperheight]{content/fuw/pictures/fuw_tem_leitungen.png}
+ {\centering%
+ \includegraphics[width=.2\paperheight]{content/fuw/pictures/fuw_tem_ersatzschaltbild.png}
   \begin{itemize}
      \itemsep0pt
      \item \textit{quasi-TEM} (\(\beta = \sqrt{\epsilon_{r,\mathrm{eff}}} k_0 \neq \sqrt{\epsilon_r} k_0\))
@@ -217,14 +217,19 @@
      \item \(\beta = \sqrt{\dfrac{C^\prime}{C_a^\prime}} = \sqrt{\epsilon_{r,\mathrm{eff}}} k_0\)
      \item Impedanzbereich eingeschränkt; typ. \SI{20}{\Omega}-\SI{300}{\Omega}
      \item \textbf{Berechnung der Kapazitätsbeläge:} entweder numerisch oder analytisch mit konforme Abbildung
+     \item Ausbreitungsgeschwindigkeit: \(c = \dfrac{1}{\sqrt{L^\prime C^\prime}}\)
+     \item \textbf{VSWR} (\textit{Viz-war}) \(= \dfrac{V_{\mathrm{max}}}{V_{\mathrm{min}}} = \dfrac{1 + |\rho|}{1 - |\rho|}\)
+     \item \( \mathrm{Mit}\; z = \dfrac{Z_L}{Z_0} \begin{cases} \rho = \frac{z-1}{z+1}\\ z = \frac{1+\rho}{1-\rho} \end{cases}\)
+  \end{itemize}
+  }
+ \subsection{Planare Leitungen}
+ \centering
+ \includegraphics[width=.25\paperheight]{content/fuw/pictures/fuw_tem_leitungen.png}
+ \begin{itemize}
+     \itemsep0pt
      \item \textbf{Streifenleitung} $\implies$ echte TEM-Welle, \(\epsilon_r = \epsilon_{r,\mathrm{eff}}\)
      \item \textbf{Mikrostreifenleitung} $\implies$ einfache Fertigung, verlustarm, messtechnisch ungünstig
      \item \textbf{Koplanarleitung} $\implies$ messtechnisch günstig, serien-/parallelelemente leich integrierbar, mittlere Verluste, zwei Moden
      \item \textbf{Koplanare Streifenleitung}: symmetrisch, Leitungstranformer und Speiseleitung für Antennen 
-     %\item Es existieren immer zwei unabhängige Lösungen, die den beiden möglichen Transportrichtungen entsprechen
-     %\item \textit{Ausbreitungsgeschwindigkeit} und \textit{Impedanz} sind für beide Lösungen und an allen Orten der Leitung gleich und ausschließlich durch die Leitungsgeometrie und die Materialien festgelegt
-     %\item Sämtliche Leitungseigentschaften lassen sich durch eine (quasi-)statische Analyse ermitteln (Kapazitätsbelag $C^\prime$ und Induktivitätsbelag $L\prime$ sind auch für Gleichstrom definiert!)
-     \item Ausbreitungsgeschwindigkeit: \(c = \dfrac{1}{\sqrt{L^\prime C^\prime}}\)
  \end{itemize}
- \subsection{Planare Leitungen}
  }

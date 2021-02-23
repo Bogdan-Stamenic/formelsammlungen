@@ -5,7 +5,7 @@
     \itemsep0pt
     \item Nicht zwingend kreiszylindrisch!
     \item Translationsinvarianz des Wellenleiters in z-Richtung
-    \item Ausbreitungskoeffizient $\gamma$:
+    \item Ausbreitungskoeffizient \(\gamma = \sqrt{q^2 - k^2}\):
         \begin{itemize}
             \itemsep0pt
             \item Sich ausbreitende Welle:\\
@@ -49,21 +49,22 @@
 \includegraphics[width=.35\paperheight]{content/fuw/pictures/fuw_rechteckhohlleiter.png}
 \begin{itemize}
     \itemsep0pt
+    \item \(q = \dfrac{m\pi}{a} + \dfrac{n\pi}{b}\)
     \item \(E_{mn}\) (TM)-Moden/Feldtypen im Rechteckhohlleiter \(H_z = 0\):
         \begin{align*}
             E_z &= E_0 \sin\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
             E_y &= -j\dfrac{\beta}{\beta_c^2} \dfrac{m\pi}{a}  E_0\cos\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
             E_x &= j\dfrac{\beta}{\beta_c^2} \dfrac{n\pi}{b} E_0 \sin\left(\dfrac{m\pi x}{a}\right)\cos\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
-            H_y &= -H_x Z_{FH},\\
-            H_x &= H_y Z_{FH}
+            H_y &= -\dfrac{E_y}{Z_{FE}},\\
+            H_x &= \dfrac{E_x}{Z_{FE}}
         \end{align*}
     \item \(H_{mn}\) (TE)-Moden/Feldtypen im Rechteckhohlleiter \(E_z = 0\):
         \begin{align*}
             H_z &= H_0 \cos\left(\dfrac{m\pi x}{a}\right)\cos\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
             H_y &= j\dfrac{\beta}{\beta_c^2} \dfrac{n\pi}{b}  H_0 \cos\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
             H_x &= j\dfrac{\beta}{\beta_c^2} \dfrac{m\pi}{a} H_0 \sin\left(\dfrac{m\pi x}{a}\right)\cos\left(\dfrac{n\pi y}{b}\right)\mathrm{e}^{-j\beta z},\\
-            E_y &= -\dfrac{E_y}{Z_{FE}},\\
-            E_x &= \dfrac{E_x}{Z_{FE}}
+            E_y &= -H_x Z_{FH},\\
+            E_x &= H_y Z_{FH}
         \end{align*}
     \item Cut-off-Wellenlänge: \(\lambda_c = \dfrac{1}{\sqrt{ \left(\dfrac{m}{2a}\right)^2 + \left(\dfrac{n}{2b}\right)^2 }}\)
     \item \(\beta_c = \dfrac{2\pi}{\lambda_c}\)
