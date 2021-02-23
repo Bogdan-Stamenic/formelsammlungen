@@ -1,4 +1,0 @@
-- make rule for all Formelsammlungen
-- improve on formatting:
- - text doesn't fit neatly into columns
- - spaces in between items too large

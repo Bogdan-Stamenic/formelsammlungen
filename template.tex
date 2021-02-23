@@ -3,16 +3,19 @@
 %% This is the space for custom commands for your Formelsammlung
 \newcommand{\FormelsammlungTitel}{TitleOfFormelsammlung}
 \newcommand{\FormelsammlungAutor}{NameOfAuthor}
+\setcounter{tocdepth}{2} % Show only sections and subsection in table of contents
 
 \begin{document}
 	\title{\FormelsammlungTitel}
 	\author{\FormelsammlungAutor}
 	\date{\today}
 	\begin{multicols}{3}
+        {\small%
 %		\begin{minipage}{.4\paperheight}
 			\maketitle
 			\tableofcontents
 %		\end{minipage}
 		\section{test}
+        }
 	\end{multicols}
 \end{document}
