@@ -1,0 +1,26 @@
+\begin{tikzpicture}[>=Stealth]
+    %% Idealized Ground
+    \draw (0,0) -- (6.5, 0);
+    \foreach \x in {0, .2, ..., 6.4}
+        \draw[xshift=\x cm] (0, -.1) -- (.1, 0);
+    %% Transmitter and Receiver
+    \begin{scope}[xshift=.5cm, yshift=1.5cm]
+        \draw node[] at (.5,.5){Tx};
+        \draw (0,0) rectangle (1,1);
+        \draw[->] (-.5, .5)node[above]{$P_{t0}$} -- (0, .5);
+    \end{scope}
+    \begin{scope}[xshift=5cm, yshift=1cm]
+        \draw node[] at (.5,.5){Rx};
+        \draw (0,0) rectangle (1,1);
+        \draw[->] (1, .5) -- (1.5, .5)node[above]{$P_{r,\mathrm{max}}$};
+    \end{scope}
+    %% Contributions
+    \draw[->, dotted] (1.5, 2) -- (5, 1.55);
+    \draw[->, dotted] (1.5, 2) -- (3.45, 0) -- (5, 1.5);
+    \draw[dashed] (1.5, 2) -- (1.5, -2) -- (3.45, 0);
+    \fill[black!] (1.5, -2) circle (3pt) node[below]{image source};
+    \fill[black!] (3.45, 0) circle (3pt) node[below right]{reflection point};
+    %% Measurements
+    \draw[{Bar}{Stealth}-{Stealth}{Bar}, thick] (1.7, 2) --node[right]{$h_t$} (1.7, 0);
+    \draw[{Bar}{Stealth}-{Stealth}{Bar}, thick] (4.7, 1.5) --node[left]{$h_r$} (4.7, 0);
+\end{tikzpicture}

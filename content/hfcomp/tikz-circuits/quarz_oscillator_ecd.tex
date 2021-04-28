@@ -1,0 +1,12 @@
+\begin{circuitikz}[
+        scale=.9,
+        transform shape]
+    % ECD
+    \draw (0,0) to[short, o-*] (1,0) (1,1) to[short] (1,-1);
+    \draw (1,1) to[L=$L_S$, american] (3,1) to[C=$C_S$] (5,1) to[R=$R_S$] (7,1) -- (7,-1);
+    \draw (1,-1) to[C=$C_p$] (7,-1);
+    \draw (7,0) to[short, *-o] (8,0);
+    % Labels
+    \draw (.5,1.8)node[]{{\large \textbf{ECD:}}};
+    \draw (.8,-1.4) to[out=270, in=180] (1,-1.6) -- (3.8, -1.6) -- (4, -1.8)node[below]{$jX$} -- (4.2, -1.6) -- (7,-1.6) to[out=0, in=270] (7.2,-1.4); 
+\end{circuitikz}

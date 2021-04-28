@@ -1,0 +1,19 @@
+\section{Parametric Effects}
+\subsection{Principle}
+\begin{enumerate}
+    \itemsep0pt
+    \item At peak voltage, the capacitance is reduced (e.g. via varactor diode) $\to$ Voltage increases due to charge conservation.
+    \item During zero crossing, all the energy is stored in $L$ and $C\to C_{\mathrm{max}}$ does not cause any energy change.
+    \item The former steps are repeated with a rate double the frequency of the voltage oscillation to amplify the signal.
+\end{enumerate}
+\subsection{Nonlinear Reactance}
+Most often: \textbf{capacitance diode} (Varactor)
+\begin{align*}
+    &C = \dfrac{\mathrm{d}q}{\mathrm{d}u_s} = C_{D0} \left(1 + \dfrac{u_s}{U_d}\right)^{-n},\\
+    &U_d(\mathrm{Si}) \approx \SI{0.7}{V}, \quad n = \dfrac{1}{3}, ..., \dfrac{1}{2}\\
+    &\text{Schottky diode:} \quad n = \dfrac{1}{2}
+\end{align*}
+\subsection{Parametric Amplifier}
+\begin{equation*}
+    \text{Manley-Rowe: } \sum\limits_i \dfrac{\partial \omega_i}{\partial \omega} \dfrac{P_i}{\omega_i} = 0
+\end{equation*}

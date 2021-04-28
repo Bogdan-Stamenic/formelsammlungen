@@ -1,0 +1,78 @@
+\section{HF Amplification}
+\begin{itemize}
+    \itemsep0pt
+    \item \textbf{Transmitter:} amplification of the oscillator power
+    \item \textbf{Receiver:} amplification of the received power
+    \item Small signals (pre-amplification): \textit{small distortions} (lower efficiency) are preffered
+    \item Larger signal (power amplifier): \textit{efficiency} is more important
+\end{itemize}
+
+\subsection{Pre-Amplification}
+\begin{itemize}
+    \itemsep0pt
+    \item Transducer power gain (Betriebsleistungsverstärkung):
+        \begin{equation*}
+            g_T = |A_B|^2 = \dfrac{P_2}{P_{i,\mathrm{max}}} = \dfrac{\frac{1}{2}|U_2|^2 R_i}{\frac{1}{2}|\frac{U_0}{2}|^2 R_2}
+        \end{equation*}
+    \item Transmittance (Betriebsübertragungsfaktor):
+        \begin{align*}
+            &A_B = \dfrac{U_2}{U_0 / 2}\sqrt{\dfrac{R_i}{R_2}} = |A_B| e^{-jb_B},\\
+            &b_B\text{: transmission phase}
+        \end{align*}
+    \item Attenuation (Betriebsdämpfung):
+        \begin{equation*}
+            a_B = -20\,\lg |A_B| \quad [\si{dB}]
+        \end{equation*}
+    \item Group delay time:
+        \begin{equation*}
+            \tau_g = \dfrac{\mathrm{d}b_B}{\mathrm{d}\omega}
+        \end{equation*}
+\end{itemize}
+
+\subsection{Power Ampflification}
+\begin{equation*}
+    \eta = \dfrac{P_t}{P_I} \quad \text{(efficiency)}
+\end{equation*}
+\begin{itemize}
+    \itemsep0pt
+    \item FETs and Tubes offer \textit{almost powerless control}
+    \item Different operation modes  depending on the \textit{DC operating point} $\implies$ Class A, B, C,... operation
+    \item \textit{Linearity/efficiency trade-off!}
+    \item \textbf{Class A Operation}
+        \begin{align*}
+            &U_{G,DC} = U_{G0}/2, \quad U_1 = -U_{G,DC},\\
+            &\theta_a = \ang{180},\\
+            &\eta = \dfrac{P_t}{P_I} = 0.5\text{ (theor. max.)}
+        \end{align*}
+    \item \textbf{Class B Operation}
+        \begin{align*}
+            &U_{G,DC} = U_{G0}, \quad |U_1| = -U_{G,DC},\\
+            &|I_a| = 0.5 \, I_{\mathrm{max}}, \quad I_{a,DC} = 0.318 \, I_{\mathrm{max}},\\
+            &\theta_a = \arccos\left(1-U_{G0}/U_{G,DC}\right) = \ang{90},\\\\
+            &\eta = \dfrac{P_t}{P_I} = \dfrac{1}{4\cdot0.318} = 0.786\text{ (max.) }\\
+            &\implies \text{No loss for zero input signal!}
+        \end{align*}
+    \item \textbf{Class C Operation}
+        \begin{align*}
+            &U_{G,DC} = 2 U_{G0}, \quad |U_1| = -U_{G,DC},\\
+            &|I_a| = 0.393 \, I_{\mathrm{max}}, \quad I_{a,DC} = 0.218 \, I_{\mathrm{max}},\\
+            &\theta_a = \ang{60},\\\\
+            &\eta = \dfrac{P_t}{P_I} = 0.9\text{ (max.) }
+        \end{align*}
+\end{itemize}
+
+\subsection{Two-Terminal (1-Port) Amplifier}
+\begin{itemize}
+    \itemsep0pt
+    \item Diodes with negative coductivity, e.g. tunnel diode\\
+        \begin{tikzpicture}
+            \begin{scope}[xshift=-1cm]
+                \draw (0,0)node[ocirc]{} to[stroke diode, v^=$U$, i=$i$] (0,2)node[ocirc]{};
+            \end{scope}
+            \begin{scope}[xshift=1cm, scale=.8, transform shape]
+                \draw (0,2)node[ocirc]{} to[R=$R_s$] (2,2) to[L=$L_s$, american] (4,2) to[C=$C_D$] (4,0) to[short] (0,0)node[ocirc]{};
+                \draw (4,2) to[short, *-] (5.5,2) to[xgeneric, l=$-R_n$] (5.5,0) to[short, -*] (4,0);
+                \draw[-{Stealth}] (0,1)node[fill=white!]{$Z$} -- (1,1);
+            \end{scope}
+        \end{tikzpicture}
+\end{itemize}

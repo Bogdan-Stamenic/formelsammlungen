@@ -1,0 +1,28 @@
+\begin{circuitikz}[
+        scale=.9,
+        transform shape
+    ]
+    \def\normalcoord(#1){coordinate(#1)}
+    \def\showcoord(#1){coordinate(#1) node[circle, red, draw, inner sep=1pt,
+    pin={[red, overlay, inner sep=0.5pt, font=\tiny, pin distance=0.1cm,
+    pin edge={red, overlay}]45:#1}](){}}
+    \let\coord=\normalcoord
+    %% Comment next line to hide coordinate markers!
+    %\let\coord=\showcoord 
+
+    \draw (0,0) node[npn](Q){Q1};
+    \path 
+    (Q.B) \coord(B) (Q.C) \coord(C)
+    (Q.E) \coord(E);
+    \draw (Q.C) to[short, i<_=$I_{C,DC}$] ++(0,1) \coord(Y) to[R=$R_C$, i<_=$I_{C,DC} + I_{q}$] ++(0,2) to[short] ++(2.5,0) to[vsource, v=$U_{Bat}$] ++(0,-6.27) to[short] ++(-2.5,0) \coord(Z) to[R=$(R_E)$] (Q.E);
+    \draw (Q.B) to [R=$R_B$, i<_=$I_{B,DC}$] ++(-3,0) \coord(X);
+    \draw (Y) to[R=$R_2$, i_=$I_q$] ++(-3.84,0) to[short] (X);
+    \draw (X) to[R=$R_1$, v=$U_{1,DC}$, i=$I_q - I_{B,DC}$] ++(0,-2.5) to[short] (Z);
+    %% U_BE,DC
+    \draw (Q.B) to[open, v=$U_{BE,DC}$] (Q.E);
+    %% U_CE,DC
+    \path (C) ++(.6,0) \coord(W);
+    \path (E) ++(.6,0) \coord(V);
+    %This is not proper, but whatever... it works!
+    \draw[-{Stealth}] (W) to[out=290, in=70]node[right]{$U_{CE,DC}$} (V);
+\end{circuitikz}

@@ -1,0 +1,27 @@
+\input{util/setup.tex}
+
+%% This is the space for custom commands for your Formelsammlung
+\newcommand{\FormelsammlungTitel}{Hochfrequenzmesstechnik}
+\newcommand{\FormelsammlungAutor}{Bogdan Stamenic}
+\setcounter{tocdepth}{2} % Show only sections and subsection in table of contents
+
+\begin{document}
+	\title{\FormelsammlungTitel}
+	\author{\FormelsammlungAutor}
+	\date{\today}
+	\begin{multicols}{3}
+        {\small%
+%		\begin{minipage}{.4\paperheight}
+			\maketitle
+			\tableofcontents
+%		\end{minipage}
+        {\LARGE \textcolor{red}{\textbf{Warning:} Abandoned FS}}
+        \input{content/hfmess/grundlagen.tex}
+        \input{content/hfmess/messunsicherheit.tex}
+        \input{content/hfmess/mischer_phasenregelkreise_und_schrittgeneratoren.tex}
+        %\input{content/hfmess/netzwerkanalysatoren.tex}
+        %\input{content/hfmess/frequenzmessung_und_spektrumanalyse.tex}
+        %\input{content/hfmess/zeitbereichsmessungen.tex}
+        }
+	\end{multicols}
+\end{document}

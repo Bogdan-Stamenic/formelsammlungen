@@ -1,0 +1,52 @@
+\begin{tikzpicture}[
+        block/.style={
+            draw,
+            rectangle,
+            minimum size = 1cm,
+            thick,
+            text centered
+        },
+        generator/.style={
+            draw,
+            circle,
+            minimum size = 1cm,
+            thick,
+            text centered
+        },
+        >=Stealth,
+        scale=.9,
+        transform shape
+    ]
+    % VCO
+    \node [generator](VCO) at (0,0){VCO};
+    % Frequency divider 1/n
+    \node[block](n) at (3,0){};
+    \draw (n.south west) -- (n.north east);
+    \node[above left] at (n.center){$n$};
+    \node[below right] at (n.center){$1$};
+    % Phase Discriminator
+    \node[block](PD) at (6,0){$\varphi$};
+    % Frequency Divider 1/m
+    \node[block](m) at (6,2){};
+    \draw (m.south west) -- (m.north east);
+    \node[above left] at (m.center){$m$};
+    \node[below right] at (m.center){$1$};
+    % Local Oscillator
+    \node[generator](LO) at (3,2){LO};
+    % Lowpass Filter
+    \node[block](LP) at (4.5,-2){LP};
+    % Inverter
+    \node[block](inv) at (1.5,-2){-1};
+
+    % Control Loop Arrows
+    \draw[->] (VCO.east) --node[below](out){} (n.west);
+    \draw[->] (n.east) --node[above]{$f_0/n$} (PD.west);
+    \draw[->] (PD.south) |-node[right, pos=.2]{$-U_{DC}$} (LP.east);
+    \draw[->] (LP.west) -- (inv.east);
+    \draw[->] (inv.west) -|node[left, pos=.75]{$U_{DC}$} (VCO.south);
+    % Output Arrow
+    \draw[->] (out) --node[left]{$f_0$} ++(0,1.5);
+    % Reference Signal Arrows
+    \draw[->] (LO.east) --node[above]{$f_Q$} (m.west);
+    \draw[->] (m.south) --node[right]{$f_Q/m$} (PD.north);
+\end{tikzpicture}

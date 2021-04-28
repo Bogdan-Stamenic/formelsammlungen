@@ -1,0 +1,56 @@
+\section{Ultra-Wideband Antennas}
+\begin{itemize}
+    \itemsep0pt
+    \item \textit{Ultra-Wideband (UWB) Technology}: originally intended for short-range technology; low-power, short range, in the same environment as other communication technologies
+    \item Possible definitions:
+        \begin{enumerate}
+            \item $\geq 20\%$ relative bandwidth
+            \item absolute bandwidth $> 500\si{MHz}$
+        \end{enumerate}
+\end{itemize}
+
+\subsection{Charaterization of Ultra-Wideband Antennas}
+\begin{itemize}
+    \itemsep0pt
+    \item Receive to transmit transfer funtion:
+        \begin{equation*}
+            jkZ_F \vec{H}^{Rx}_1 = \vec{H}^{Tx}_1
+        \end{equation*}
+    \item In the time domain, the transmit transfer function is \textit{proportional} to the \textit{time derivative} of the receive reveive transfer function
+\end{itemize}
+
+\subsection{Complementary and Self-Complementary Structures}
+\begin{itemize}
+    \itemsep0pt
+    \item \textit{Babinet's principle} underlies these structures
+    \item Complementary $\neq$ dual, but strongly related (according to Prof. Eibert)
+    \item \textbf{Self-complementary:} trading free space for PEC and vice-versa, we get the exact same antenna with the following input impedance:
+        \begin{equation*}
+            Z_{\mathrm{in}} = Z_{F0}/2 \approx \SI{188.4}{\Omega}
+        \end{equation*}
+\end{itemize}
+\begin{align*}
+    &\parbox{3cm}{Poynting Theorem: }\\
+    &-\oiint\limits_{A(V)}\vec{S}\cdot\mathrm{d}\vec{A} = P_S = P_V - 2\,j\omega(\overline{W}_e - \overline{W}_m)\\
+    &P_S\text{: complex radiated power}\\
+    &P_V\text{: power loss}\\
+\end{align*}
+\begin{align*}
+    &\parbox{3cm}{Time average of elec. energy: }\
+    &\overline{W}_e = \dfrac{1}{4} \iiint\limits_V \left[\epsilon^\prime_r \epsilon_0 \vec{E}\cdot\vec{E}^*\right]\mathrm{d}v\\
+    &\parbox{3cm}{Time average of magn. energy: }\
+    &\overline{W}_m = \dfrac{1}{4} \iiint\limits_V \left[\mu^\prime_r \mu \vec{H}\cdot\vec{H}^*\right]\mathrm{d}v\\\\
+\end{align*}
+
+\subsection{Equiangular Structures}
+%\begin{itemize}
+%    \itemsep0pt
+%\end{itemize}
+\subsection{Examples of Ultra-Wideband Antennas}
+\begin{itemize}
+    \itemsep0pt
+    \item Biconical antenna
+    \item Vivaldi antenna
+\end{itemize}
+
+\subsection{Logarithmic Periodic Antennas}

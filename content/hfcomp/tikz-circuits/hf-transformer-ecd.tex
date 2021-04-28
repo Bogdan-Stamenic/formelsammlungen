@@ -1,0 +1,37 @@
+\begin{circuitikz}[>=stealth, straight voltages, scale=.65, transform shape]
+    \draw (0,0) node[transformer core, american](T){}
+    %%Transformer primary side
+    (T.A1) node[]{}
+    +(-.5,0) node[ocirc]{} to[short, i=$I_1$] (T.A1)
+    (T.A2) node[]{}
+    +(-.5,0) node[ocirc]{} to[short] (T.A2)
+    (T.A1)++(-.5,0) to[open, v=$U_1$] +(0,-2)
+    %%Transformer secondary side
+    (T.B1) node[]{}
+    +(.5,0) node[ocirc]{} to[short, i^=$I_2$] (T.B1)
+    (T.B2) node[]{}
+    +(.5,0) node[ocirc]{} to[short] (T.B2)
+    (T.B1)++(.5,0) to[open, v=$U_2$] +(0,-2);
+    \draw [to-to] (T.inner dot A1) to[out=60, in=120] node[anchor=south]{$M$} (T.inner dot B1);
+    \draw[-{Implies}, double, thick] (2,0) -- (2.5,0);
+    \begin{scope}[xshift=7.5cm, yshift=0cm]
+        \draw
+        (0,0) node[transformer](G){}
+        (G.A1) node[ocirc]{}
+        to[short] +(-1,0)
+        (G.A2) node[ocirc]{}
+        to[short] +(-1,0)
+        (G.B1) node[ocirc]{}
+        (G.B2) node[ocirc]{};
+        \path
+        (G.inner dot A1) -- node[anchor=south]{$n:1$} (G.inner dot B1);
+        \draw
+        (G.A1)+(-1,0) to[L, *-*, american inductors, L=$k^2 L_1$]
+        +(-1,-2.1);
+        \draw
+        (G.A1)++(-1,0) to[L, american inductors, L=$(1-k^2)L_1$] +(-2.5,0) node[ocirc]{}
+        +(0,-2.1) to[short] +(-2.5,-2.1) node[ocirc]{};
+%        ++(0,-2) to[short]
+%        ++(-2,0) node[ocirc]{};
+    \end{scope}
+\end{circuitikz}

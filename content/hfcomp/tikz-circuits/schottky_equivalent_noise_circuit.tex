@@ -1,0 +1,12 @@
+\begin{circuitikz}[scale=.8, transform shape]
+    \begin{scope}[scale=1.2, xshift=-1cm]
+        \draw (0,0) to[stroke diode, v=$u$, i=$i$, o-o] (2,0);
+    \end{scope}
+    \begin{scope}[xshift=2cm, yshift=-1cm]
+        \draw (4,2)node[ocirc]{}
+        -- (0,2)
+        to[R=$G_S$] (0,0)
+        -- (4,0)node[ocirc]{};
+        \draw (2, 2) to[european current source, l=$W_{i,s}^s$, i<=$\tilde{I}$, fill=gray!50, *-*] (2,0);
+    \end{scope}
+\end{circuitikz}

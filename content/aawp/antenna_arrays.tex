@@ -1,0 +1,85 @@
+\section{Antenna Arrays}
+\textbf{Purpose:}
+\begin{itemize}
+    \itemsep0pt
+    \item Synthesize equivalent current distribution by discrete elements (sampling)
+    \item Increase directivity
+    \item Electronic beam -steering/-shaping
+    \item Digital signal processing
+    \item Angle of arrival estimation
+    \item Adaptive (smart) antennas
+\end{itemize}
+
+\subsection{Linear Antenna Arrays}
+\begin{itemize}
+    \itemsep0pt
+    \item \textit{Antenna elements} located along a straight line (often equally spaced)
+    \item Overall \textbf{array characteristic}:
+        \begin{align*}
+            &C_a(\vartheta, \varphi) = C_s(\vartheta,\varphi) C_g(\vartheta,\varphi),\\
+            &C_s\text{: single element characteristic},\\
+            &C_g\text{: group characteristic (array factor)}
+        \end{align*}
+    \item \textbf{Array of Two identical Antenna Elements}:
+        \begin{tabular}{cc}
+            \(\vec{r} = \begin{bmatrix}r \sin\vartheta \cos\varphi\\ r \sin\vartheta \sin\varphi\\ r \cos\vartheta\end{bmatrix}\)
+            &
+            \(\vec{r}^\prime = \begin{bmatrix}x^\prime\\ y^\prime\\ z^\prime\end{bmatrix}\)\\
+                \parbox{2.5cm}{$(\vec{r}$ centered on first antenna)} & \parbox{3cm}{($\vec{r}^\prime$ second antenna relative to first)}
+        \end{tabular}
+        \begin{align*}
+            &C_g(\vartheta,\varphi) = \left|\cos\dfrac\delta2\right|,\\
+            &\delta = \psi - \beta \cdot \dfrac{\vec{r} \cdot \vec{r}^\prime}{r}, \quad \beta = \dfrac{2\pi}{\lambda}
+        \end{align*}
+    \item Linear array with $2N+1 = M$ equally-spaced elements:
+        \begin{align*}
+            &C_{g,\mathrm{lin}}(\vartheta,\varphi) = \dfrac{G(\vartheta,\varphi)}{2N+1},\\
+            &G(\vartheta,\varphi) = \dfrac{\sin\left((2N+1)v/2\right)}{\sin\left(v/2\right)},\\
+            &v = kd\,\cos\vartheta - \Delta\psi
+        \end{align*}
+    \item Spacing $d$ and $\Delta\phi$ determine \textit{visible range} array factor $C_{g,\mathrm{lin}}(\vartheta,\varphi)$:
+        \begin{itemize}
+            \itemsep0pt
+            \item $\Delta\phi = 0$: Main lobe in $\vartheta = \ang{90}$ broadside direction.
+            \item $d > \frac\lambda2$: More than 1 main maximum possible $\implies$ \textbf{grating lobes}.
+            \item $d < \frac\lambda2$: Narrow visible range. Can be used to realize \textbf{super gain antenna}.
+        \end{itemize}
+    \item Directivity of a general linear array:
+        \begin{align*}
+            &D = \dfrac{\left|\dfrac{\sin\left( M\dfrac\xi2 \right)}{M\sin\left( \dfrac\xi2 \right)}\right|^2}{\dfrac{1}{M} + \dfrac{1}{M^2} \cdot \zeta}\\
+            &\zeta = \sum\limits^{M-1}_{m=1}\dfrac{(M-m)}{mkd} 2\,\cos\left(m\Delta\phi\right)\,\sin(mkd)\\
+            &\xi\text{: maximum of array factor } C_g(\cdot)
+        \end{align*}
+    \item For $n(\lambda/2)$ spacing and in-phase radiation, this simplifies to:
+        \begin{equation*}
+            D = M, \quad d = n\dfrac{\lambda}{2}, \quad \Delta\psi = 0
+        \end{equation*}
+    \item \textbf{Radiation condition} of a linear array $\implies$ $k_t$ must have a real part!:\\
+        \input{content/aawp/tikz/k_linear_array.tex}
+        \begin{align*}
+            &k_{z,g}^2 + k_t^2 = k^2, \quad k_{z.g} = \dfrac{2\pi}{\lambda_z}= \dfrac{\Delta\psi}{d} = k\,\cos\vartheta_{\mathrm{max}}\\
+            &\implies k_t = \pm \sqrt{k^2 - k_{z,g}^2}\\
+        \end{align*}
+\end{itemize}
+
+\subsection{Nonlinear Arrays}
+\begin{tabular}{p{2.5cm}p{4.5cm}}
+    \toprule
+    Two-dimensional arrays & Equally-spaced and equal phase shift.\\\midrule
+    Conformal (curved) Arrays & Treatment by element factor and array factor no longer possible, beam-steering more complicated.\\\midrule
+    Thinned Arrays & Statistically distributed array elements with spacing greater $\lambda/2$.\\\midrule
+    3D-Arrays & E.g. crow's nest antenna.\\
+    \bottomrule
+\end{tabular}
+
+\subsection{Decoupling of Array Elements, Compact Arrays}
+\begin{itemize}
+    \itemsep0pt
+    \item Closely spaced antennas couple among each other
+    \item Coupling can be described by $M\times M$ scattering matrix $S_{\mathrm{ant}}$
+    \item Decoupled ports can be achieved by a $2M\times 2M$ decoupling (matching) network $S_{\mathrm{DCM}}$
+    \item Solve for $m$ eigenvalues $\lambda_i$ for the matrix $S_{\mathrm{ant}}$, which can be found from:
+        \begin{equation*}
+            \det(S_{\mathrm{ant}} - \lambda I) = 0
+        \end{equation*}
+\end{itemize}

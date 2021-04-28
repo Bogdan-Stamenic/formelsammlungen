@@ -1,0 +1,71 @@
+\section{Oscillators}
+\subsection{Oscillation Condition}
+\begin{itemize}
+    \itemsep0pt
+    \item Oscillation condition:
+        \begin{align*}
+            &|k| \cdot |V_u| = 1, \quad V_u = \dfrac{U_v}{U_e}, k = \dfrac{U_a}{U_v}\\
+            &\varphi_v + \varphi_k = 0\text{ or }n\,2\pi
+        \end{align*}
+    \item Classification by feedback principle:
+    \includegraphics[width=7.5cm]{content/hfcomp/pictures/oscillator_types.png}
+\end{itemize}
+\subsection{Variable Oscillators}
+\begin{itemize}
+    \itemsep0pt
+    \item Colpitts common base circuit:
+        \includegraphics[width=6.5cm]{content/hfcomp/pictures/colpitts_bipolar_common_base_oscillator.png}
+        \begin{align*}
+            &f_S = f_T: \to \alpha \approx -\dfrac{j}{\sqrt{2}}\\
+            &\omega_S C_K Z_K = \dfrac{1}{j\alpha} = \sqrt{2}
+        \end{align*}
+%    \item General oscillator circuit with transistor (Bipolar or FET):
+%        \begin{equation*}
+%            \rotatebox{-90}{%
+%            $\begin{bmatrix}
+%                (Y_1 + Y_3 + Y_i) & -(Y_1 + Y_i) & -Y_3 & 0\\
+%                -(Y_1 + Y_i + g_m) & (Y_1 + Y_2 + Y_i + Y_0 + g_m) & -Y_2 & -Y_0\\
+%                -Y_3 & -Y_2 & (Y_2 + Y_3) & 0\\
+%                g_m & -(Y_0 + g_m) & 0 & Y_0
+%            \end{bmatrix}
+%            \begin{bmatrix}
+%                U_1\\
+%                U_2\\
+%                U_3\\
+%                U_4
+%            \end{bmatrix}
+%            =0
+%            $}
+%        \end{equation*}
+\end{itemize}
+\subsection{Quarz-Oscillators}
+\begin{itemize}
+    \itemsep0pt
+    \item Oscillator stability: $\dfrac{10^{-4}}{K},\dfrac{10^{-6}}{K}...\dfrac{10^{-9}}{K}$
+    \item Piezo-electric oscillator: \textit{thickness oscillator}
+\end{itemize}
+\input{content/hfcomp/tikz-circuits/quarz_oscillator_ecd}
+\subsection{Mixer, Phase Detector}
+\begin{itemize}
+    \item Mixing gain (loss):
+        \begin{equation*}
+            g_M = 10 \lg\dfrac{P_a}{P_{1,\mathrm{max}}}
+        \end{equation*}
+\end{itemize}
+\subsection{PLL-Circuit (Phase Locked Loop)}
+\begin{itemize}
+    \itemsep0pt
+    \item Phase of the output signal of a controllable oscillator is locked to the phase of a reference signal by a feedback loop
+    \input{content/hfcomp/tikz-circuits/pll}
+    \begin{equation*}
+        f_0 = \dfrac{n}{m} f_Q
+    \end{equation*}
+    \item Digital frequency detection and division
+\end{itemize}
+\subsection{Two-Terminal-(1-Port)-Oscillators}
+\begin{equation*}
+    \text{Stability:} \dfrac{\partial Y_k}{\partial\sigma} > 0
+\end{equation*}
+\subsection{Oscillator Noise}
+Leeson's Model for Oscillator Phase Noise:\\
+\includegraphics[width=.3\paperheight]{content/hfcomp/pictures/leeson_model_phase_noise.png}
