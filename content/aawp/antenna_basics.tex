@@ -1,5 +1,39 @@
 \section{Antenna Basics}
+\includegraphics[width=.4\paperheight]{content/aawp/pictures/detachment_of_waves.png}
 \begin{itemize}
     \itemsep0pt
-    \item Blah
+    \item Input reflection coefficient:\\
+        \[r = S_{11} = \dfrac{Z - Z_0}{Z + Z_0} = -\dfrac{Y - Y_0}{Y + Y_0}\]
+    \item Current and Voltage stop being useful for high frequencies\\
+        $\implies$ Power wave amplitudes $a$ and $b$:
+    \begin{align*}
+        &a = \dfrac{U_{in} + I_{in}Z_0}{2\sqrt{Z_0}} & U_{in} = \sqrt{Z_0} (a + b)\\
+        &b = \dfrac{U_{in} - I_{in}Z_0}{2\sqrt{Z_0}} & I_{in} = \dfrac{a - b}{\sqrt{Z_0}}
+    \end{align*}
+    \item Much like Current and Voltage, Impedance Matrices also stop making sense at higher frequencies\\
+    $\implies$ Scattering matrix $S$:
+        \[\begin{bmatrix}b_1\\ b_2\end{bmatrix} =\
+            \begin{bmatrix}S_{11} & S_{12}\\ S_{21} & S_{22}\end{bmatrix} \
+            \begin{bmatrix}a_1\\ a_2\end{bmatrix}\]
+            \item \textbf{Symmetry:} \(\left(S = S^\top\right) \land \left(S_{ii} = S_{jj}\;\;\forall\:i, j \in \left[1;\:\mathrm{dim}\{S\}\right]\,\right)\)
+    \item \textbf{Reciprocity:} \(S = S^\top\)
+    \item There are 3 antenna field zones:
+        \begin{enumerate}
+            \itemsep0pt
+            \item Reactive near-field
+            \item Radiating near-field
+            \item Far-field
+        \end{enumerate}
+    \includegraphics[width=.4\paperheight]{content/aawp/pictures/antenna_field_zones.png}
+    \item Characteristics of the far-field:
+        \begin{itemize}
+            \itemsep0pt
+            \item spherical wave fronts
+            \item work with locally plane waves
+            \item no reactive fields (\(\mathrm{Im}\{\vec{S}\} = 0\))
+            \item \(|\vec{k}| = \omega \sqrt{\epsilon\mu}\)
+        \end{itemize}
+    \item \textit{Radiation Characteristic} $C(\vartheta, \varphi)$ describes angle-dependant antenna radiation (under far-field conditions):\\
+        \(C(\vartheta, \varphi) = \dfrac{E(\vartheta, \varphi)}{E_{max}},\;\
+        |C(\vartheta, \varphi)| = \sqrt{\dfrac{S(\vartheta, \varphi)}{S_{max}}}\)
 \end{itemize}
