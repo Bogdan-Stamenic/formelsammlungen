@@ -12,6 +12,9 @@ a:
 fuw:
 	make fuw_fs.pdf
 
+aawp:
+	make aawp_fs.pdf
+
 template.pdf: FORCE
 	pdflatex template.tex
 	pdflatex template.tex
@@ -22,6 +25,11 @@ fuw_fs.pdf: FORCE
 	pdflatex fuw_fs.tex
 	make clean
 
+aawp_fs.pdf: FORCE
+	pdflatex aawp_fs.tex
+	pdflatex aawp_fs.tex
+	make clean
+
 clean: FORCE
 	rm -rf *.aux *.log *.nvm *.tic *.toc\
 		*.fdb_latexmk *.fls *.synctex.gz\
@@ -29,3 +37,4 @@ clean: FORCE
 		*~ settings/*~ util/*~
 
 FORCE:
+
