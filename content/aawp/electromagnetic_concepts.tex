@@ -1,5 +1,38 @@
 \section{Electromagnetic Concepts}
+\subsection{Maxwell's Equations}
 \begin{itemize}
     \itemsep0pt
-    \item Blah
+    \item Maxwell Equations in differential form (with excitations):
+        \begin{align*}
+            &\nabla \times \vec{H} = j\omega\epsilon\vec{E} + \vec{J}\\
+            &\nabla \times \vec{E} = -j\omega\mu\vec{H} - \vec{M}\\
+            &\nabla \cdot \left(\epsilon\vec{E}\right) = \rho\\
+            &\nabla \cdot \left(\mu\vec{H}\right) = \rho_m
+        \end{align*}
+        \textbf{Boundary conditions}\\
+        \begin{minipage}{.25\paperheight}
+            \centering
+            \includegraphics[width=\textwidth]{content/aawp/pictures/EH_field_boundary_condition.png}
+            \includegraphics[width=\textwidth]{content/aawp/pictures/BD_density_boundary_condition.png}
+        \end{minipage}
+        \begin{align*}
+            &\vec{n} \times \left(\vec{H_1} - \vec{H_2}\right) =\
+            \begin{cases} 0 & \quad \text{standard}\\ \vec{J_a} & \quad \text{surface current density} \end{cases}\\
+            &\vec{n} \times \left(\vec{E_1} - \vec{E_2}\right) =\
+            \begin{cases} 0 & \quad \text{standard}\\ \vec{-M_a} & \quad \text{surface current density} \end{cases}\\
+        \end{align*}
+        \begin{align*}
+            &\vec{n} \cdot \left(\vec{D_1} - \vec{D_2}\right) =\
+            \begin{cases} 0 & \quad \text{standard}\\ \vec{\rho}_A & \quad \text{surface charge density} \end{cases}\\
+            &\vec{n} \cdot \left(\vec{B_1} - \vec{B_2}\right) =\
+            \begin{cases} 0 & \quad \text{standard}\\ \vec{\rho}_{mA} & \quad \text{surface charge density} \end{cases}\\
+        \end{align*}
+\end{itemize}
+\subsection{Green's Functions}
+\begin{itemize}
+    \item A Green's function is the field distribution of a \textit{Dirac Delta source distribution} (e.g. field of a Hertzian dipole)
+    \item Charaterizes solution similar to how the behaviour of an LTI system is charaterized by an \textit{impulse response}
+    \item For simple solution domains (eg. free space) Green's functions are known in analytical form
+    \item Fields of arbitrary source distribution as \textit{integral over the source distribution}:\\
+        \(\vec{E} = \iiint \dyade{G}(\vec{r}, \vec{r^\prime}) \cdot \vec{J}(\vec{r^\prime}) \mathrm{d}v^\prime\)
 \end{itemize}

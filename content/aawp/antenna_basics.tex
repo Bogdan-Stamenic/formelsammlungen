@@ -33,15 +33,25 @@
             \item no reactive fields (\(\mathrm{Im}\{\vec{S}\} = 0\))
             \item \(|\vec{k}| = \omega \sqrt{\epsilon\mu}\)
         \end{itemize}
+    \item Poynting vectors: 
+        \begin{align*}
+            &\text{Far-field:} &S(r) = \dfrac{|E(r)|^2}{2 Z_{F0}},\;\; Z_{F0} \approx \SI{120\pi}{\Omega}\\
+            &\text{Reciprocal:} &S(r) = \dfrac{P_{t0}G_t}{4\pi r^2} = \dfrac{P_{t0}\eta D_t}{4\pi r^2}
+        \end{align*}
     \item \textit{Radiation Characteristic} $C(\vartheta, \varphi)$ describes angle-dependant antenna radiation (under far-field conditions):\\
         \(C(\vartheta, \varphi) = \dfrac{E(\vartheta, \varphi)}{E_{max}},\;\
         |C(\vartheta, \varphi)| = \sqrt{\dfrac{S(\vartheta, \varphi)}{S_{max}}}\)
     \item \textbf{Gain:} \(G = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t0} = \mathrm{const}}\)
-    \item \textit{Accepted Power} $P_{t0}$ (IEEE definition of gain)
+    \item Maximum (generator) power $P_{t0,max}$, Accepted Power $P_{t0}$ (transmission \(\to\) antenna; IEEE gain), and Radiated Power $P_t$:
+        \begin{align*}
+            &P_{t0} = (1- |\Gamma|^2) P_{t0,max},\text{   } P_t = \eta_a P_{t0},\\
+            &P_t = \int\limits_{\vartheta=0}^{\pi} \int\limits_{\varphi=0}^{2\pi} S_{max} |C(\vartheta, \varphi)|^2 r^2 \sin(\vartheta)\: \mathrm{d}\vartheta \mathrm{d}\varphi
+        \end{align*}
     \item Transmission Gain and Directivity:
         \begin{align*}
-            &G = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t0} = \mathrm{const}} & D = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t} = \mathrm{const}}\\
-            &G = \eta D & \eta = \dfrac{P_t}{P_{t0}}
+            &G = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t0} = \mathrm{const}} &= \dfrac{S_{\mathrm{max}}}{P_{t0} / 4\pi r^2}\\
+            &D = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t} = \mathrm{const}} &= \dfrac{S_{\mathrm{max}}}{P_t / 4\pi r^2}\\
+            &G = \eta D, & \eta = \dfrac{P_t}{P_{t0}}
         \end{align*}
     \item Deriving \textit{directivity} D from Radiation Characteristic:\\
         \(D = \dfrac{4\pi}{\iint |C(\vartheta, \varphi)|^2 \sin(\vartheta) \mathrm{d}\vartheta\mathrm{d}\varphi} = \dfrac{4\pi}{\Omega_a} \
@@ -58,8 +68,14 @@
             A_e &= \dfrac{\lambda_0^2}{4\pi} G = \eta A_0&
         \end{align*}
     \includegraphics[width=.3\paperheight]{content/aawp/pictures/friis_transmission.png}
-    \item \textbf{Friis Transmission Formula} for a radio link under far-field conditions:\\
-        \(\dfrac{P_{r,max}}{P_{t0}} = G_1 G_2 \left(\dfrac{\lambda_0}{4\pi r} \right)^2\)
+    \item \textbf{Friis Transmission Formula} for a radio link under far-field conditions:
+        \begin{align*}
+            &\dfrac{P_{r,max}}{P_{t0}} = G_1 G_2 \left(\dfrac{\lambda_0}{4\pi r} \right)^2,\\
+            &r: \text{distance between antennas},\\
+            &\lambda_0: \text{transmission wavelength},\\
+            &G_1: \text{transmission antenna gain},\\
+            &G_2: \text{receiving antenna gain}
+        \end{align*}
     \item Radio Link Attenuation (\textit{Pathloss of free space}):\\
         \(\dfrac{a_0}{\si{dB}} = 10 \log_{10}^2\left(\dfrac{4 \pi r}{\lambda_0}\right) =\
         22 + 20 \log_{10}\left(\dfrac{r}{\lambda_0}\right)\)
