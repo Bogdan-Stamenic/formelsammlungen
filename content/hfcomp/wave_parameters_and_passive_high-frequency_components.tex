@@ -1,5 +1,19 @@
 \section{Wave Parameters and Passive High-Frequency Components}
 \begin{itemize}
     \itemsep0pt
-    \item blah
+    \item Scattering matrix $S$:
+        \[\begin{bmatrix}b_1\\ b_2\end{bmatrix} =\
+            \begin{bmatrix}S_{11} & S_{12}\\ S_{21} & S_{22}\end{bmatrix} \
+            \begin{bmatrix}a_1\\ a_2\end{bmatrix}\]
+            \item \textbf{Symmetry:} \(\left(S = S^\top\right) \land \left(S_{ii} = S_{jj}\;\;\forall\:i, j \in \left[1;\:\mathrm{dim}\{S\}\right]\,\right)\)
+                \includegraphics[width=.3\paperheight]{content/hfcomp/pictures/general_two-port.png}
+    \item For a general 2-port, the following holds:
+        \begin{flalign*}
+            &S_{21} = 2 \dfrac{U_2}{U_0} \sqrt{\dfrac{Z_1}{Z_2}},\;\; S_{12} = 2 \dfrac{U_1}{U_0} \sqrt{\dfrac{Z_2}{Z_1}},\\
+            &U_{f1} = \dfrac{U_0}{2},\;\; g_T = |S_{21}|^2,\;\; \dfrac{U_2}{U_1} = \dfrac{S_{21}}{(1 + S_{11})}
+        \end{flalign*}
+    \item For \(Z_{L1} \neq Z_{L2}\), all of the above equations hold, if $U_f$ and $U_b$ are replaced by \textit{normalized power wave amplitudes}:
+        \begin{align*}
+            &a_i = \dfrac{U_{fi}}{\sqrt{Z_{Li}}} &b_i = \dfrac{U_{bi}}{\sqrt{Z_{Li}}}
+        \end{align*}
 \end{itemize}
