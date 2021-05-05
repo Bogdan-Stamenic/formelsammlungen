@@ -15,6 +15,9 @@ fuw:
 aawp:
 	make aawp_fs.pdf
 
+hfcomp:
+	make hfcomp_fs.pdf
+
 template.pdf: FORCE
 	pdflatex template.tex
 	pdflatex template.tex
@@ -28,6 +31,11 @@ fuw_fs.pdf: FORCE
 aawp_fs.pdf: FORCE
 	pdflatex aawp_fs.tex
 	pdflatex aawp_fs.tex
+	make clean
+
+hfcomp_fs.pdf: FORCE
+	pdflatex hfcomp_fs.tex
+	pdflatex hfcomp_fs.tex
 	make clean
 
 clean: FORCE
