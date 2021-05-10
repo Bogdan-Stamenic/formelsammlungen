@@ -1,5 +1,24 @@
 \section{Wire Antennas}
+\subsection{Field Calculation}
 \begin{itemize}
     \itemsep0pt
-    \item Blah
+    \item \textbf{Strategy:} Enclose the whole wire by a closed Huygens surface and introduce equivalent electric and magnetic Huygens currents according to the tangential fields on the Huygens surface.
+\end{itemize}
+
+\subsection{Straight-Lined Dipoles and Monopoles}
+\begin{itemize}
+    \itemsep0pt
+    \item Radiation resistance of a dipole antenna: \(R_r = \dfrac{Z_F}{\pi} 0.61 \approx \SI{73}{\Omega} = Z_d\)
+    \item Directivity of half-wave dipole \(\approx \SI{2.51}{dBi}\)
+    \item Dipoles of general length:
+        \begin{align*}
+            I(z^\prime) &= I_{\mathrm{max}} \sin\left(k (h - |z^\prime|)\right)\\
+            C(\vartheta) &= \dfrac{\cos(k h \cos(\vartheta)) - \cos(k h)}{\sin(\vartheta) (1 - \cos(k h))}
+        \end{align*}
+\end{itemize}
+
+\subsection{Folded Dipole}
+\begin{itemize}
+    \itemsep0pt
+    \item \(Z_{fd} = 4 Z_d\)
 \end{itemize}

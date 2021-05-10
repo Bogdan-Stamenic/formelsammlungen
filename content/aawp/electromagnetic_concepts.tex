@@ -33,6 +33,70 @@
     \item A Green's function is the field distribution of a \textit{Dirac Delta source distribution} (e.g. field of a Hertzian dipole)
     \item Charaterizes solution similar to how the behaviour of an LTI system is charaterized by an \textit{impulse response}
     \item For simple solution domains (eg. free space) Green's functions are known in analytical form
-    \item Fields of arbitrary source distribution as \textit{integral over the source distribution}:\\
-        \(\vec{E} = \iiint \dyade{G}(\vec{r}, \vec{r^\prime}) \cdot \vec{J}(\vec{r^\prime}) \mathrm{d}v^\prime\)
+    \item Poisson's equation: \(\Delta G^\varphi(\vec{r}, \vec{r}^\prime) = -\dfrac{1}{\epsilon}\delta(\vec{r}, \vec{r}^\prime)\)
+
+    \item Fields of arbitrary source distribution as \textit{integral over the source distribution} (duality applies for $\vec{F} = \vec{A}$, $\epsilon = \mu$, $\vec{M} = \vec{J}$):\\
+        %\(\vec{E} = \iiint \dyade{G}(\vec{r}, \vec{r^\prime}) \cdot \vec{J}(\vec{r^\prime}) \mathrm{d}v^\prime\)
+        \begin{align*}
+            \vec{A} &= \iiint\limits_V \dyade{G}^A(\vec{r},\vec{r}^\prime) \cdot \vec{J}(\vec{r}^\prime)\:\mathrm{d}v^\prime =\\
+            &= \iiint\limits_V\
+            \begin{pmatrix}\
+                G^A_{xx}(\vec{r},\vec{r}^\prime) & G^A_{xy}(\cdot) & G^A_{xz}(\cdot)\\
+                G^A_{yx}(\cdot) & G^A_{yy}(\cdot) & G^A_{yz}(\cdot)\\
+                G^A_{zx}(\cdot) & G^A_{zy}(\cdot) & G^A_{zz}(\cdot)
+            \end{pmatrix}\
+            \begin{pmatrix}\
+                J_x(\vec{r}^\prime)\\
+                J_y(\vec{r}^\prime)\\
+                J_z(\vec{r}^\prime)
+            \end{pmatrix}\
+            \mathrm{d}v^\prime
+        \end{align*}
+\end{itemize}
+
+\subsection{Radiation from Electromagnetic Sources}
+\begin{itemize}
+    \itemsep0pt
+    \item Assuming homogenous (e.g. free) space:
+        \begin{align*}
+            \vec{B} &= \nabla\times\vec{A}\\
+            \vec{E} &= -j\omega\vec{A} - \nabla\phi
+        \end{align*}
+    \item Vector and scalar \textit{Helmholtz-Equations}:
+        \begin{align*}
+            \Delta \vec{A} + k^2 \vec{A} &= -\mu \vec{J}\\
+            \Delta \phi + k^2 \phi &= \dfrac{\nabla\cdot\vec{J}}{j\omega\epsilon} = -\dfrac{\rho}{\epsilon}
+        \end{align*}
+\end{itemize}
+
+\subsection{Far-Field Approxamations}
+\includegraphics[width=.25\paperheight]{content/aawp/pictures/far-field_approximation.png}
+\begin{itemize}
+    \itemsep0pt
+    \item Two different far-field approximations:\\
+        \begin{itemize}
+        \itemsep0pt
+        \item For the dividend (amplitude): \(|\vec{r} - \vec{r}^\prime| \approx r\)
+        \item For the exponent (phase): \(|\vec{r} - \vec{r}^\prime| \approx r - \Delta r = r - \dfrac{\vec{r} \cdot \vec{r}^\prime}{r}\)
+        \item Approximating in the far-field, we get:
+            \begin{align*}
+                &\vec{A}(\vec{r}) = \mu\dfrac{\mathrm{e}^{-jkr}}{4\pi r} \iiint\limits_V \vec{J}(\vec{r}^\prime) \mathrm{e}^{+jk\dfrac{\vec{r}^\prime \cdot \vec{r}}{r}} \:\mathrm{d}v^\prime\\
+                &\vec{F}(\vec{r}) = \epsilon\dfrac{\mathrm{e}^{-jkr}}{4\pi r} \iiint\limits_V \vec{M}(\vec{r}^\prime) \mathrm{e}^{+jk\dfrac{\vec{r}^\prime \cdot \vec{r}}{r}} \:\mathrm{d}v^\prime\\
+                &\nabla\cdot\vec{A} \approx -jk\vec{e}_r \times \vec{A}(\vec{r})\\
+                &\nabla\cdot\vec{A} \approx -jk\vec{e}_r \cdot \vec{A}(\vec{r})\\
+            \end{align*}
+        \item Spherical field components in the Far-field; \textit{electric currents}:
+            \begin{align*}
+                &H_{r1}=0, &E_{r1}=0,\\
+                &H_{\vartheta1}=\dfrac{jk}{\mu}A_{\varphi}, &E_{\vartheta1}=-j\omega A_{\vartheta}=Z_F H_{\varphi1},\\
+                &H_{\varphi1}=\dfrac{jk}{\mu}A_{\vartheta}, &E_{\varphi1}=-j\omega A_{\varphi}=-Z_F H_{\vartheta1}\\
+            \end{align*}
+        \item Spherical field components in the Far-field; \textit{magnetic currents}:
+            \begin{align*}
+                &E_{r2}=0, &H_{r2}=0,\\
+                &E_{\vartheta2}=-\dfrac{jk}{\epsilon}F_{\varphi}=Z_F H_{\varphi2}, &H_{\vartheta2}=-j\omega F_{\vartheta},\\
+                &E_{\varphi2}=\dfrac{jk}{\epsilon}F_{\vartheta}=-Z_F H_{\vartheta2}, &E_{\varphi2}=-j\omega F_{\varphi}\\
+            \end{align*}
+
+        \end{itemize}
 \end{itemize}
