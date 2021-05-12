@@ -1,7 +1,9 @@
 all:
 	@echo Usage:
-	@echo \"make template.pdf\" for template PDF.
-	@echo \"make fuw\" for Technische Felder und Wellen.
+	@echo \(1\) \"make template.pdf\" for template PDF.
+	@echo \(2\) \"make fuw\" for Technische Felder und Wellen.
+	@echo \(3\) \"make aawp\" for Antennas and Wave Propagation.
+	@echo \(4\) \"make hfcomp\" for High-Frequency, Components, Amplifiers and Oscillators.
 	@echo
 	@echo \"make a\" to make all of the above.
 
