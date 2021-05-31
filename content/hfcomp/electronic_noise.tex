@@ -1,5 +1,44 @@
 \section{Electronic Noise}
 \begin{itemize}
     \itemsep0pt
-    \item blah
+    \item Noise: \textit{threshold for the perception of a signal}
+    \item \textbf{Signal-to-noise ration:} \(\dfrac{S}{N} = \dfrac{P_S}{P_N}\)
+    \item Limits of perceptibility:
+        \begin{itemize}
+            \item Analogue speech signal: $\text{NL} \approx 0\si{dB}$
+            \item Analogue TV signal $\text{NL} \approx 34\si{dB}$
+            \item With apriori and correlation techniques \(\implies \text{NL} < 0\si{dB}\)
+        \end{itemize}
+    \item Noise sources:
+        \begin{itemize}
+            \item Thermal noise $\propto T$ (resistors)
+            \item Shot noise $\propto q_e I_{DC}$ (active/biased elements)
+            \item Antenna noise: man-made, atmospheric (lightning) and cosmic (CMB)
+        \end{itemize}
 \end{itemize}
+
+\subsection{Properties of Noise Signals}
+\begin{itemize}
+    \item Temporal behaviour is fundamentally \textit{unpredictable} $\implies$ integral values are predictable:
+        \begin{align}
+            &\text{Linear, time average:} &\bar{u}^{\Delta t} &= \dfrac{1}{\Delta t}\int\limits^{t_0+\Delta t}_{t_0} u(t) \mathrm{d}t\\
+            &\text{Mean square:} &\overline{u^2}^{\Delta t} &= \dfrac{1}{\Delta t}\int\limits^{t_0+\Delta t}_{t_0} u^2(t) \mathrm{d}t
+        \end{align}
+    \item Wide sense stationarity assumed; $\bar{u}^{\Delta t}$ and $\overline{u^2}^{\Delta t}$ independant from $t_0$
+    \item Spectral density of voltage: \(W_u^s = \left.\dfrac{\bar{u}^2}{\Delta f}\right|_{\Delta f \to 0}\)
+    \item \textbf{Central Limit Theorem} (Gaussian PDF):
+        \(p^*(u) = \dfrac{e^{- \frac{1}{2}\frac{u^2}{\overline{u^2}}}}{\sqrt{2\pi \overline{u^2}}}\)
+\end{itemize}
+
+\subsection{Working with Noise Signals}
+\begin{itemize}
+    \itemsep0pt
+    \item \textb
+\end{itemize}
+
+\subsection{Noise of Two-Terminal Elements}
+\begin{itemize}
+    \itemsep0pt
+    \item \(\overline{u^2(t)} = 4 k_B T R \Delta f = |U|^2\)
+\end{itemize}
+

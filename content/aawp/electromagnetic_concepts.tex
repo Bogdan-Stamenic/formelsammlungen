@@ -86,17 +86,50 @@
                 &\nabla\cdot\vec{A} \approx -jk\vec{e}_r \cdot \vec{A}(\vec{r})\\
             \end{align*}
         \item Spherical field components in the Far-field; \textit{electric currents}:
+            \noindent\fbox{%
+                \parbox{.3\textwidth}{%
             \begin{align*}
                 &H_{r1}=0, &E_{r1}=0,\\
                 &H_{\vartheta1}=\dfrac{jk}{\mu}A_{\varphi}, &E_{\vartheta1}=-j\omega A_{\vartheta}=Z_F H_{\varphi1},\\
                 &H_{\varphi1}=\dfrac{jk}{\mu}A_{\vartheta}, &E_{\varphi1}=-j\omega A_{\varphi}=-Z_F H_{\vartheta1}\\
-            \end{align*}
+            \end{align*}\vspace{-7mm}
+                    }%
+                }
         \item Spherical field components in the Far-field; \textit{magnetic currents}:
+            \noindent\fbox{%
+                \parbox{.3\textwidth}{%
             \begin{align*}
                 &E_{r2}=0, &H_{r2}=0,\\
                 &E_{\vartheta2}=-\dfrac{jk}{\epsilon}F_{\varphi}=Z_F H_{\varphi2}, &H_{\vartheta2}=-j\omega F_{\vartheta},\\
                 &E_{\varphi2}=\dfrac{jk}{\epsilon}F_{\vartheta}=-Z_F H_{\vartheta2}, &E_{\varphi2}=-j\omega F_{\varphi}\\
-            \end{align*}
+            \end{align*}\vspace{-7mm}
+                    }%
+                }
 
         \end{itemize}
 \end{itemize}
+
+\subsection{Image Theory}
+\begin{center}
+    \includegraphics[width=.27\textwidth]{content/aawp/pictures/aawp_image_theory.png}
+\end{center}
+
+\subsection{Hertzian and Fitzgerald Dipoles}
+\begin{itemize}
+    \itemsep0pt
+    \item Hertzian Dipole:
+        \begin{itemize}
+            \itemsep0pt
+            \item Excitation for derivation of Green's function:\\
+                \(\vec{J} = I_a \vec{l}_e \delta(\vec{r} - \vec{r}^\prime)\)
+            \item Characteristic: \(|C(\vartheta)| = \left|\sin(\vartheta)\right|\)
+            \item Radiation Resistance: \(\dfrac{2}{3} \pi Z_F \left(\dfrac{l_e}{\lambda}\right)^2 = 80 \pi^2 \Omega \left(\dfrac{l_e}{\lambda}\right)^2\)
+        \end{itemize}
+    \item Fitzgerald Dipole:
+        \begin{itemize}
+            \itemsep0pt
+            \item Excitation:\\
+                \(\vec{M} = I_m \vec{\Delta} \delta(\vec{r} - \vec{r}^\prime) = j\omega\mu I A \delta(\vec{r} - \vec{r}^\prime)\)
+        \end{itemize}
+\end{itemize}
+

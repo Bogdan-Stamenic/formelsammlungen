@@ -17,3 +17,85 @@
             &a_i = \dfrac{U_{fi}}{\sqrt{Z_{Li}}} &b_i = \dfrac{U_{bi}}{\sqrt{Z_{Li}}}
         \end{align*}
 \end{itemize}
+
+\subsection{Even/Odd Exitation of Symmetric Circuits}
+\begin{itemize}
+    \itemsep0pt
+    \item Split a symmetric circuit into two less complex circuits
+    \item \textit{Even(+)}-mode: in-phase excitation at both ports
+    \item \textit{Odd(-)}-mode: excitation with opposite phases at both ports
+    \item S-parameters of the original two-port are formally found to be:
+        \begin{align*}
+            S_{11} &= S_{22} = \dfrac{1}{2} (S_{11,e} + S_{11,o}),\\
+            S_{21} &= S_{12} = \dfrac{1}{2} (S_{11,e} - S_{11,o})
+        \end{align*}
+\end{itemize}
+
+\subsection{Wilkinson Divider}
+\centering
+\includegraphics[width=3cm]{content/hfcomp/pictures/lossless_wilkinson_divider.png}
+\begin{itemize}
+    \itemsep0pt
+    \item Input power is equally divided among the output ports, without reflections at the input port
+    \item Scattering matrix with(-out) transverse resistor:
+        \begin{align*}
+            &\text{Without (lossless):} & \|S\| &= \
+            \begin{Vmatrix}\
+                0 & \frac{-j}{\sqrt{2}} & \frac{-j}{\sqrt{2}}\\\
+                \frac{-j}{\sqrt{2}} & \frac{1}{2} & \frac{-1}{2}\\\
+                \frac{-j}{\sqrt{2}} & \frac{-1}{2} & \frac{1}{2}\
+            \end{Vmatrix}\\
+            &\text{With (lossy):} & \|S\| &= \dfrac{-j}{\sqrt{2}}\
+            \begin{Vmatrix}\
+                0 & 1 & 1\\\
+                1 & 0 & 0\\\
+                1 & 0 & 0\
+            \end{Vmatrix}\\
+        \end{align*}
+\end{itemize}
+
+\subsection{Transmission Line Hybrid Coupler}
+\begin{itemize}
+    \itemsep0pt
+    \item When \textit{fed at one port}, one output port is \textit{decoupled} and the other two output ports have \textit{equal amplitude}, but \textit{different phase differences} dependant on the design
+    \item Most often: \ang{90}-hybrid, \ang{180}-hybrid Rat-Race
+    \item Scattering matrix of \ang{90}-hybrid coupler:
+        \begin{align*}
+            \|S\| = \dfrac{-1}{\sqrt{2}}\
+            \begin{Vmatrix}\
+                0 & 0 & 1 & j\\\
+                0 & 0 & j & 1\\\
+                1 & j & 0 & 0\\\
+                j & 1 & 0 & 0\
+            \end{Vmatrix}
+        \end{align*}
+\end{itemize}
+
+\subsection{Signal Flow Graphs}
+\begin{itemize}
+    \itemsep0pt
+    \item Connection of wave amplitudes ($U_f$, $U_b$, $a$, $b$) by \textit{symbolic graph representation}
+    \item \textbf{Vertex (knot):} wave amplitude
+    \item \textbf{Branch:} transmission coefficient $S_{ij}$
+    \includegraphics[width=.3\paperheight]{content/hfcomp/pictures/rules_signal_flow_graph.png}
+    \item \textbf{Simplification rules for signal flow graphs:}
+        \begin{enumerate}
+            \item \(W_3 = S_{21}S_{32} W_1\)
+            \item \(W_2 = W_1 S_a + W_1 S_b\)
+            \item \(W_2 = W_1 \dfrac{S_{21}}{1 - S_{22}}\)
+            \item Signal flow must not be changed!!!
+        \end{enumerate}
+    \item Analysis by the Mason-Rule:
+        \begin{itemize}
+            \itemsep0pt
+%            \item \textbf{Independant variable:} Vertex of incident wave ($U_{fi}$, $a_i$)
+%            \item \textbf{Dependant variable:} Vertex of an outgoing wave ($U_{bi}$, $b_i$)
+            \item \textbf{Path:} Propagation path from an independant vertex ($a_i$) to a dependant vertex ($b_i$)following the positive direction of the branches, such that no vertex is passed more often than once.
+            \item \textbf{Path Value:} Product of the branch coefficients of all branches along the path.
+            \item \textbf{Loop of first order $L(1)$:} Product of the branch coefficients on a closed loop from one vertex back to the same vertex without passing any vertex twice.
+            \item \textbf{Loop of second order $L(2)$:} Product of \textit{two loops of first order}, which do not touch (not even in a vertex).
+            \item \textbf{Loop of third order $L(3)$:} Product of \textit{three loops of first order}, which do not touch (not even in a vertex).
+            \item \textbf{Mason's Rule:}\\
+                \[T = \dfrac{P_1 \left(1 - \sum L(1)^1 + \sum L(2)^1 - ...\right) + \left(1 - \sum L(1)^2 + ...\right) + ...}{1 - \sum L(1) + \sum L(2) - \sum L(3) + ...}\]
+        \end{itemize}
+\end{itemize}
