@@ -52,6 +52,20 @@
             \end{pmatrix}\
             \mathrm{d}v^\prime
         \end{align*}
+    \item EM-Felder des freien Raumes, bei \textbf{Anregung mit elektrischen Strömen:}\\
+        \begin{align*}
+            &\dyade{G}^E_J(\vec{r},\vec{r}^\prime) = -j\omega\mu\left[\left(\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right) \dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\right]\\
+            &\dyade{G}^H_J(\vec{r},\vec{r}^\prime) = \nabla\;\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|} \times \dyade{I}\\
+            &\vec{E} = -j\omega \left[\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right] \cdot \vec{A},\;\
+            \vec{H} = \dfrac{1}{\mu} \nabla \times \vec{A}
+        \end{align*}
+    \item EM-Felder des freien Raumes, bei \textbf{Anregung mit magnetischen Strömen:}\\
+        \begin{align*}
+            &\dyade{G}^E_M(\vec{r},\vec{r}^\prime) = -\nabla\;\dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|} \times \dyade{I}\\
+            &\dyade{G}^H_M(\vec{r},\vec{r}^\prime) = -j\omega\epsilon\left[\left(\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right) \dfrac{\mathrm{e}^{-jk\:|\vec{r} - \vec{r}^\prime|}}{4\pi|\vec{r} - \vec{r}^\prime|}\right]\\
+            &\vec{E} = -\dfrac{1}{\epsilon} \nabla \times \vec{F},\;\
+            \vec{H} = -j\omega \left[\dyade{I} + \dfrac{1}{k^2}\nabla\nabla\right] \cdot \vec{F}
+        \end{align*}
 \end{itemize}
 
 \subsection{Radiation from Electromagnetic Sources}
@@ -132,4 +146,32 @@
                 \(\vec{M} = I_m \vec{\Delta} \delta(\vec{r} - \vec{r}^\prime) = j\omega\mu I A \delta(\vec{r} - \vec{r}^\prime)\)
         \end{itemize}
 \end{itemize}
+
+\subsection{Reciprocity Theorem}
+\begin{align*}
+    &\text{\parbox{3cm}{General form of reciprocity theorem:}} &\iiint\limits_V\left(\vec{E}_1 \cdot \vec{J}_2 - \vec{H}_1 \cdot \vec{M}_2\right)\mathrm{d}v\\
+    & &= \iiint\limits_V\left(\vec{E}_2 \cdot \vec{J}_1 - \vec{H}_2 \cdot \vec{M}_1\right)\mathrm{d}v,\\
+    &\text{\parbox{3cm}{Form for two-port model:}} &\dfrac{U_{10}}{I_2} = Z_{12} = \dfrac{U_{20}}{I_1} = Z_{21}
+\end{align*}
+
+\subsection{Huygen's Principal}
+\begin{align*}
+    &\text{Mathematical form of Huygen's Principal:}\\
+    \vec{E}(\vec{r})
+    &= \iiint\limits_{V_b} \left[\
+    \dyade{G}^E_J(\vec{r},\vec{r}^\prime)\cdot\vec{J}(\vec{r}^\prime)
+    + \dyade{G}^E_M(\vec{r},\vec{r}^\prime)\cdot\vec{M}(\vec{r}^\prime) \right] \mathrm{d}v^\prime\\
+    &+ \oiint\limits_{A(V_b)}\
+    \left[ \dyade{G}^E_J(\vec{r},\vec{r}^\prime)\cdot\vec{J}_A(\vec{r}^\prime)
+    + \dyade{G}^E_M(\vec{r},\vec{r}^\prime)\cdot\vec{M}_A(\vec{r}^\prime) \right] \mathrm{d}a^\prime,\\
+    &\text{Tang. elec. current: }\vec{J}_A(\vec{r}^\prime) = \vec{n} \times \vec{H}(\vec{r}^\prime),\\
+    &\text{Tang. magn. current: }\vec{M}_A(\vec{r}^\prime) = -\vec{n} \times \vec{E}(\vec{r}^\prime)
+\end{align*}
+\begin{enumerate}
+    \itemsep-1pt
+    \item Calculate $\vec{J}_A$ and $\vec{M}_A$.
+    \item Enclose the entire AUT in a Huygen's surface.
+    \item Keeping $\vec{J}_A$ and $\vec{M}_A$, we can formally replace the enclosed antenna's material (no net fields) with whatever we please $\implies$ free space.
+    \item Determine the AUT characteristics using the (free space) \textit{Green's functions}.
+\end{enumerate}
 

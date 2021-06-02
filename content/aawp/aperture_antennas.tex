@@ -18,7 +18,7 @@
             E_{\vartheta} &= -jE_0 \dfrac{AB}{\lambda} \dfrac{e^{-jkr}}{r} C(\vartheta, \varphi),\\
             C(\vartheta, \varphi) &= \cos\varphi\
             \mathrm{si}\left(\pi \dfrac{A}{\lambda}\sin\varphi\sin\vartheta\right)\
-            \mathrm{si}\left(\pi \dfrac{A}{\lambda}\cos\vartheta\right)
+            \mathrm{si}\left(\pi \dfrac{B}{\lambda}\cos\vartheta\right)
         \end{align*}
     \item Half power beam width (HPBW):
         \begin{align*}
@@ -27,10 +27,26 @@
             &\text{E-Plane, } \varphi = 0 \text{:}\
             &\dfrac{\vartheta^\prime_{\SI{3}{dB}}}{\mathrm{deg}} \approx 50.4 \dfrac{\lambda}{B}
         \end{align*}
-    \item Side lobe suppression:\\
-        \(a_{SL} = 20 \log \dfrac{1}{0.21} \approx \SI{13.6}{dB}\)
+            \(\implies \text{Side-lobe: } a_{SL} = 20 \log \dfrac{1}{0.21} \approx \SI{13.6}{dB}\)
     \item Directivity $D$ of \textit{rectangular aperture}:
         \begin{equation*}
             D = \left(\dfrac{S_{\mathrm{max}}}{S_I}\right)_{P_t} = \dfrac{(AB)^2 4\pi r^2}{\lambda^2 r^2 AB} = 4\pi \dfrac{AB}{\lambda^2}
         \end{equation*}
+    \item \textbf{Horn of infinite length:}
+        \begin{align*}
+            E_z &= E_0 \cos\left(\dfrac{\pi y}{A}\right),\\
+            E_{\vartheta} &= -jE_0 \dfrac{AB}{\lambda} \dfrac{2}{\pi} \dfrac{e^{-jkr}}{r} C(\vartheta, \varphi),\\
+            C(\vartheta, \varphi) &= \cos\varphi\
+            \dfrac{\cos\left(\pi \frac{A}{\lambda}\sin\varphi\sin\vartheta\right)}{1 - \left(2 \frac{A}{\lambda}\sin\varphi\sin\vartheta\right)^2}\
+            \mathrm{si}\left(\pi \dfrac{A}{\lambda}\cos\vartheta\right)
+        \end{align*}
+    \item Directivity D of \textit{Horn of infinite extent:}\\
+        \(D = \dfrac{4\pi}{\lambda^2}qAB,\;\;q \text{: aperture efficiency}\)
+    \item Horns of finite extent:
+        \begin{itemize}
+            \itemsep0pt
+            \item E-plane horn: \(B>b\),
+            \item H-plane horn: \(A>a\),
+            \item Pyramidal horn: \(B>b \text{ and  } A>a\)
+        \end{itemize}
 \end{itemize}
