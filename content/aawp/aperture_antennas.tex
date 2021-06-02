@@ -1,5 +1,36 @@
 \section{Aperture Antennas}
+\subsection{Rectangular Apertures, Horn Antennas}
 \begin{itemize}
     \itemsep0pt
-    \item Blah
+    \item Aperture typically illuminated from behind
+    \item Assuming:
+        \begin{align*}
+            &E_{\mathrm{tan}} = 0 \text{, } H_{\mathrm{tan}} \neq 0 \text{ outside aperture,}\\
+            &E(y^\prime, z^\prime) = E_0 G_y\left(\frac{y^\prime}{\lambda}\right) G_z\left(\frac{z^\prime}{\lambda}\right)
+        \end{align*}
+        \begin{align*}
+            \implies& g(t^\prime) = \int\limits^{+\infty}_{-\infty} G(f^\prime) e^{j2\pi f^\prime t^\prime} \mathrm{d}f^\prime,\\
+            &\text{e.g., } f^\prime = \frac{z^\prime}{\lambda_0} \text{, } t^\prime = \cos\vartheta
+        \end{align*}
+    \item \textit{Radiation pattern is obtained by Fourier Transform of aperture distribution!}
+    \item \textbf{Rectangular Aperture} with \textbf{uniform field distribution:}
+        \begin{align*}
+            E_{\vartheta} &= -jE_0 \dfrac{AB}{\lambda} \dfrac{e^{-jkr}}{r} C(\vartheta, \varphi),\\
+            C(\vartheta, \varphi) &= \cos\varphi\
+            \mathrm{si}\left(\pi \dfrac{A}{\lambda}\sin\varphi\sin\vartheta\right)\
+            \mathrm{si}\left(\pi \dfrac{A}{\lambda}\cos\vartheta\right)
+        \end{align*}
+    \item Half power beam width (HPBW):
+        \begin{align*}
+            &\text{H-Plane, } \vartheta = \dfrac{\lambda}{2} \text{:}\
+            &\dfrac{\varphi_{\SI{3}{dB}}}{\mathrm{deg}} \approx 50.4 \dfrac{\lambda}{A}\\
+            &\text{E-Plane, } \varphi = 0 \text{:}\
+            &\dfrac{\vartheta^\prime_{\SI{3}{dB}}}{\mathrm{deg}} \approx 50.4 \dfrac{\lambda}{B}
+        \end{align*}
+    \item Side lobe suppression:\\
+        \(a_{SL} = 20 \log \dfrac{1}{0.21} \approx \SI{13.6}{dB}\)
+    \item Directivity $D$ of \textit{rectangular aperture}:
+        \begin{equation*}
+            D = \left(\dfrac{S_{\mathrm{max}}}{S_I}\right)_{P_t} = \dfrac{(AB)^2 4\pi r^2}{\lambda^2 r^2 AB} = 4\pi \dfrac{AB}{\lambda^2}
+        \end{equation*}
 \end{itemize}
