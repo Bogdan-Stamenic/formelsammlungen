@@ -4,9 +4,10 @@
 \begin{itemize}
     \itemsep0pt
     \item n-type semiconductor; better carrier mobility of electrons
-    \item Small barrier capacitance
-    \item $\implies$ Fast switching
-    \item Characteristic curve: \(i = I_0 \left(\mathrm{exp}\left(\dfrac{u}{U_T} - 1\right)\right)\)
+    \item Small barrier capacitance $\implies$ \textit{Fast switching}
+    \begin{equation*}
+        \text{Characteristic curve: }i = I_0 \left(\mathrm{exp}\left(\dfrac{u}{U_T} - 1\right)\right)
+    \end{equation*}
 \end{itemize}
 
 \subsubsection{Capacitance Diode}
@@ -15,14 +16,15 @@
     \item Operated in reverse direction; application of reverse voltage causes a barrier
     \item Increasing voltage $\to$ decreasing capacitance
     \item Can be used as an \textit{electronically variable capacitance}
+    \item \textbf{Application:} tuning of resonators, filters, ...
 \end{itemize}
 
-\subsubsection{Capacitance Diode}
+\subsubsection{Tunnel Diode}
 \begin{itemize}
     \itemsep0pt
     \item The u-i-characteristic exhibits regions with \textit{negative differential resistance}
     \item Can be used for the \textit{amplification of high-frequency} signals
-    \item \(G_{n \downarrow \left(|U|\uparrow \right)}\)
+    \item \(G_{n} \downarrow \left(|U|\uparrow \right)\)
 \end{itemize}
 
 \subsubsection{Impatt Diode}
@@ -31,7 +33,7 @@
     \item Written out: \textbf{imp}act ionization \textbf{a}valanche \textbf{t}ransit \textbf{t}ime
     \item Operation as a \textit{read diode}:
         \begin{align*}
-            \Theta = \omega t = \omega w/v_s\\
+            \Theta = \omega t = \omega \; w/v_s\\
             I_D = I_{\mathrm{max}} \dfrac{\Theta}{\pi} e^{-j\Theta/2} \dfrac{\sin\Theta/2}{\Theta/2}
         \end{align*}
     \item \(R_n \downarrow \left(|U_s|\uparrow\right)\)
@@ -42,7 +44,7 @@
 \begin{itemize}
     \itemsep0pt
     \item \textit{Positive-intrinsic-negative} diode
-    \item Constant charge can be achieved by impressing a current |I_{DC}| = \left|\dfrac{dQ_x}{dt}\right|
+    \item Constant charge can be achieved by impressing a current \(|I_{DC}| = \left|\dfrac{dQ_x}{dt}\right|\)
     \item Properties:
         \begin{itemize}
             \itemsep0pt
@@ -64,12 +66,35 @@
 \begin{itemize}
     \itemsep0pt
     \item The Gunn Element is \textit{not} a diode
+    \item \textbf{Justification:} \textit{negative differential mobility} of the electrons
 \end{itemize}
 
 \subsection{HF-Transistors}
 \subsubsection{Bipolar Transistor}
+\includegraphics[width=.3\paperheight]{content/hfcomp/pictures/bipolar_transistor_giacoletto.png}
+\begin{align*}
+    &S \approx \dfrac{I_{E,DC}}{U_T}, \;\;\;\;\; C_{B^\prime E} \approx \dfrac{S}{2\pi f_T},\\
+    &\dfrac{1}{R_{b^\prime E}} = G_{B^\prime E} \approx \dfrac{S}{\beta_0},\\
+    &\beta_0 = \left.\dfrac{I_C}{I_B}\right|_{f\to0} \approx \dfrac{I_{C,DC}}{I_{B,DC}} = B,\\
+    &f_T\text{: transit frequency }(\beta = 1),\\
+    &B\text{: DC current amplification}
+\end{align*}
 \begin{itemize}
     \itemsep0pt
-    \item Transit frequency $f_T$, when $\beta = 1$
-    \item Emitter circuit and Base circuit
+    \item The HF operational parameters depend on the chosen operating point. The following is also achieved:
+    \begin{itemize}
+        \itemsep0pt
+        \item \textit{Control} and \textit{stabilization} of the HF operational parameters
+        \item Compensation of \textit{device tolerances}
+        \item \textbf{Principle:} DC current feedback circuit
+    \end{itemize}
+    \item Typical biasing for Emitter (Base) Circuit:
+    \begin{equation*}
+        U_{E,DC} \approx \dfrac{U_{Bat}}{3..6},\;\;\; I_{q,DC} \approx 10 I_{B,DC}
+    \end{equation*}
+\item E12-series resistors:
+    \begin{equation*}
+        R_n = 10^\frac{n}{12} 10^p \quad n=0,1,2,...
+    \end{equation*}
 \end{itemize}
+

@@ -85,7 +85,7 @@
             \item \(W_2 = W_1 \dfrac{S_{21}}{1 - S_{22}}\)
             \item Signal flow must not be changed!!!
         \end{enumerate}
-    \item Analysis by the Mason-Rule:
+    \item Analysis by Mason's Gain Rule:
         \begin{itemize}
             \itemsep0pt
 %            \item \textbf{Independant variable:} Vertex of incident wave ($U_{fi}$, $a_i$)
@@ -95,7 +95,11 @@
             \item \textbf{Loop of first order $L(1)$:} Product of the branch coefficients on a closed loop from one vertex back to the same vertex without passing any vertex twice.
             \item \textbf{Loop of second order $L(2)$:} Product of \textit{two loops of first order}, which do not touch (not even in a vertex).
             \item \textbf{Loop of third order $L(3)$:} Product of \textit{three loops of first order}, which do not touch (not even in a vertex).
-            \item \textbf{Mason's Rule:}\\
-                \[T = \dfrac{P_1 \left(1 - \sum L(1)^1 + \sum L(2)^1 - ...\right) + \left(1 - \sum L(1)^2 + ...\right) + ...}{1 - \sum L(1) + \sum L(2) - \sum L(3) + ...}\]
+            \item \textbf{Mason's Gain Rule:}
+                \begin{align*}
+                    &T = \dfrac{P_1 \xi_1 + P_2\xi_2 + P_3\xi_3 +...}{1 - \sum L(1) + \sum L(2) - \sum L(3) + ...},\\\\
+                    &\xi_i = \left(1 - \sum L(1)^i + \sum L(2)^i - ...\right),\\
+                    &L(1)^i:\parbox{4cm}{loops of order 1 that don't touch path $i$}
+                \end{align*}
         \end{itemize}
 \end{itemize}

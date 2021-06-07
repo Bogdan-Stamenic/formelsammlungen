@@ -17,7 +17,7 @@ fuw:
 aawp:
 	make aawp_fs.pdf
 
-hfcomp:
+hfc:
 	make hfcomp_fs.pdf
 
 hfm:
