@@ -18,7 +18,8 @@
             E_{\vartheta} &= -jE_0 \dfrac{AB}{\lambda} \dfrac{e^{-jkr}}{r} C(\vartheta, \varphi),\\
             C(\vartheta, \varphi) &= \cos\varphi\
             \mathrm{si}\left(\pi \dfrac{A}{\lambda}\sin\varphi\sin\vartheta\right)\
-            \mathrm{si}\left(\pi \dfrac{B}{\lambda}\cos\vartheta\right)
+            \mathrm{si}\left(\pi \dfrac{B}{\lambda}\cos\vartheta\right),\\
+            \text{\textit{With: }}&\mathrm{si}(x) = \dfrac{\sin(x)}{x}
         \end{align*}
     \item Half power beam width (HPBW):
         \begin{align*}
@@ -49,4 +50,59 @@
             \item H-plane horn: \(A>a\),
             \item Pyramidal horn: \(B>b \text{ and  } A>a\)
         \end{itemize}
+\end{itemize}
+
+\subsection{Corrugated Horns}
+\includegraphics[width=4.5cm]{content/aawp/pictures/corrugated_horn_magn_walls.png}
+\includegraphics[width=3cm]{content/aawp/pictures/corrugated_wall.png}
+\begin{itemize}
+    \itemsep0pt
+    \item \textbf{Design Goal:} Taper of the aperture field distribution in $E$-plane as well
+    \item Anisotropic surface impedance (grooved walls):
+        \begin{align*}
+            &\text{For }E_\parallel: \quad Z_{S\parallel} = 0,\\
+            &\text{For }E_\perp:     \quad Z_{S\perp} \to \infty
+        \end{align*}
+    \item Corrugations \textit{improve} sidelobe and forward/backward behaviour
+    \item $E$- and $H$-plane patterns become more similar
+\end{itemize}
+
+\subsection{Circular Aperture}
+\includegraphics[width=.3\paperheight]{content/aawp/pictures/circular_aperture_distribution.png}
+\begin{align*}
+    %\text{For:} \quad &E(\rho) = E_0 \left(p + \left(1 - \dfrac{\rho^2}{R^2}\right)^n\right)\\\\
+    \implies &E_y = \left(p + \dfrac{1}{n+1}\right) \dfrac{jE_0 k R^2}{2} \dfrac{e^{jkr}}{r}C(\vartheta),\\
+    C(\vartheta) &= \dfrac{1}{p + \frac{1}{1+n}}\
+    \left(\dfrac{J_1(\xi)}{\xi/2} + \dfrac{n!\,J_{n+1}(\xi)}{(\xi/2)^{n+1}}\right),\\
+    \xi = &kR\sin\vartheta,\\
+    J_\alpha:&\text{ Bessel function, first kind}
+\end{align*}
+\textbf{Consider uniform field distribution} (\(p=0, n=0\)):
+\begin{equation*}
+    C(\vartheta) = 2\dfrac{J_1(kR\sin(\vartheta))}{kR\sin\vartheta} = 2\dfrac{J_1(\pi u)}{\pi u}, \quad u = \dfrac{2R}{\lambda}\sin\vartheta
+\end{equation*}
+\begin{equation*}
+    \implies \dfrac{\vartheta_{\SI{3}{dB}}}{\mathrm{deg}} \approx 57\dfrac{\lambda}{2R}, \quad a_{\mathrm{SL}} \approx \SI{17.7}{dB}
+\end{equation*}
+
+\subsection{Reflector Antennas}
+\begin{itemize}
+    \itemsep0pt
+    \item \textbf{Goal:} In-phase illumination of a \textit{large aperture}
+    \item Point source in focues of parabola generates planar wavefront
+    \item \textit{High gain/directivity} antennas
+    \item Common refelctor shapes (\textit{conic sections}):
+        \begin{itemize}
+            \itemsep0pt
+%            \item Ellipsoid(?)
+            \item Paraboloid (e.g. radio telescope)
+            \item Hyperboloid (e.g. TV antenna) $\to$ off-axis feed
+            \item Cassegrain: two reflectors, \textit{convex} secondary refelctor
+        \end{itemize}
+    \item Treatment for Huygen's principle:
+        \begin{align*}
+            &\vec{J}_A = 0 &\text{in \textit{shadow} region}\\
+            &\vec{J}_A = 2\vec{n} \times\vec{H}^{\mathrm{inc}}(0) &\text{in \textit{lit} region}\\
+            &\vec{M}_A = -\vec{n}\times\vec{E} = 0
+        \end{align*}
 \end{itemize}
