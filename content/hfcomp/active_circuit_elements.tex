@@ -98,3 +98,41 @@
     \end{equation*}
 \end{itemize}
 
+\subsubsection{Field-effect Transistor}
+\includegraphics[width=.3\paperheight]{content/hfcomp/pictures/mosfet_hf_equivalent.png}\\
+n-channel MOSFET, depletion type:
+\begin{align*}
+    &i_D \approx I_{DSS} \left(1 - \dfrac{u_{GS}}{U_P}\right)^2\\
+    &S = \left.\dfrac{\partial i_D}{\partial u_{GS}}\right|_{U_{DS}=\mathrm{const}} = \dfrac{2}{|U_P|}\sqrt{I_{DSS} \; i_D}\\
+    &U_P\text{: pinch-off voltage, here } U_P < 0
+\end{align*}
+
+\subsection{Microwave Tubes}
+\subsubsection{Klystron}
+\begin{itemize}
+    \itemsep0pt
+    \item Continuous electron beam is velocity modulated by an HF signal $\implies$ density-modulation
+    \item Density modulated beam equivalent to an AC current $\implies$ excites \textit{amplified} oscillation in output resonator
+\end{itemize}
+\begin{align*}
+    &i \approx I_0 \left(1 + p \cos(\omega t_0)\right)\\
+    &p = \dfrac{\omega l |U_e|}{2v_0 U_0}\text{ (bunching parameter)}
+\end{align*}
+
+\subsubsection{Travelling Wave Tube (TWT)}
+\begin{itemize}
+    \itemsep0pt
+    \item Density modulated electrons, as with Klystron
+    \item Energy transfer \textit{only if}(!) average electron velocity $v_0$ is greater than the phase velocity $v_p$ of the RF wave $\implies$ delay lines for RF wave
+\end{itemize}
+\begin{align*}
+    &v_p \approx c_0 \sin \psi, \quad v_p < v_0\\
+    &\psi\text{: angle of helical delay line}
+\end{align*}
+
+\subsubsection{Magnetron (ger.: Kreuzfeldröhre)}
+\begin{itemize}
+    \itemsep0pt
+    \item Similar to Klystron and TWT, but additionally \textit{shaped by DC magnetic field}
+    \item Electron beam excites resonators embedded in the cathode
+\end{itemize}
