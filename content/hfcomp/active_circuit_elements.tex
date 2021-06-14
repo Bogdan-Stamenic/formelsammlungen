@@ -73,11 +73,15 @@
 \subsubsection{Bipolar Transistor}
 \includegraphics[width=.3\paperheight]{content/hfcomp/pictures/bipolar_transistor_giacoletto.png}
 \begin{align*}
-    &S \approx \dfrac{I_{E,DC}}{U_T}, \;\;\;\;\; C_{B^\prime E} \approx \dfrac{S}{2\pi f_T},\\
-    &\dfrac{1}{R_{b^\prime E}} = G_{B^\prime E} \approx \dfrac{S}{\beta_0},\\
+    &S \approx \dfrac{I_{E,DC}}{U_T}, \quad C_{B^\prime E} \approx \dfrac{S}{2\pi f_T},\\
+    &\dfrac{1}{R_{B^\prime E}} = G_{B^\prime E} \approx \dfrac{S}{\beta_0},\\
     &\beta_0 = \left.\dfrac{I_C}{I_B}\right|_{f\to0} \approx \dfrac{I_{C,DC}}{I_{B,DC}} = B,\\
+    &U_T = \frac{k_B T}{q_e}, \; U_T(T=\SI{25}{\degree C}) \approx \SI{25}{mV}\\
     &f_T\text{: transit frequency }(\beta = 1),\\
-    &B\text{: DC current amplification}
+    &B\text{: DC current amplification},\\
+    &k_B\text{: Boltzmann constant},\\
+    &T\text{: Abs. temperature in Kelvin},\\
+    &q_e\text{: Elementary charge}
 \end{align*}
 \begin{itemize}
     \itemsep0pt
@@ -88,10 +92,11 @@
         \item Compensation of \textit{device tolerances}
         \item \textbf{Principle:} DC current feedback circuit
     \end{itemize}
-    \item Typical biasing for Emitter (Base) Circuit:
-    \begin{equation*}
-        U_{E,DC} \approx \dfrac{U_{Bat}}{3..6},\;\;\; I_{q,DC} \approx 10 I_{B,DC}
-    \end{equation*}
+\item \textit{Rules of thumb} for Emitter (Base) Circuit:
+    \begin{align*}
+        &U_{E,DC} \approx \dfrac{U_{Bat}}{3..6}, \quad U_{BE,DC} \approx \SI{0.7}{V},\\
+        &I_{RX,DC} \approx 10 \, I_{B,DC}\text{ (base feed current)}
+    \end{align*}
 \item E12-series resistors:
     \begin{equation*}
         R_n = 10^\frac{n}{12} 10^p \quad n=0,1,2,...
