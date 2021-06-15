@@ -72,6 +72,42 @@
         \end{align*}
 \end{itemize}
 
+\subsection{Coupled Transmission Lines}
+\begin{itemize}
+    \itemsep0pt
+    \item Unshielded transmission lines (in close proximity) are electromagnetically coupled $\implies$ directional couplers and bandpass filters can be realized
+    \item Transmission line model with \textit{coupling capacitor} (elec. coupling) and \textit{coupling inductor} (magn. coupling)
+%        \begin{align*}
+%            &\frac{\mathrm{d}I_1}{\mathrm{d}z} = -j\omega(C^\prime_1 + C^\prime_{12})U_1 + j\omega C^\prime_{12}U_2\\
+%            &\frac{\mathrm{d}I_2}{\mathrm{d}z} = -j\omega(C^\prime_2 + C^\prime_{12})U_2 + j\omega C^\prime_{12}U_1\\
+%            &\frac{\mathrm{d}U_1}{\mathrm{d}z} = -j\omega L^\prime_1 I_1 - j\omega M^\prime I_2\\
+%            &\frac{\mathrm{d}U_2}{\mathrm{d}z} = -j\omega L^\prime_2 I_2 - j\omega M^\prime I_1\\
+%            &k = \frac{M^\prime}{L^\prime}\text{ (coupling coef.)}
+%        \end{align*}
+    \item For a transformer (inductive coupling):
+        \begin{minipage}{.3\paperheight}
+            \input{content/hfcomp/tikz-circuits/hf-transformer-ecd.tex}
+        \end{minipage}
+        \begin{align*}
+            &n = \dfrac{M}{L_2}, \quad k = \dfrac{M}{\sqrt{L_1 L_2}}\text{ (coupl. coeff.)},\\
+            &\begin{bmatrix}\
+                U_1\\
+                I_1
+            \end{bmatrix}\
+            =\
+            \begin{bmatrix}\
+                n & 0\\
+                0 & 1/n
+            \end{bmatrix}\
+            \begin{bmatrix}\
+                U_2\\
+                -I_2
+            \end{bmatrix} \parbox{2cm}{(ideal trafo)}\\
+            &L_1\text{: primary coil inductance}\\
+            &L_2\text{: secondary coil inductance}
+        \end{align*}
+\end{itemize}
+
 \subsection{Signal Flow Graphs}
 \begin{itemize}
     \itemsep0pt
@@ -103,4 +139,14 @@
                     &L(1)^i:\parbox{4cm}{loops of order 1 that don't touch path $P_i$}
                 \end{align*}
         \end{itemize}
+\end{itemize}
+
+\subsection{Non-Reciprocal Ferrite  Components}
+\begin{itemize}
+    \itemsep0pt
+    \item In general: \(\mu_r = \mu_r^\prime - j\mu''_r\)
+    \item YIG-Filter ($Y_3 Fe_2 O_{12}$) $\implies$ $H_0$ controls filter behaviour; selectively choose for left-/right-handed polarization
+    \item \textit{Faraday Rotation} due to different permeabilites for left-/right-handed circ. pol. waves due to gyro-magnetic effects
+    \item Uni-line circulator uses Faraday rotation to realize \textit{one-way} transmission line
+    \item Y-Circulator (3-port) used to decouple transmitter-antenna-receiver for high powers
 \end{itemize}
