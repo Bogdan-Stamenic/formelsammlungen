@@ -10,10 +10,10 @@
     \end{equation*}
 \end{itemize}
 
-\subsubsection{Capacitance Diode}
+\subsubsection{Capacitance/Varactor Diode}
 \begin{itemize}
     \itemsep0pt
-    \item Operated in reverse direction; application of reverse voltage causes a barrier
+    \item Reverse biased p-n-diode; application of reverse voltage causes a barrier
     \item Increasing voltage $\to$ decreasing capacitance
     \item Can be used as an \textit{electronically variable capacitance}
     \item \textbf{Application:} tuning of resonators, filters, ...
@@ -31,6 +31,10 @@
 \begin{itemize}
     \itemsep0pt
     \item Written out: \textbf{imp}act ionization \textbf{a}valanche \textbf{t}ransit \textbf{t}ime
+    \item Negative differential resistance
+    \item Usage in high-power applications
+    \item Amplifier/Oscillator
+    \item \textbf{Drawback:} high phase noise from avalanche effect
     \item Operation as a \textit{read diode}:
         \begin{align*}
             \Theta = \omega t = \omega \; w/v_s\\
@@ -66,12 +70,13 @@
 \begin{itemize}
     \itemsep0pt
     \item The Gunn Element is \textit{not} a diode
-    \item \textbf{Justification:} \textit{negative differential mobility} of the electrons
+    \item Oscillator/Amplifier
+    \item \textbf{Justification:} \textit{negative differential mobility} of the electrons (negative resistance/conductance)
 \end{itemize}
 
 \subsection{HF-Transistors}
 \fbox{%
-    \parbox{6cm}{%
+    \parbox{8cm}{%
         \textbf{Two-step analysis of HF-Transistor Amplifier Circuits:}
         \begin{enumerate}
             \itemsep0pt
