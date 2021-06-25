@@ -12,7 +12,7 @@
     (T.B2) node[]{}
     +(.5,0) node[ocirc]{} to[short] (T.B2)
     (T.B1)++(.5,0) to[open, v=$U_2$] +(0,-2);
-    \draw [<->] (T.inner dot A1) -- node[anchor=south]{$M$} (T.inner dot B1);
+    \draw [to-to] (T.inner dot A1) to[out=60, in=120] node[anchor=south]{$M$} (T.inner dot B1);
     \draw[-{Implies}, double, thick] (2,0) -- (2.5,0);
     \begin{scope}[xshift=7.5cm, yshift=0cm]
         \draw
