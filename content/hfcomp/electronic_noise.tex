@@ -27,18 +27,112 @@
     \item Wide sense stationarity assumed; $\bar{u}^{\Delta t}$ and $\overline{u^2}^{\Delta t}$ independant from $t_0$
     \item Spectral density of voltage: \(W_u^s = \left.\dfrac{\bar{u}^2}{\Delta f}\right|_{\Delta f \to 0}\)
     \item \textbf{Central Limit Theorem} (Gaussian PDF):
-        \(p^*(u) = \dfrac{e^{- \frac{1}{2}\frac{u^2}{\overline{u^2}}}}{\sqrt{2\pi \overline{u^2}}}\)
+        \(p^*(u) = \dfrac{1}{\sqrt{2\pi\:\overline{u^2}}}\exp\left(- \dfrac{1}{2}\dfrac{u^2}{\overline{u^2}}\right)\)
 \end{itemize}
 
 \subsection{Working with Noise Signals}
+\subsubsection{Correlation Functions}
 \begin{itemize}
     \itemsep0pt
-    \item blah
+    \item Auto- ($i=j$)/Cross- ($i\neq j$)\textbf{Correlation Function}:
+    \begin{align*}
+        \rho_{ij}(\tau) &= \overline{u_i(t) u_j(t+\tau)}\\
+        &= \lim_{\Delta t\to\infty} \dfrac{1}{\Delta t} \int\limits^{t_0+\Delta t}_{t_0} u_i(t) u_j(t+\tau) \mathrm{d}t
+    \end{align*}
+    \item $\rho(\tau) = \rho(-\tau) \implies \text{Even function!}$
+    \item However, cross-correlation function $\rho_{ij}(\tau)$ \textit{not generally even!}
+\end{itemize}
+
+\subsubsection{Noise Signals in Frequency Domain}
+\begin{align*}
+    &\overline{u^2} = \int\limits_0^\infty W_u^s(f) \mathrm{d}f = |\tilde{u}|^2\\
+    &W_u^s\text{: single-sided (power) spectral density}
+\end{align*}
+\begin{itemize}
+    \itemsep0pt
+    \item Double-sided spectral densities (\textit{even function}) as Fourier transform of correlation functions:
+        \begin{align*}
+            W_u(f) &= \int\limits^\infty_{-\infty}\rho(\tau)\,e^{-j2\pi f\tau}\mathrm{d}\tau\\
+            &= \int\limits^\infty_{-\infty}\rho(\tau) \cos(-j2\pi f\tau)\mathrm{d}\tau\\
+        \end{align*}
+    \item \textbf{Wiener-Khinchin-Relations:}
+    \begin{align*}
+        &W_{u12} = \int\limits^\infty_{-\infty}\rho_{12}(\tau)\,e^{-j2\pi f\tau}\mathrm{d}\tau,\\
+        &W_{u12}(f) = W_{u21}^*(f),\\
+        &W_{u21}(f) = W_{u21}^*(-f)
+    \end{align*}
+    \item Normalized cross spectral density $\gamma$:
+        \begin{equation*}
+            \gamma = \dfrac{W_{u12}(f)}{\sqrt{W_u1(f)} \sqrt{W_u2(f)}}
+        \end{equation*}
+\end{itemize}
+
+\subsubsection{Noise Signals in Linear Networks}
+\begin{tabular}{cc}
+    \includegraphics[width=3.5cm]{content/hfcomp/pictures/2-port_linear_network.png}\
+    &\includegraphics[width=3.5cm]{content/hfcomp/pictures/3-port_linear_network.png}\\
+\end{tabular}
+\begin{itemize}
+    \itemsep0pt
+    \item Two-port network with tranfer function $h(t)$:
+        \begin{align*}
+            &\rho_a(\tau) = \int\limits_{-\infty}^\infty\int\limits_{-\infty}^\infty\
+            h(t')h(t'')\rho_e(\tau+t'-t'')\mathrm{d}t'\mathrm{d}t'',\\
+            &W_a(f) = |H(f)|^2 W_e(f),\\
+            &\rho_e\text{: Input autocorrelation function}\\
+            &\rho_a\text{: Output autocorrelation function}
+        \end{align*}
+    \item Three-port network (2 in-, 1 output) with tranfer functions $h_{1/2}(t)$:
+        \begin{align*}
+            W_a(f) = &|H_1(f)|^2 W_{e1}(f) + |H_2(f)|^2 W_{e2}(f)\\
+            &+ 2\:\mathrm{Re}\{H_1^*(f) H_2^*(f) W_{e1e2}(f)\}
+        \end{align*}
 \end{itemize}
 
 \subsection{Noise of Two-Terminal Elements}
+\subsubsection{Thermal Noise}
+\includegraphics[width=.4\paperheight]{content/hfcomp/pictures/thermal_noise_resistor.png}
+\begin{align*}
+    &\overline{u^2(t)} = 4 k_B T R \Delta f = |\tilde{U}|^2\\
+    &W_{tu}^s(f) = 4\,k_B T\,R \quad \text{(single-sided)}\\\\
+    &P_{N\;\mathrm{max}} = \dfrac{\overline{u^2(t)}}{4}\dfrac{1}{R} = k_B T\Delta f\\
+    &\dfrac{P_{N\;\mathrm{max}}}{\mathrm{W}} = 4\cdot10^{-21}\;\dfrac{\Delta f}{\mathrm{Hz}}\dfrac{T}{T_0}
+\end{align*}
+
+\subsubsection{Noise of Receiving Antennas}
 \begin{itemize}
     \itemsep0pt
-    \item \(\overline{u^2(t)} = 4 k_B T R \Delta f = |U|^2\)
+    \item Equivalent antenna noise temperature $T_a=T$ (like a \textit{black body})
+    \item Sources:
+        \begin{itemize}
+            \itemsep0pt
+            \item cosmic noise
+            \item atmospheric noise (tropical thunderstorms)
+            \item ionospheric (fluctuation) noise
+            \item heat radiation of the earth received by low directivity antennas
+        \end{itemize}
 \end{itemize}
 
+\subsubsection{Shot Noise}
+\begin{itemize}
+    \itemsep0pt
+    \item Due to the \textbf{quantisation of electric charge}
+    \item \textbf{Shottky equation} (derived from consider high vacuum diode):
+        \begin{align*}
+            W_{is}^s(f) = 2q_e\,q_e n |S(f)|^2 \approx 2 q_e\,I_{\mathrm{DC}}
+        \end{align*}
+\end{itemize}
+
+\subsection{Noise of Diodes}
+\begin{center}
+    \input{content/hfcomp/tikz-circuits/schottky_equivalent_noise_circuit}\\
+    \textit{Schottky diode and equivalent noise circuit.}
+\end{center}
+\begin{itemize}
+    \item Diode noise power:
+    \begin{equation*}
+        W_{i,s}^s = 2\,q_e (I_0 + 2I_{ss}), \quad I_{ss}\text{: sat. current}
+    \end{equation*}
+\end{itemize}
+
+\subsection{Noise of Two-Ports}
