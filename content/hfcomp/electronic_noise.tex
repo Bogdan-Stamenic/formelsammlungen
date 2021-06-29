@@ -22,12 +22,21 @@
     \item Temporal behaviour is fundamentally \textit{unpredictable} $\implies$ integral values are predictable:
         \begin{align}
             &\text{Linear, time average:} &\bar{u}^{\Delta t} &= \dfrac{1}{\Delta t}\int\limits^{t_0+\Delta t}_{t_0} u(t) \mathrm{d}t\\
-            &\text{Mean square:} &\overline{u^2}^{\Delta t} &= \dfrac{1}{\Delta t}\int\limits^{t_0+\Delta t}_{t_0} u^2(t) \mathrm{d}t
+            &\text{Mean square:} &\overline{u^2}^{\Delta t} &= \dfrac{1}{\Delta t}\int\limits^{t_0+\Delta t}_{t_0} u^2(t) \mathrm{d}t\\
+            &\text{Root Mean Square (RMS):} &\tilde{u}=\sqrt{\overline{u^2}}
         \end{align}
     \item Wide sense stationarity assumed; $\bar{u}^{\Delta t}$ and $\overline{u^2}^{\Delta t}$ independant from $t_0$
     \item Spectral density of voltage: \(W_u^s = \left.\dfrac{\bar{u}^2}{\Delta f}\right|_{\Delta f \to 0}\)
     \item \textbf{Central Limit Theorem} (Gaussian PDF):
         \(p^*(u) = \dfrac{1}{\sqrt{2\pi\:\overline{u^2}}}\exp\left(- \dfrac{1}{2}\dfrac{u^2}{\overline{u^2}}\right)\)
+    \item \textbf{(Normalized) Error Function:}
+        \begin{equation*}
+            p(0<u<u_1) = \int\limits_0^{u_1} p^*(u)\mathrm{d}u = \Phi^*\left(\dfrac{u_1}{\tilde{u}}\right) \approx \dfrac{1}{2} - \dfrac{\exp(-\frac{1}{2}\frac{u_1^2}{\tilde{u}})}{\sqrt{2\pi}(u_1/\tilde{u})}
+        \end{equation*}
+        \begin{tabular}{|c|c|c|c|c|}\hline
+            $\dfrac{u_1}{\sqrt{\overline{u^2}}}$ & 1 & 2 & 3 & 4\\\hline
+            $\Phi^*$ & 0.413 & 0.4772 & 0.4987 & 0.49997\\\hline
+        \end{tabular}
 \end{itemize}
 
 \subsection{Working with Noise Signals}
@@ -39,7 +48,8 @@
         \rho_{ij}(\tau) &= \overline{u_i(t) u_j(t+\tau)}\\
         &= \lim_{\Delta t\to\infty} \dfrac{1}{\Delta t} \int\limits^{t_0+\Delta t}_{t_0} u_i(t) u_j(t+\tau) \mathrm{d}t
     \end{align*}
-    \item $\rho(\tau) = \rho(-\tau) \implies \text{Even function!}$
+    \item $\rho_{ii}(\tau) = \rho_{ii}(-\tau) \implies \text{Even function!}$
+    \item $\rho(0) = \sqrt{\overline{u^2}} = \tilde{u}$ (RMS)
     \item However, cross-correlation function $\rho_{ij}(\tau)$ \textit{not generally even!}
 \end{itemize}
 

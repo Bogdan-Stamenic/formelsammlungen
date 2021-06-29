@@ -3,9 +3,9 @@
         \draw (0,0) to[stroke diode, v=$u$, i=$i$, o-o] (2,0);
     \end{scope}
     \begin{scope}[yshift=-3.8cm]
-        \draw (6,2)node[ocirc]{} to[european voltage source, v=$W_{u,s}^s$, fill=gray!50](4,2)
-        to[R=$R_b$] (2,2)-- (0,2)
-        to[R=$G_S$] (0,0) -- (6,0)node[ocirc]{};
-        \draw (2, 2) to[european current source, i=$W_{i,s}^s$, fill=gray!50, *-*] (2,0);
+        \draw (7,2)node[ocirc]{} to[european voltage source, l=$W_{u,s}^s$, fill=gray!50](5,2)
+        to[R=$R_b$] (3,2) -- (0,2)
+        to[R=$G_S$] (0,0) -- (7,0)node[ocirc]{};
+        \draw (2, 2) to[european current source, l=$W_{i,s}^s$, i=$\tilde{I}$, fill=gray!50, *-*] (2,0);
     \end{scope}
 \end{circuitikz}
