@@ -20,11 +20,11 @@
 \subsection{Properties of Noise Signals}
 \begin{itemize}
     \item Temporal behaviour is fundamentally \textit{unpredictable} $\implies$ integral values are predictable:
-        \begin{align}
+        \begin{align*}
             &\text{Linear, time average:} &\bar{u}^{\Delta t} &= \dfrac{1}{\Delta t}\int\limits^{t_0+\Delta t}_{t_0} u(t) \mathrm{d}t\\
             &\text{Mean square:} &\overline{u^2}^{\Delta t} &= \dfrac{1}{\Delta t}\int\limits^{t_0+\Delta t}_{t_0} u^2(t) \mathrm{d}t\\
             &\text{Root Mean Square (RMS):} &\tilde{u}=\sqrt{\overline{u^2}}
-        \end{align}
+        \end{align*}
     \item Wide sense stationarity assumed; $\bar{u}^{\Delta t}$ and $\overline{u^2}^{\Delta t}$ independant from $t_0$
     \item Spectral density of voltage: \(W_u^s = \left.\dfrac{\bar{u}^2}{\Delta f}\right|_{\Delta f \to 0}\)
     \item \textbf{Central Limit Theorem} (Gaussian PDF):
@@ -92,18 +92,36 @@
             &\rho_e\text{: Input autocorrelation function}\\
             &\rho_a\text{: Output autocorrelation function}
         \end{align*}
-    \item Three-port network (2 in-, 1 output) with tranfer functions $h_{1/2}(t)$:
-        \begin{align*}
-            W_a(f) = &|H_1(f)|^2 W_{e1}(f) + |H_2(f)|^2 W_{e2}(f)\\
-            &+ 2\:\mathrm{Re}\{H_1^*(f) H_2^*(f) W_{e1e2}(f)\}
-        \end{align*}
+%    \item Three-port network (2 in-, 1 output) with tranfer functions $h_{1/2}(t)$:
+%        \begin{align*}
+%            W_a(f) = &|H_1(f)|^2 W_{e1}(f) + |H_2(f)|^2 W_{e2}(f)\\
+%            &+ 2\:\mathrm{Re}\{H_1^*(f) H_2^*(f) W_{e1e2}(f)\}
+%        \end{align*}
 \end{itemize}
+\fbox{%
+    \parbox{8cm}{%
+        \textbf{Symbolic Calculation of Noise Sources:}
+        \begin{enumerate}
+            \item Treat noise sources like normal current/voltage sources and apply Kirchhoff's laws to combine sources, e.g.
+                \begin{equation*}
+                    U_a = H_1(f)U_{e1} + H_2(f)U_{e2}.
+                \end{equation*}
+            \item Take the magnitude squared of the expression and apply the correspondence $|\tilde{U}_{e1}|^2 = W_{e1}$ for voltage or $|\tilde{I}_{e1}|^2 = W_{e1}$ for current sources, e.g.
+                \begin{align*}
+                    |U_a|^2 = &|H_1|^2|U_{e1}|^2 + |H_2|^2|U_{e2}|^2\\
+                    &+ 2\:\mathrm{Re}\{H_1^* H_2^*\:U_{e1}^* U_{e2}\},\\
+                    \updownarrow\\
+                    W_a(f) = &|H_1|^2 W_{e1} + |H_2|^2 W_{e2}\\
+                    &+ 2\:\mathrm{Re}\{H_1^* H_2^*\:W_{e1e2}\}.
+                \end{align*}
+        \end{enumerate}}
+    }
 
 \subsection{Noise of Two-Terminal Elements}
 \subsubsection{Thermal Noise}
 \includegraphics[width=.4\paperheight]{content/hfcomp/pictures/thermal_noise_resistor.png}
 \begin{align*}
-    &\overline{u^2(t)} = 4 k_B T R \Delta f = |\tilde{U}|^2\\
+    &\overline{u^2(t)} = 4k_B T R\,\Delta f = |\tilde{u}|^2\\
     &W_{tu}^s(f) = 4\,k_B T\,R \quad \text{(single-sided)}\\\\
     &P_{N\;\mathrm{max}} = \dfrac{\overline{u^2(t)}}{4}\dfrac{1}{R} = k_B T\Delta f\\
     &\dfrac{P_{N\;\mathrm{max}}}{\mathrm{W}} = 4\cdot10^{-21}\;\dfrac{\Delta f}{\mathrm{Hz}}\dfrac{T}{T_0}
@@ -126,8 +144,8 @@
 \subsubsection{Shot Noise}
 \begin{itemize}
     \itemsep0pt
-    \item Due to the \textbf{quantisation of electric charge}
-    \item \textbf{Shottky equation} (derived from consider high vacuum diode):
+    \item Due to the \textit{quantisation of electric charge}
+    \item \textbf{Shottky equation} (derived from considering high vacuum diode):
         \begin{align*}
             W_{is}^s(f) = 2q_e\,q_e n |S(f)|^2 \approx 2 q_e\,I_{\mathrm{DC}}
         \end{align*}
@@ -146,3 +164,48 @@
 \end{itemize}
 
 \subsection{Noise of Two-Ports}
+\begin{itemize}
+    \item Transducer Power Gain:
+        \begin{equation*}
+            g_T = \dfrac{P_{\mathrm{out}}}{P_{\mathrm{in},\mathrm{max}}} = |A_B|^2
+        \end{equation*}
+    \item Two-port's noise as an effective thermal noise source ($T_z$)
+    \item \textit{Noise Figure} $F$, as ratio of input- and output-SNR:
+        \begin{align*}
+            &F = \dfrac{T_0 + T_z}{T_0} = 1 + \dfrac{T_z}{T_0} = 1 + F_z\\
+            &F_z\text{: excess noise figure}\\
+            &T_0\text{: real temperature}
+        \end{align*}
+    \item \textbf{Noise of a passive two-port}:
+        \begin{equation*}
+            T_z = \dfrac{(1 - g_T)}{g_T}\,T_0
+        \end{equation*}
+    \item Cascade of $n$ two-ports:
+        \begin{equation*}
+            F_z = F_{z1} + \dfrac{F_{z2}}{g_{T1,\mathrm{max}}} +\dots+\dfrac{F_{zn}}{\prod\limits_{i=1}^{n-1}g_{Ti,\mathrm{max}}}
+        \end{equation*}
+    \item \textit{First amplifier} in a cascade of noisy two-port should have a \textit{low noise figure}!
+    \item Noise Measure $M_i$:
+        \begin{equation*}
+            M_i = \dfrac{F_{zi}}{1 - \dfrac{1}{g_{Ti,\mathrm{max}}}}
+        \end{equation*}
+\end{itemize}
+\subsubsection{Noise of Bipolar Transistor}
+\subsubsection{Noise Matching}
+\begin{itemize}
+    \item \textbf{Goal:} Choose an internal generator impedance $Z_i=R_i + jX_i$ that minimizes the noise figure of a noisy two-port.
+    \item Assume input noise sources:
+        \begin{align*}
+            &|\tilde{U}_{Nu}|^2 = 4k_B T_0 R_n \Delta f,\\
+            &|\tilde{I}_{N}|^2 = 4k_B T_0 R_n \Delta f,\\
+            &\tilde{U}_{Nc} = Z_c \tilde{I}_N, \quad Z_c=R_c + jX_c,\\
+            &(\tilde{U}_{Nu}\text{ and }\tilde{I}_N\text{ uncorrelated})
+        \end{align*}
+    \item We get the optimal $Z_{i,\mathrm{opt}}$ minimal noise figure $F_{z,\mathrm{min}}$:
+        \begin{align*}
+            &R_{i, \mathrm{opt}} = \sqrt{\dfrac{R_n}{G_n} + R_c^2},\quad X_{i, \mathrm{opt}} = -X_c,\\
+            &F_{z,\mathrm{min}} = 2\left[G_n R_n + \sqrt{G_n R_c + (G_n R_c)^2}\right]
+        \end{align*}
+    \item Circles of constant noise figure:\\
+        \todo{Add formulas and diagram here.}
+\end{itemize}
