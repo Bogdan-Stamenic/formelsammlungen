@@ -88,6 +88,21 @@
         22 + 20 \log_{10}\left(\dfrac{r}{\lambda_0}\right)\)
 \end{itemize}
 
+\noindent\fbox{%
+    \parbox{8cm}{%
+        \textbf{How to Calculate Radiation Resistance} $R_r$:
+        \begin{enumerate}
+            \item Determine the antenna's current $I_a$ or its voltage $U_a$.
+                \begin{equation*}
+                    P_t = \dfrac{1}{2} |I_a|^2 R_r = \dfrac{1}{2} \dfrac{|U_a|^2}{R_r}
+                \end{equation*}
+            \item Equate the following with the above equation and solve for $R_r$:
+                \begin{equation*}
+                    P_t = \iint\limits_A \vec{S}(\vec{r}) \,\mathrm{d}\vec{A} = \iint\limits_A \dfrac{|E_{\mathrm{max}}|^2}{2 Z_F} |C(\vartheta,\varphi)| \,\mathrm{d}\vec{A}
+                \end{equation*}
+        \end{enumerate}
+    }}
+
 %% Important definitions table:
 \begin{tabular}{p{3cm}p{4cm}}
         \toprule
