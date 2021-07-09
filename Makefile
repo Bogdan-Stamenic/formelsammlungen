@@ -52,7 +52,7 @@ clean: FORCE
 	rm -rf *.aux *.log *.nvm *.tic *.toc\
 		*.fdb_latexmk *.fls *.synctex.gz\
 		.*.un~ settings/.*.un~ util/.*.un~\
-		*~ settings/*~ util/*~
+		*~ settings/*~ util/*~ *.out
 
 FORCE:
 

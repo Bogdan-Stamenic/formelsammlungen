@@ -3,7 +3,7 @@
 \begin{itemize}
     \itemsep0pt
     \item Input reflection coefficient:\\
-        \[r = S_{11} = \dfrac{Z - Z_0}{Z + Z_0} = -\dfrac{Y - Y_0}{Y + Y_0}\]
+        \[r \text{ or } \Gamma = S_{11} = \dfrac{Z - Z_0}{Z + Z_0} = -\dfrac{Y - Y_0}{Y + Y_0}\]
     \item Current and Voltage stop being useful for high frequencies\\
         $\implies$ Power wave amplitudes $a$ and $b$:
     \begin{align*}
@@ -38,31 +38,36 @@
             &\text{Far-field:} &S(r) = \dfrac{|E(r)|^2}{2 Z_{F0}},\;\; Z_{F0} \approx \SI{120\pi}{\Omega}\\
             &\text{Reciprocal:} &S(r) = \dfrac{P_{t0}G_t}{4\pi r^2} = \dfrac{P_{t0}\eta D_t}{4\pi r^2}
         \end{align*}
-    \item \textit{Radiation Characteristic} $C(\vartheta, \varphi)$ describes angle-dependant antenna radiation (under far-field conditions):\\
-        \(C(\vartheta, \varphi) = \dfrac{E(\vartheta, \varphi)}{E_{max}},\;\
-        |C(\vartheta, \varphi)| = \sqrt{\dfrac{S(\vartheta, \varphi)}{S_{max}}}\)
-    \item \textbf{Gain:} \(G = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t0} = \mathrm{const}}\)
-    \item Maximum (generator) power $P_{t0,max}$, Accepted Power $P_{t0}$ (transmission \(\to\) antenna; IEEE gain), and Radiated Power $P_t$:
+    \item \textbf{Radiation Characteristic} $C(\vartheta, \varphi)$; angle-dependant antenna radiation under far-field conditions:
+        \begin{equation*}
+            C(\vartheta, \varphi) = \dfrac{E(\vartheta, \varphi)}{E_{max}}, \quad
+            |C(\vartheta, \varphi)| = \sqrt{\dfrac{S(\vartheta, \varphi)}{S_{max}}}
+        \end{equation*}
+    \item Definitions of (Transmitted) Power:
         \begin{align*}
-            &P_{t0} = (1- |\Gamma|^2) P_{t0,max},\text{   } P_t = \eta_a P_{t0},\\
-            &P_t = \int\limits_{\vartheta=0}^{\pi} \int\limits_{\varphi=0}^{2\pi} S_{max} |C(\vartheta, \varphi)|^2 r^2 \sin(\vartheta)\: \mathrm{d}\vartheta \mathrm{d}\varphi
+            &P_{t0} = (1- |\Gamma|^2) P_{t0,max},\text{ (Accepted)}\\
+            &P_t = \eta_a P_{t0},\text{ (Radiated)}\\
+            &P_t = \int\limits_{\vartheta=0}^{\pi} \int\limits_{\varphi=0}^{2\pi} S_{max} |C(\vartheta, \varphi)|^2 r^2 \sin(\vartheta)\: \mathrm{d}\vartheta \mathrm{d}\varphi\\
+            &P_{t0,\mathrm{max}}\text{: Maximum (Generator) Power}
         \end{align*}
-    \item Transmission Gain and Directivity:
+    \item Transmission Gain $G$ and Directivity $D$:
         \begin{align*}
-            &G = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t0} = \mathrm{const}} &= \dfrac{S_{\mathrm{max}}}{P_{t0} / 4\pi r^2}\\
-            &D = \left.\dfrac{S_{max}}{S_I}\right|_{P_{t} = \mathrm{const}} &= \dfrac{S_{\mathrm{max}}}{P_t / 4\pi r^2}\\
-            &G = \eta D, & \eta = \dfrac{P_t}{P_{t0}}
+            G &= \left.\dfrac{S_{max}}{S_I}\right|_{P_{t0} = \mathrm{const}} &= \dfrac{S_{\mathrm{max}}}{P_{t0} / 4\pi r^2}\\
+            D &= \left.\dfrac{S_{max}}{S_I}\right|_{P_{t} = \mathrm{const}} &= \dfrac{S_{\mathrm{max}}}{P_t / 4\pi r^2}
         \end{align*}
+        \begin{equation*}
+            G = \eta D, \quad \eta = \dfrac{P_t}{P_{t0}}
+        \end{equation*}
     \item Deriving \textit{directivity} D from Radiation Characteristic:\\
-        \(D = \dfrac{4\pi}{\iint |C(\vartheta, \varphi)|^2 \sin(\vartheta) \mathrm{d}\vartheta\mathrm{d}\varphi} = \dfrac{4\pi}{\Omega_a} \
-        \\\approx \dfrac{4\pi}{\varphi_{\SI{3}{dB}} \vartheta^\prime_{\SI{3}{dB}}}\)
-    \item Directivity of $\lambda/2$ dipole:\\
-        \(D_{\lambda/2} = 1.64 = \SI{2.15}{dBi}\)
-    \item Maximum received power $P_{r0,\mathrm{max}}$
+        \begin{align*}
+            D &= \dfrac{4\pi}{\iint |C(\vartheta, \varphi)|^2 \sin(\vartheta) \mathrm{d}\vartheta\mathrm{d}\varphi}\\
+            &= \dfrac{4\pi}{\Omega_a} \approx \dfrac{4\pi}{\varphi_{\SI{3}{dB}} \vartheta^\prime_{\SI{3}{dB}}}
+        \end{align*}
     \item \textit{Effective area} $A_e$ and \textit{maximum effective area} (aperture) $A_0$ of reveiving antennas:\\
         \begin{align*}
-        A_e = \dfrac{P_{r,\mathrm{max}}}{S}\\
-        A_0 = \dfrac{P_{r0,\mathrm{max}}}{S}
+            &A_e = \dfrac{P_{r,\mathrm{max}}}{S}\\
+            &A_0 = \dfrac{P_{r0,\mathrm{max}}}{S}\\
+            &P_{r0,\mathrm{max}}\text{: Maximum received power}
         \end{align*}
     \item For a \textit{reciprocal antenna} $\leftrightarrow$, the following holds:
         \begin{align*}
@@ -83,3 +88,13 @@
         22 + 20 \log_{10}\left(\dfrac{r}{\lambda_0}\right)\)
 \end{itemize}
 
+%% Important definitions table:
+\begin{tabular}{p{3cm}p{4cm}}
+        \toprule
+        (Absolute) Gain $G$ & How well the antenna converts the accepted power $P_{t0}$ into radiation in a certain direction for a lossy ($\eta<1$) antenna, and assuming perfect matching ($|\Gamma|^2 = 0$).\\\midrule
+        Realized (IEEE) Gain & Less than the absolute Gain. Power is reduced by mismatch losses ($|\Gamma|^2 > 0$) of the antenna input impedance to a specified (reference) impedance.\\\midrule
+        Maximum (Generator) Power $P_{t0,\mathrm{max}}$ & No losses ($\eta=1$) and perfect matching ($|\Gamma|^2 = 0$) from generator to antenna.\\\midrule
+        Accepted Power $P_{t0}$ & No antenna losses and with mismatching ($|\Gamma|^2 > 0$) from generator to anenna.\\\midrule
+        Radiated Power $P_t$ & Power that is emitted as an EM-wave, accounting for antenna losses ($\eta < 1$) and mismatching losses ($|\Gamma|^2 > 0$).\\
+        \bottomrule
+\end{tabular}
