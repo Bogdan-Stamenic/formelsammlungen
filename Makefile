@@ -3,8 +3,8 @@ all:
 	@echo \(1\) \"make template.pdf\"   Template PDF, to see how an FS could look like,
 	@echo \(2\) \"make fuw\"            Technische Felder und Wellen,
 	@echo \(3\) \"make aawp\"           Antennas and Wave Propagation,
-	@echo \(4\) \"make hfcomp\"         High-Frequency, Components, Amplifiers and Oscillators,
-	@echo \(5\) \"make hfmess\"         Hochfrequenzmesstechnik \(Warning: unfinished + abandoned\),
+	@echo \(4\) \"make hfc\"            High-Frequency, Components, Amplifiers and Oscillators,
+	@echo \(5\) \"make hfm\"            Hochfrequenzmesstechnik \(Warning: unfinished + abandoned\),
 	@echo
 	@echo \(6\) \"make a\" to make all of the above.
 
