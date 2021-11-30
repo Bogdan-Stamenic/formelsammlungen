@@ -1,0 +1,123 @@
+
+\section{Fundamentals of Electromagnetic Fields}
+\subsection{Maxwell's Equations}
+Maxwell's Equations (integral form):
+\begin{align*}
+  \oint\limits_{C(A)} \vec{h}(\vec{r}, t)\cdot\mathrm{d}\vec{s}
+  &= \iint\limits_{A}\left[ \vec{j}(\vec{r}, t) + \dfrac{\mathrm{d}\vec{d}(\vec{r}, t)}{\mathrm{d}t} \right]\cdot\mathrm{d}\vec{a}\\
+  \oint\limits_{C(A)} \vec{e}(\vec{r}, t)\cdot\mathrm{d}\vec{s}
+  &= -\iint\limits_{A}\left[ \vec{m}(\vec{r}, t) + \dfrac{\mathrm{d}\vec{b}(\vec{r}, t)}{\mathrm{d}t} \right]\cdot\mathrm{d}\vec{a}\\
+  \oiint\limits_{A(V)}\vec{d}(\vec{r}, t)\cdot\mathrm{d}\vec{A} &= \iiint\limits_{V}\rho(\vec{r},t)\,\mathrm{d}v\\
+  \oiint\limits_{A(V)}\vec{b}(\vec{r}, t)\cdot\mathrm{d}\vec{A} &= \iiint\limits_{V}\rho_{m}(\vec{r},t)\,\mathrm{d}v
+\end{align*}
+
+Maxwell's Equations (differential form):
+\begin{align*}
+&\nabla\times\vec{h}(\vec{r}, t) = \vec{j}(\vec{r},t) + \dfrac{\mathrm{d}\vec{d}(\vec{r},t)}{\mathrm{d}t}\\
+&\nabla\times\vec{e}(\vec{r}, t) = -\dfrac{\mathrm{d}\vec{b}(\vec{r},t)}{\mathrm{d}t} -\vec{m}(\vec{r},t)\\
+&\nabla\cdot\vec{d}(\vec{r},t) = \rho(\vec{r},t)\\
+&\nabla\cdot\vec{b}(\vec{r},t) = \rho_{m}(\vec{r},t)
+\end{align*}
+
+Material Relations:
+\begin{align*}
+&\vec{d}(\vec{r},t) = \epsilon(\vec{r},t) * \vec{e}(\vec{r},t)\\
+&\vec{j}(\vec{r},t) = \sigma(\vec{r},t) * \vec{e}(\vec{r},t) + \vec{j}_{\mathrm{exc}}(\vec{r},t)\\
+&\vec{b}(\vec{r},t) = \mu(\vec{r},t) * \vec{h}(\vec{r},t)\\
+&\vec{m}(\vec{r},t) = \vec{m}_{\mathrm{exc}}(\vec{r},t)\\
+\end{align*}
+
+Poisson Equation ($\partial_{t}\vec{e} = 0$, $\epsilon(\vec{r}) = \mathrm{const.}$):
+\begin{equation*}
+\nabla\cdot\left(\nabla\phi\right) = \Delta\phi = -\dfrac{\rho(\vec{r})}{\epsilon}
+\end{equation*}
+
+\subsection{Green's Theorems and Uniqueness of the Poisson Equation}
+\todo{Add Green's theorems\\}
+Solutions of $\Delta\phi(\vec{r}) = -\rho(\vec{r})/\epsilon$ are uniquely defined by specifying:
+\begin{enumerate}
+\item $\rho(\vec{r})$ and $\left.\phi(\vec{r})\right|_{\vec{r}\in F(V)}$
+\item \textbf{or} $\rho(\vec{r})$ and $\left.\dfrac{\partial}{\partial n}\phi(\vec{r})\right|_{\vec{r}\in F(V)}$
+\item \textbf{or} $\rho(\vec{r})$ and $\left.\phi(\vec{r})\right|_{\vec{r}\in F_{1}(V)}$, $\left.\dfrac{\partial}{\partial n}\phi(\vec{r})\right|_{\vec{r}\in F_{2}(V)}$\\
+        with $F_{1}(V) \cup F_{2}(V) = F(V)$,\\
+        $F_{1}(V) \cap F_{2}(V) = \emptyset$
+\end{enumerate}
+
+\subsection{Uniqueness of Time-Harmonic Electromagnetic Fields}
+Unique solutions while assuming arbitrarily small losses, when:
+\begin{enumerate}
+\item Presetting $\vec{n}\times\vec{E}$ on boundary surface $A$
+\item Presetting $\vec{n}\times\vec{H}$ on $A$
+\item Presetting $\vec{n}\times\vec{E}$ on parts of $A$, presetting $\vec{n}\times\vec{H}$ on the remainder of $A$
+\item In general, it is also possible to define $\vec{n}\times\vec{E}$ as a function of $\vec{n}\times\vec{H}$ or vice-versa
+\end{enumerate}
+
+\subsection{The Dirac Delta-Functional}
+\begin{itemize}
+  \item Motivated by volume charge density representation of a point charge:
+      \begin{equation*}
+        \iiint\limits_{V}\rho(\vec{r}, \vec{r_{P}})\mathrm{d}v =
+        \begin{cases}
+          Q_{P} \quad \text{for }\vec{r_{P}}\in V\\
+          0 \quad \text{elsewhere}
+        \end{cases}
+      \end{equation*}
+  \item Dirac delta defined via functional equation
+        \begin{equation*}
+\int\limits^{+\infty}_{-\infty}\delta(x)\varphi(x)\,\mathrm{d}x = \varphi(x)
+        \end{equation*}
+  \item A functional maps \textbf{a function onto a number}
+        \begin{equation*}
+\varphi(x) \mapsto \varphi(0)
+        \end{equation*}
+  \item A functional is linear, when
+        \begin{align*}
+&F\{\varphi_{1}+\varphi_{2}\} = F\{\varphi_{1}\} + F\{\varphi_{2}\}\\
+&F\{k\varphi\} = kF\{\varphi\}
+        \end{align*}
+        \item Domain of functionals are \textit{function spaces}
+        \item Function space is in general a set of functions and maps from a set $X$ onto a set $Y$
+        \item In many cases, vector addition and scalar multiplication can be defined. Such function spaces are called \textit{vector spaces}.
+        \item Properties of $\delta_{n}(x)$:
+        \begin{align*}
+          &\delta_{n}(ax) = \dfrac{1}{|a|} \delta(x)\\
+          &\int\limits^{+\infty}_{-\infty}\delta^{(n)}\varphi(x)\,\mathrm{d}x = (-1)^{n}\varphi^{(n)}(0)\\
+          &H^{\prime}(x) = \delta(x),\quad H(x) =
+          \begin{cases}
+            1 \quad x\geq0\\
+            0 \quad \text{elsewhere}
+          \end{cases}
+        \end{align*}
+\end{itemize}
+\subsubsection{Multi-dimension $\delta$-distributions in different coordinate systems}
+\begin{enumerate}
+\item Cartesian coordinates $P=(x',y',z')$
+        \begin{equation*}
+          \mathrm{d}v = \mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z
+        \end{equation*}
+        \begin{align*}
+          \delta(\vec{r}-\vec{r}_{P}) = \delta(x-x')\delta(y-y')\delta(z-z')
+        \end{align*}
+\item Cylinder coordinates $P=(\rho',\varphi',z')$
+        \begin{equation*}
+          \mathrm{d}v = \rho\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}z
+        \end{equation*}
+        \begin{align*}
+          &\delta(\vec{r}-\vec{r}_{P}) =\\
+          &\begin{cases}
+            \dfrac{1}{\rho}\delta(\rho-\rho')\delta(\varphi-\varphi')\delta(z-z'), \quad \rho'\neq0\\
+            \dfrac{1}{\pi\rho}\delta(\rho)\delta(z-z'), \quad \rho'=0
+          \end{cases}
+        \end{align*}
+\item Cylinder coordinates $P=(r',\vartheta',\varphi')$
+        \begin{equation*}
+          \mathrm{d}v = r^{2}\,\mathrm{d}r\,\sin(\vartheta)\,\mathrm{d}\,\vartheta\mathrm{d}\varphi
+        \end{equation*}
+        \begin{align*}
+          &\delta(\vec{r}-\vec{r}_{P}) =\\
+          &\begin{cases}
+            \dfrac{1}{r^{2}\sin\vartheta}\delta(r-r')\delta(\vartheta-\vartheta')\delta(\varphi-\varphi'),r'\neq0\\
+            \dfrac{1}{2\pi r^{2}}\delta(r), \quad r'=0
+          \end{cases}
+        \end{align*}
+\end{enumerate}

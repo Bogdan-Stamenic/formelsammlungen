@@ -1,0 +1,33 @@
+\input{util/setup.tex}
+
+%% This is the space for custom commands for your Formelsammlung
+\newcommand{\FormelsammlungTitel}{Computational and Analytical Methods in Electromagnetics}
+\newcommand{\FormelsammlungAutor}{Bogdan Stamenic}
+\setcounter{tocdepth}{2} % Show only sections and subsection in table of contents
+
+\begin{document}
+	\title{\FormelsammlungTitel}
+	\author{\FormelsammlungAutor}
+	\date{\today}
+	\begin{multicols*}{3}
+%		\begin{minipage}{.4\paperheight}
+			\maketitle
+			\tableofcontents
+%		\end{minipage}
+		\input{content/caem/fundamentals_of_electromagnetic_fields.tex}
+		\section{Finite Difference and Integration Methods}
+        \lipsum[2]
+		\section{The Method of Moments}
+        \lipsum[3]
+		\section{Finite Element Method and the Method of Moments}
+        \lipsum[4]
+		\section{Construction of Green's Functions by Orthonormal Series Expansion}
+        \lipsum[5]
+		\section{Variational Calculus}
+        \lipsum[6]
+		\section{Integral Equation Solutions}
+        \lipsum[7]
+		\section{Vector Solutions of Maxwell's Equations}
+        \lipsum[8]
+	\end{multicols*}
+\end{document}

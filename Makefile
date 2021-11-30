@@ -5,6 +5,7 @@ all:
 	@echo \(3\) \"make aawp\"           Antennas and Wave Propagation,
 	@echo \(4\) \"make hfcomp\"         High-Frequency, Components, Amplifiers and Oscillators,
 	@echo \(5\) \"make hfmess\"         Hochfrequenzmesstechnik \(Warning: unfinished + abandoned\),
+	@echo \(6\) \"make caem\"           Computational and Analytical Methods in Electromagnetics,
 	@echo
 	@echo \(6\) \"make a\" to make all of the above.
 
@@ -26,6 +27,9 @@ hfc:
 
 hfm:
 	make hfmess_fs.pdf
+
+caem:
+	make caem_fs.pdf
 
 template.pdf: FORCE
 	pdflatex template.tex
@@ -50,6 +54,11 @@ hfcomp_fs.pdf: FORCE
 hfmess_fs.pdf: FORCE
 	pdflatex hfmess_fs.tex
 	pdflatex hfmess_fs.tex
+	make clean
+
+caem_fs.pdf: FORCE
+	pdflatex caem_fs.tex
+	pdflatex caem_fs.tex
 	make clean
 
 clean: FORCE
