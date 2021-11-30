@@ -1,2 +1,10 @@
 \newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+%% Shorthands for math symbols
 \newcommand{\dyade}[1]{\overleftrightarrow{#1}}
+\newcommand{\dif}[3]{\dfrac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
+\newcommand{\dhat}[1]{\hat{\hat{#1}}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+%% Custom environments
+\newenvironment{definition}[1]{\begin{tcolorbox}[title=Def.: #1, colback=white!,colframe=green!50!black]}{\end{tcolorbox}}
+\newenvironment{recipe}[1]{\begin{tcolorbox}[title=#1, colback=white!,colframe=red!50!black]}{\end{tcolorbox}}
+\newenvironment{info}[1]{\begin{tcolorbox}[title=#1, colback=white!]}{\end{tcolorbox}}

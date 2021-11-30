@@ -15,19 +15,21 @@
 			\tableofcontents
 %		\end{minipage}
 		\input{content/caem/fundamentals_of_electromagnetic_fields.tex}
-		\section{Finite Difference and Integration Methods}
-        \lipsum[2]
-		\section{The Method of Moments}
-        \lipsum[3]
-		\section{Finite Element Method and the Method of Moments}
-        \lipsum[4]
-		\section{Construction of Green's Functions by Orthonormal Series Expansion}
-        \lipsum[5]
-		\section{Variational Calculus}
-        \lipsum[6]
-		\section{Integral Equation Solutions}
-        \lipsum[7]
-		\section{Vector Solutions of Maxwell's Equations}
-        \lipsum[8]
+		\input{content/caem/finite_difference_and_integral_methods.tex}
+		\input{content/caem/the_method_of_moments.tex}
+		\input{content/caem/finite_element_method_and_the_method_of_moments.tex}
+		\input{content/caem/construction_of_greens_functions.tex}
+		\input{content/caem/variational_calculus.tex}
+		\input{content/caem/integral_equation_solutions.tex}
+		\input{content/caem/vector_solutions_of_maxwells_equations.tex}
+		\section{Supplementary material}
+		Completeness relations:
+		\begin{align*}
+          &\dfrac{2}{d} \sum\limits_{n=1}^{\infty}\left[\sin\left(\dfrac{\pi n}{d}\right) \, \sin\left(\dfrac{\pi n}{d}\right) \right] = \delta(x - x')\\
+		  &\dfrac{1}{2}\sum\limits_{n=0}^{\infty}(2n+1)\dfrac{(n-m)!}{(n+m)!} P_{n}^{m}(\cos\vartheta)P_{n}^{m}(\cos\vartheta') = \dfrac{\delta(\vartheta - \vartheta')}{\sin\vartheta},\\
+		  &\sum\limits_{n=0}^{\infty}\sum\limits_{m=-n}^{n}Y_{n,m}(\vartheta,\varphi) Y_{n,m}^{*}(\vartheta',\varphi') = \dfrac{1}{\sin\vartheta}\delta(\vartheta-\vartheta')\delta(\varphi-\varphi')\\
+		  &\dfrac{2}{\rho_{0}^{2}}\sum\limits_{n=1}^{\infty} \dfrac{1}{J_{\nu+1}^{2}(x_{\nu n})} J_{\nu}\left(x_{\nu n}\dfrac{\rho}{\rho_{0}}\right) J_{\nu}\left(x_{\nu n}\dfrac{\rho'}{\rho_{0}}\right)
+			= \dfrac{1}{\rho} \delta(\rho - \rho')
+		\end{align*}
 	\end{multicols*}
 \end{document}

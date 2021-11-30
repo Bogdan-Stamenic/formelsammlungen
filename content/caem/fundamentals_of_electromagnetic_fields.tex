@@ -34,14 +34,16 @@ Poisson Equation ($\partial_{t}\vec{e} = 0$, $\epsilon(\vec{r}) = \mathrm{const.
 
 \subsection{Green's Theorems and Uniqueness of the Poisson Equation}
 \todo{Add Green's theorems\\}
-Solutions of $\Delta\phi(\vec{r}) = -\rho(\vec{r})/\epsilon$ are uniquely defined by specifying:
-\begin{enumerate}
-\item $\rho(\vec{r})$ and $\left.\phi(\vec{r})\right|_{\vec{r}\in F(V)}$
-\item \textbf{or} $\rho(\vec{r})$ and $\left.\dfrac{\partial}{\partial n}\phi(\vec{r})\right|_{\vec{r}\in F(V)}$
-\item \textbf{or} $\rho(\vec{r})$ and $\left.\phi(\vec{r})\right|_{\vec{r}\in F_{1}(V)}$, $\left.\dfrac{\partial}{\partial n}\phi(\vec{r})\right|_{\vec{r}\in F_{2}(V)}$\\
-        with $F_{1}(V) \cup F_{2}(V) = F(V)$,\\
-        $F_{1}(V) \cap F_{2}(V) = \emptyset$
-\end{enumerate}
+\begin{info}{Uniqueness of Poisson Equation}
+  Solutions of $\Delta\phi(\vec{r}) = -\rho(\vec{r})/\epsilon$ are uniquely defined by specifying:
+  \begin{enumerate}
+    \item $\rho(\vec{r})$ and $\left.\phi(\vec{r})\right|_{\vec{r}\in F(V)}$
+    \item \textbf{or} $\rho(\vec{r})$ and $\left.\dfrac{\partial}{\partial n}\phi(\vec{r})\right|_{\vec{r}\in F(V)}$
+    \item \textbf{or} $\rho(\vec{r})$ and $\left.\phi(\vec{r})\right|_{\vec{r}\in F_{1}(V)}$ and $\left.\dfrac{\partial}{\partial n}\phi(\vec{r})\right|_{\vec{r}\in F_{2}(V)}$\\
+          with $F_{1}(V) \cup F_{2}(V) = F(V)$,\\
+          $F_{1}(V) \cap F_{2}(V) = \emptyset$
+  \end{enumerate}
+\end{info}
 
 \subsection{Uniqueness of Time-Harmonic Electromagnetic Fields}
 Unique solutions while assuming arbitrarily small losses, when:
@@ -121,3 +123,93 @@ Unique solutions while assuming arbitrarily small losses, when:
           \end{cases}
         \end{align*}
 \end{enumerate}
+
+\subsection{Solution of Poisson Equation by Green's Function}
+\begin{itemize}
+  \item Green's function as solution for a Dirac delta excitation according to
+        \begin{equation*}
+          \Delta G(\vec{r},\vec{r}') = -\delta(\vec{r} - \vec{r}').
+        \end{equation*}
+  \item Green's function of \textit{two-dimensional} free space
+        \begin{equation*}
+          G(\vec{r},\vec{r}') = \dfrac{1}{2\pi}\ln\dfrac{1}{\sqrt{(x-x')^{2} + (y-y')^{2}}}
+        \end{equation*}
+\end{itemize}
+
+\subsection{Generalization of the Solution Strategy for Non-Self-Adjoint Linear Differential Operators}
+\begin{definition}{Adjoint Operator}
+    \begin{equation*}
+    \langle\psi(x)\mathcal{L}\,\varphi(x)\rangle = \langle\varphi(x)\mathcal{L}^{*}\psi(x)\rangle
+    \end{equation*}
+\end{definition}
+\begin{itemize}
+  \item Self-adjoint diff. operator of 2. order:
+        \begin{equation*}
+          \mathcal{L} = \dif{}{}{x}\left(p(x)\dif{}{}{x}\right) + g(x)
+        \end{equation*}
+  \item Formally adjoint lin. operator $\mathcal{L}^{\dagger}$ to $\mathcal{L}$:
+        \begin{align*}
+          &\mathcal{L} = \sum\limits^{n}_{\nu=0} a_{\nu}(x) \dif{\nu}{}{x},\\
+          &\mathcal{L}^{\dagger} = \sum\limits^{n}_{\kappa=0} (-1)^{\kappa} \sum\limits^{\kappa}_{\nu=0}
+          \begin{pmatrix}\kappa\\ \nu\end{pmatrix}
+          \left(\dif{(\kappa-\nu)}{a_{\kappa}(x)}{x}\right)
+          \dif{\nu}{}{x}
+        \end{align*}
+\end{itemize}
+
+\subsection{Dyadic Green's Functions}
+\begin{itemize}
+        \item A Green's function is the field of a Delta function source distribution (e.g. field of Hertzian Dipole).
+        \item Characterizes a particular solution domain, similar to how a LTI-system is characterized by its impulse response.
+  \item Field of arbitrary source distribution as integral over source distribution:
+        \begin{align*}
+          \vec{E}(\vec{r}) = \iiint\dyade{G}{\vec{r},\vec{r}'} \cdot \vec{J}(\vec{r}')\,\mathrm{d}v'
+        \end{align*}
+\end{itemize}
+
+\subsection{Radiation from Electromagnetic Sources}
+\begin{itemize}
+        \item Assume homogenous, isotropic (free) space and \textit{electric current} sources:
+        \begin{align*}
+          &\vec{B} = \nabla\times\vec{A}\\
+          &\vec{A} = \nabla\times\vec{C} + \nabla\xi \text{(Helmholtz theorem)}\\
+          \implies &\vec{E} = -j\omega\vec{A} -\nabla\phi
+        \end{align*}
+  \item Using the \textit{Lorenz-Gauge} $\nabla\cdot\vec{A} + j\omega\mu\epsilon\phi = 0$, we get the \textbf{Helmholtz-Equations}:
+        \begin{align*}
+          \Delta\vec{A} + k^{2}\vec{A} &= -\mu\vec{J}\text{ (vector)}\\
+          \Delta\phi + k^{2}\phi &= \dfrac{\nabla\cdot\vec{J}}{j\omega\epsilon} = -\dfrac{\rho}{\epsilon}\text{ (scalar)}
+        \end{align*}
+\end{itemize}
+\begin{info}{Green's functions in Homogenous Space}
+  Integrating over the source distribution $\hat{J}$ in homogenous space returns the field quantity $\hat{E}$:
+  \begin{equation*}
+    \hat{E}(\vec{r},\vec{r}') = \iiint\limits_{V}\dyade{G}_{\hat{J}}^{\hat{E}}(\vec{r},\vec{r}') \hat{J}(\vec{r}')\,\mathrm{d}v'
+  \end{equation*}
+  when $\dyade{G}_{\hat{J}}^{\hat{E}}$ is the corresponding Green's function. For the elec. and magn. vector potentials, $\dyade{G}$ would be:
+  \begin{align*}
+    \dyade{G}_{J}^{A} = \dfrac{\mu}{4\pi} \dfrac{e^{-jk|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|},\\
+    \dyade{G}_{M}^{F} = \dfrac{\epsilon}{4\pi} \dfrac{e^{-jk|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|}.
+  \end{align*}
+  For the elec. and magn. fields, $\dyade{G}$ would be:
+  \begin{align*}
+    \dyade{G}_{J}^{E} = \dfrac{-j}{4\pi}\left(\dyade{I} + \dfrac{1}{k^{2}}\nabla\nabla\right)\dfrac{e^{-jk|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|},\\
+    \dyade{G}_{M}^{H} = \dfrac{-j}{4\pi}\left(\dyade{I} + \dfrac{1}{k^{2}}\nabla\nabla\right)\dfrac{e^{-jk|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|}.
+  \end{align*}
+\end{info}
+
+\subsection{Huygen's Principle}
+\begin{recipe}{Huygen's Principle}
+  \begin{enumerate}
+    \item Define a source volume $V_{a}$ and a solution volume $V_{b}$.
+    \item Enclose all elec./magn. current sources in $V_{a}$.
+    \item Calculate
+          \begin{align*}
+            &\vec{J}_{a}(\vec{r}') = \vec{n} \times \vec{H}(\vec{r}'),\\
+            &\vec{M}_{a}(\vec{r}') = -\vec{n} \times \vec{E}(\vec{r}'),
+          \end{align*}
+          for the surface normal $\vec{n}$ of the volume $V_{a}$.
+    \item All field in $V_{a}$ vanish when $\vec{J}_{a}$ and $\vec{M}_{a}$ are applied to $A(V_{a})$.
+    \item We can \textit{formally} replace the material in $V_{a}$ without affecting the fields in $V_{b}$. $\implies$ Choose free space.
+  \end{enumerate}
+\end{recipe}

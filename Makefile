@@ -4,10 +4,14 @@ all:
 	@echo \(2\) \"make fuw\"            Technische Felder und Wellen,
 	@echo \(3\) \"make aawp\"           Antennas and Wave Propagation,
 	@echo \(4\) \"make hfcomp\"         High-Frequency, Components, Amplifiers and Oscillators,
-	@echo \(5\) \"make hfmess\"         Hochfrequenzmesstechnik \(Warning: unfinished + abandoned\),
-	@echo \(6\) \"make caem\"           Computational and Analytical Methods in Electromagnetics,
+	@echo \(5\) \"make hfm\"            Hochfrequenzmesstechnik \(Warning: unfinished + abandoned\),
+	@echo \(6\) \"make caem\"           Computational and Analytical Methods in Electromagnetics \(unfinished\),
+	@echo \(7\) \"make bdml\"           Bauelemente der Mikro- und Leistungselektronik \(unfinished\),
 	@echo
-	@echo \(6\) \"make a\" to make all of the above.
+	@echo \(8\) \"make a\" to make all of the above.
+	@echo
+	@echo === The FS are distributed as-is with no claim to completeness ===
+	@echo
 
 a:
 	make template.pdf
@@ -15,6 +19,8 @@ a:
 	make aawp
 	make hfc
 	make hfm
+	make caem
+	make bdml
 
 fuw:
 	make fuw_fs.pdf
@@ -30,6 +36,11 @@ hfm:
 
 caem:
 	make caem_fs.pdf
+
+bdml:
+	make bdml_fs.pdf
+
+#====
 
 template.pdf: FORCE
 	pdflatex template.tex
@@ -59,6 +70,11 @@ hfmess_fs.pdf: FORCE
 caem_fs.pdf: FORCE
 	pdflatex caem_fs.tex
 	pdflatex caem_fs.tex
+	make clean
+
+bdml_fs.pdf: FORCE
+	pdflatex bdml_fs.tex
+	pdflatex bdml_fs.tex
 	make clean
 
 clean: FORCE

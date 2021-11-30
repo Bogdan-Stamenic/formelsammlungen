@@ -1,0 +1,39 @@
+\section{Finite Difference and Integration Methods}
+
+\subsection{Finite Difference Solution of Wave Problems in the Time Domain}
+\begin{info}{Courant stability condition}
+  In order for the FDTD-method to be stable, the so-called Courant-condition must be fulfilled:
+  \begin{equation*}
+    \Delta t \leq \left(c\sqrt{\dfrac{1}{(\Delta x)^{2}} + \dfrac{1}{(\Delta y)^{2}} + \dfrac{1}{(\Delta z)^{2}}}\,\right)^{-1},
+  \end{equation*}
+  where $\Delta t$, $\Delta x$, $\Delta y$, and $\Delta z$ are the discretization step sizes.
+\end{info}
+
+\subsection{Finite Integration Technique}
+\begin{itemize}
+        \item Mathematically identical to FD method
+        \item Starting with the integral of Maxwell's Equations, \textit{replace the line and surface integrals} by discrete grid voltages $e_{x/y,i}$ and discrete grid fluxes $b_{z,j}$.
+        \begin{align*}
+          \oint\limits_{C(A)} \vec{e}(\vec{r}, t)\cdot\mathrm{d}\vec{s} = -\iint\limits_{A}\dfrac{\partial\vec{b}(\vec{r}, t)}{\partial t}\cdot\mathrm{d}\vec{a}\\
+          \implies (\hat{e}_{x1} - \hat{e}_{x2}) + (\hat{e}_{y1} - \hat{e}_{y2}) = -\dot{\dhat{b_{z}}}
+        \end{align*}
+  \item The unknown grid voltages and grid fluxes are collected into column vectors and the discrete Maxwell equations can be written in the following matrix-vector form:
+        \begin{align*}
+          &\bs{C} \hat{\bs{e}} = -\dot{\dhat{\bs{b}}} & \text{(Faraday)}\\
+          &\tilde{\bs{C}} \hat{\bs{h}} = \dot{\dhat{\bs{d}}} + \dhat{\bs{j}} & \text{(Ampère-Maxwell)}\\
+          &\bs{S} \dhat{\bs{b}} = 0 & \text{(Magn. Gauß)}\\
+          &\tilde{\bs{S}} \dhat{\bs{d}} = \bs{q} & \text{(Gauß)}
+        \end{align*}
+  \item The discretization of the material relations leads to approximations, e.g.:
+        \begin{align*}
+          &\dhat{b}_{z}(\Delta x\Delta y)^{-1} \approx b_{z}\\
+          &\hat{h}_{z} \approx h_{z}\Delta z\\
+          \implies &\hat{h}_{z} \approx \dfrac{\Delta z}{\Delta x\Delta y}\mu^{-1}\dhat{b}_{z}
+        \end{align*}
+  \item Various discretizations are possible:
+        \begin{itemize}
+          \item Hexahedral,
+          \item Tetrahedral,
+          \item Subgridding.
+        \end{itemize}
+\end{itemize}
