@@ -1,0 +1,27 @@
+\section{Finite Element Method and the Method of Moments}
+\begin{itemize}
+  \item Consider the inhomogeneous curl-curl-equation
+        \begin{equation*}
+          \nabla\times\dfrac{\nabla\times\vec{E}(\vec{r})}{\mu_{r}(\vec{r})} - \epsilon_{r}(\vec{r})k_{0}^{2}\vec{E}(\vec{r}) = jk_{0}Z_{0}\vec{J}(\vec{r})
+        \end{equation*}
+  \item Utilization of the \textit{method of moments} with identical expasion and testing functions (Galerkin approach):
+        \begin{align*}
+          &\vec{E}(\vec{r}) = \sum\limits_{n=1}^{N}E_{n}\vec{\alpha_{n}}(\vec{r}),\\
+          &\vec{w}_{m}(\vec{r}) = \vec{a}_{m}(\vec{r}), \quad m=1,\dots,N
+        \end{align*}
+        \begin{align*}
+          \sum\limits_{n=1}^{N}E_{n}\iiint\limits_{V_{a}}\left[\dfrac{(\nabla\times\vec{a}_{m}(\vec{r}))\cdot(\nabla\times\vec{a}_{n}(\vec{r}))}{\mu_{r}(\vec{r})}\right.\\
+          - \epsilon_{r}(\vec{r})\,k_{0}^{2}\,\vec{a}_{m}(\vec{r})\cdot\vec{a}_{n}(\vec{r})\bigg]\,\mathrm{d}v
+        \end{align*}
+        \vspace{-5mm}
+        \begin{align*}
+          = &j\,k_{0}\,Z_{0} \iiint\limits_{V_{a}}\vec{a}_{m}(\vec{r})\cdot\vec{J}(\vec{r})\,\mathrm{d}v\\
+          - &j\,k_{0}\,Z_{0} \oiint\limits_{A(V_{a})}\left[\vec{a}_{m}(\vec{r})\cdot(\vec{H}(\vec{r})\times\vec{n}(\vec{r}))\right]\,\mathrm{d}a
+        \end{align*}
+  \item Ignoring the surface integral term is equivalent to setting $\vec{H}(\vec{r})\times\vec{n}(\vec{r}) = 0$, i.e. the solution domain is enclosed by a magnetic wall in this case. This is called the \textbf{natural boundary condition} of the given finite element formulation.
+  \item The finite element equation system can be written in matrix form as:
+        \begin{align*}
+          &[R_{mn}][E_{n}] - k_{0}^{2}[S_{mn}][E_{n}]\\
+          = -&jk_{0}Z_{0}[T_{mn}][H_{n}] + jk_{0}Z_{0}[W_{m}]
+        \end{align*}
+\end{itemize}
