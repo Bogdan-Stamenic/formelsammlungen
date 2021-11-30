@@ -1,0 +1,42 @@
+\section{The Method of Moments}
+\begin{itemize}
+  \item \textbf{Problem:} Solve the linear operator equation $\mathcal{L}\{f(x)\} = g(x), \quad x_{1}\leq x \leq x_{2}$.
+  \item Solution can be found as $\mathcal{L}^{-1}\{g(x)\} = f(x)$, however $\mathcal{L}^{-1}$ \textit{cannot be found in closed form}. $\implies$ Approximation by Method of Moments
+        \begin{enumerate}
+          \item Expand the solution function in a series of basis- or expansion functions
+                \begin{equation*}
+                  f(x) = \sum\limits_{n=1}^{N}\alpha_{n}f_{n}(x)
+                \end{equation*}
+          \item Insertion of the series expansion into the operator equation and generation of so-called \textit{inner products} with \textit{testing or weighting functions} results in a linear system of equations for the determination of the expansion coefficients $\alpha_{n}$:
+                \begin{align*}
+                  &\sum\limits_{n=1}^{N}\alpha_{n}\left\langle w_{m}(x)\mathcal{L}\{f_{n}(x)\}\right\rangle =\\
+                  &\langle w_{m}(x)g(x)\rangle, \quad m=1,\dots,N,\\
+                  &\text{with } \langle w_{m}(x)f_{n}(x)\rangle = \int\limits_{x_{1}}^{x_{2}}w_{m}(x)f_{n}(x)\,\mathrm{d}x
+                \end{align*}
+        \end{enumerate}
+  \item Common choices for the expansion and testing functions:
+        \begin{itemize}
+                \item Orthogonal sets of functions (e.g. Fourier series)
+                \begin{equation*}
+                  \int\limits_{x_{1}}^{x_{2}}f_{n}(x)f_{m}(x)\,\mathrm{d}x = \delta_{mn} =
+                  \begin{cases}
+                    1, \quad n = m\\
+                    0, \quad n \neq m
+                  \end{cases}
+                \end{equation*}
+          \item Eigenfunctions of the operators (usually also orthogonal), i.e.
+                \begin{equation*}
+                  \mathcal{L}\{f_{n}(x)\} = c_{1}f_{n}(x)
+                \end{equation*}
+          \item Entire domain functions (different from zero in the complete solution domain)
+          \item Subdomain functions: different from zero only in small pieces (usually of simple shape) of the solution domain, e.g. piece-wise contant/linear functions
+          \item Point matching
+                \begin{equation*}
+                  w_{n}(x) = \delta(x - x_{n})
+                \end{equation*}
+          \item Galerkin approach
+                \begin{equation*}
+                  w_{n}^{*}(x) = f_{n}(x)
+                \end{equation*}
+        \end{itemize}
+\end{itemize}
