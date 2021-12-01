@@ -19,9 +19,19 @@
           - &j\,k_{0}\,Z_{0} \oiint\limits_{A(V_{a})}\left[\vec{a}_{m}(\vec{r})\cdot(\vec{H}(\vec{r})\times\vec{n}(\vec{r}))\right]\,\mathrm{d}a
         \end{align*}
   \item Ignoring the surface integral term is equivalent to setting $\vec{H}(\vec{r})\times\vec{n}(\vec{r}) = 0$, i.e. the solution domain is enclosed by a magnetic wall in this case. This is called the \textbf{natural boundary condition} of the given finite element formulation.
-  \item The finite element equation system can be written in matrix form as:
-        \begin{align*}
-          &[R_{mn}][E_{n}] - k_{0}^{2}[S_{mn}][E_{n}]\\
-          = -&jk_{0}Z_{0}[T_{mn}][H_{n}] + jk_{0}Z_{0}[W_{m}]
-        \end{align*}
 \end{itemize}
+\begin{info}{FEM for Electromagnetics}
+  The finite element equation system can be written in matrix form according to:
+  \begin{align*}
+    &[R_{mn}][E_{n}] - k_{0}^{2}[S_{mn}][E_{n}]\\
+    = -&jk_{0}Z_{0}[T_{mn}][H_{n}] + jk_{0}Z_{0}[W_{m}],\\
+    &m, n = 1,\dots,N
+  \end{align*}
+  \begin{align*}
+    &[R_{mn}] = \iiint\limits_{V_{a}}\left[\dfrac{(\nabla\times\vec{a}_{m}(\vec{r}))\cdot(\nabla\times\vec{a}_{m}(\vec{r}))}{\mu_{r}{\vec{r}}}\right]\,\mathrm{d}v\\
+    &[S_{mn}] = \iiint\limits_{V_{a}}\left[\epsilon_{r}(\vec{r})\vec{\alpha}_{m}(\vec{r})\cdot\vec{\alpha}_{n}(\vec{r})\right]\,\mathrm{d}v\\
+    &[T_{mn}] = \oiint\limits_{A(V_{a})}\left[\vec{a}_{m}(\vec{r})\cdot(\vec{\alpha}_{m}(\vec{r})\times\vec{n}(\vec{r}))\right]\,\mathrm{d}a\\
+    &\left([T_{mn}]\text{ based on } \vec{H}(\vec{r}) = \sum\limits_{n=1}^{N_{H}}H_{n}\vec{\alpha}_{n}(\vec{r})\right)\\
+    &[W_{mn}] = \iiint\limits_{V_{a}}\left[\vec{\alpha}_{m}(\vec{r})\cdot\vec{J}(\vec{r})\right]\,\mathrm{d}v
+  \end{align*}
+\end{info}
