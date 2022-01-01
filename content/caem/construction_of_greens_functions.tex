@@ -1,0 +1,43 @@
+\section{Construction of Green's Functions by Orthonormal Series Expansion}
+\subsection{Constructing Green's functions in 2 or 3 dimensions by reducing to 1D problem}
+\begin{enumerate}
+  \item Express the problem $\mathcal{L}\{G(\bs{r}-\bs{r'})\} = -\delta(\bs{r}-\bs{r'})$ in an appropriate coordinate system for the boundary conditions.
+        \begin{equation*}
+          \mathcal{L}\left\{G(q_{1}, q_{2}, q_{3})\right\} = -\delta(q_{1}-q_{1}') \delta(q_{2}-q_{2}') \delta(q_{3}-q_{3}')
+        \end{equation*}
+  \item Find solutions to the homogeneous problems (eigenfunctions corresponding to operator):
+        \begin{align*}
+          \mathcal{\hat{L}} \left\{U(q_{1})\right\} = c_{1}U(q_{1}) & & U_{m}(q_{1})\\
+          \mathcal{\tilde{L}} \left\{V(q_{2})\right\} = c_{2}V(q_{2}) & \implies & V_{n}(q_{2})\\
+          \mathcal{\bar{L}} \left\{W(q_{3})\right\} = c_{3}W(q_{3}) & & W_{l}(q_{3})
+        \end{align*}
+  \item Reduce to new 1D problem using \textbf{completeness} (term by term equality) and \textbf{orthogonality} in one or two coordinates:
+        \begin{align*}
+          &G = \sum\limits_{n} g_{n}(q_{3},q'_{3}) U_{n}(q_{1},q_{2})U_{n}(q'_{1},q'_{2})\\
+          &\sum\limits_{n} U_{n}(q_{1},q_{2}) U_{n}(q'_{1},q'_{2}) = \delta(q_{1}-q'_{1})\delta(q_{2}-q'_{2})\\
+          &\implies \mathcal{L'}\left\{g_{n}(q_{3},q'_{3})\right\} = -\delta(q_{3}-q'_{3})
+        \end{align*}
+  \item Find 1D Green's function for the new 1D problem
+        \begin{equation*}
+          \mathcal{L'}\left\{g_{n}(q_{3},q'_{3})\right\} = -\delta(q_{3}-q'_{3})
+        \end{equation*}
+\end{enumerate}
+
+\subsection{Systematic procedure for a Green's function of 2nd order ordinary differential operator}
+\begin{itemize}
+  \item Use two linearly independant solutions $f_1$ and $f_2$ of homogeneous problem \(\mathcal{L}\{f_{1/2}(x)\} = 0\)
+  \item Generate particular solutions on both sides of the source location
+        \begin{align*}
+          u_{1}(x) = A_{1} f_{1}(x) + A_{2} f_{2}(x), \quad x < x'\\
+          u_{1}(x) = B_{1} f_{1}(x) + B_{2} f_{2}(x), \quad x > x'\\
+        \end{align*}
+  \item Choose a Green's function of the form
+        \begin{equation*}
+          g(x, x') = h \, u_{1}(x_{<})u_{2}(x_{>})
+        \end{equation*}
+  \item Determine the constant h according to
+        \begin{equation*}
+          h = \dfrac{-1}{\mathcal{W}\{u_{1}(x), u_{2}(x)\}},
+        \end{equation*}
+        whereas $\mathcal{W}\{\cdot\}$ is the Wronski determinant (``Jump'' equation is automatically fulfilled). $\mathcal{W}\{\cdot\}$ can either be calculated or looked up in textbooks such as \textit{Handbook of Mathematics} by \textsc{Abramowitz and Stegun}.
+\end{itemize}
