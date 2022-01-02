@@ -20,6 +20,50 @@
         \end{align*}
 \end{itemize}
 \subsection{Constructing a Green's Function for the Domain Outside of a Wedge (2D Problem)}
+\begin{align*}
+  &\Delta_{2}G_{D}(\bs{r}, \bs{r'}) = - \delta (\bs{r} - \bs{r'}),\\
+  &G_{D}(\bs{r}, \bs{r'}) = 0\text{ for } \varphi=0 \lor \varphi=\alpha
+\end{align*}
+\begin{center}
+  \includegraphics[width=.3\paperheight]{content/caem/pictures/conducting_wedge.png}
+\end{center}
+\begin{enumerate}
+  \item Formulation in cylindrical coordinates:
+        \begin{align*}
+          &\dfrac{1}{\rho} \dfrac{\partial}{\partial\rho}\left(\rho \dfrac{\partial}{\partial\rho}G\right)
+          + \dfrac{1}{\rho^{2}}\dfrac{\partial^{2}}{\partial \varphi^{2}}G\\
+          = &-\dfrac{1}{\rho} \delta(\rho - \rho') \delta(\varphi - \varphi')
+        \end{align*}
+  \item Seperation ansatz for homogeneous problem:
+        \begin{align*}
+          &\phi(\rho, \varphi) = h(\rho) f(\varphi),\\
+          &\underbrace{\dfrac{\rho}{h(\rho)} \dfrac{\partial}{\partial\rho} \left[\rho \dfrac{\partial}{\partial\rho} h(\rho)\right]}_{\nu^{2}}
+            + \underbrace{\dfrac{1}{f(\varphi)} \dfrac{\partial^{2}}{\partial\varphi^{2}} f(\varphi)}_{-\nu^{2}}
+            = 0\\
+          & \dfrac{\partial^{2}}{\partial\varphi^{2}}f(\varphi) + \nu^{2}f(\varphi) = 0
+            \implies f(\varphi) \text{\texttildelow} \left\{e^{\pm j\nu \varphi}\right\}
+          \begin{Bmatrix} \sin(\nu\varphi)\\ \cos(\nu\varphi) \end{Bmatrix}\\
+          & \dfrac{\partial}{\partial\rho} \left[\rho \dfrac{\partial}{\partial\rho} h(\rho)\right] - \nu^{2}\dfrac{h(\rho)}{\rho} = 0
+            \implies h(\rho) \, \text{\texttildelow} \, \rho^{\nu}, \rho^{-\nu}
+        \end{align*}
+  \item Ansatz for $G_{D}$ (fulfills BC in $\varphi$ and symmetry in $\varphi, \varphi'$)
+        \begin{equation*}
+          G_{D}(\rho, \varphi, \rho', \varphi') = \sum\limits_{n=1}^{\infty} g_{n}(\rho, \rho')
+          \dfrac{2}{\alpha}
+          \sin\left(\dfrac{n\pi}{\alpha} \varphi\right)
+          \sin\left(\dfrac{n\pi}{\alpha} \varphi'\right)
+        \end{equation*}
+  \item Solution after reducing problem to 1D and solving coefficients using the ``jump'' equation:
+        \begin{align*}
+          &G_{D}(\rho, \varphi, \rho', \varphi')\\
+          = &\dfrac{1}\pi \sum\limits_{n=1}^{\infty} \dfrac{1}{n}
+          \sin\left(\dfrac{n\pi}{\alpha} \varphi\right)
+          \sin\left(\dfrac{n\pi}{\alpha} \varphi'\right)
+          \rho_{<}^{\frac{n\pi}{\alpha}}
+          \rho_{>}^{-\frac{n\pi}{\alpha}}
+        \end{align*}
+\end{enumerate}
+\subsection{Linearly Independant Solutions of the Laplace Equation in Spherical Coordinates}
 \subsection{Constructing Green's functions in 2 or 3 dimensions by reducing to 1D problem}
 \begin{enumerate}
   \item Express the problem $\mathcal{L}\{G(\bs{r}-\bs{r'})\} = -\delta(\bs{r}-\bs{r'})$ in an appropriate coordinate system for the boundary conditions.
