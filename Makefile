@@ -4,10 +4,13 @@ all:
 	@echo \(2\) \"make fuw\"            Technische Felder und Wellen,
 	@echo \(3\) \"make aawp\"           Antennas and Wave Propagation,
 	@echo \(4\) \"make hfcomp\"         High-Frequency, Components, Amplifiers and Oscillators,
-	@echo \(5\) \"make hfmess\"         Hochfrequenzmesstechnik \(Warning: unfinished + abandoned\),
+	@echo \(5\) \"make hfm\"            Hochfrequenzmesstechnik \(Warning: unfinished + abandoned\),
 	@echo \(6\) \"make caem\"           Computational and Analytical Methods in Electromagnetics,
 	@echo
-	@echo \(6\) \"make a\" to make all of the above.
+	@echo \(7\) \"make a\" to make all of the above.
+	@echo
+	@echo === The FS are distributed as-is with no claim to completeness ===
+	@echo
 
 a:
 	make template.pdf
@@ -30,6 +33,8 @@ hfm:
 
 caem:
 	make caem_fs.pdf
+
+#====
 
 template.pdf: FORCE
 	pdflatex template.tex

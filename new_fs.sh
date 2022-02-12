@@ -1,18 +1,31 @@
-#~bash
+#!/bin/bash
 
-DEFAULT_FILE="fs.tex"
+DEFAULT_SHORT="fs"
 DEFAULT_TITLE="I bims eine Formelsammlung"
 DEFAULT_AUTHOR="Bogdan Stamenic"
 
-## Read filename from stdin
-read -t 30 -p "Enter filename (with .tex | default: $DEFAULT_FILE): " FILE
-if  [ "$FILE" != "" ]
+### Read filename from stdin
+#read -t 30 -p "Enter filename (with .tex | default: $DEFAULT_FILE): " FILE
+#if  [ "$FILE" != "" ]
+#then
+#	cp template.tex $FILE
+#else
+#	FILE=$DEFAULT_FILE
+#	cp template.tex $FILE
+#fi
+
+## Read short-form name from stdin
+read -t 30 -p "Enter short-form name of FS (default: $DEFAULT_SHORT): " SHORT
+if  [ "$SHORT" != "" ]
 then
-	cp template.tex $FILE
-else
-	FILE=$DEFAULT_FILE
-	cp template.tex $FILE
+	SHORT=$DEFAULT_SHORT
 fi
+## Create base tex-file
+cp template.tex ${SHORT}_fs.tex
+
+## Make directories for content
+mkdir -vp content/$SHORT content/$SHORT/pictures
+echo "\n=== Makefile entry for ${SHORT}_fs.tex must be manually added to Makefile===\n"
 
 
 ## Read title from stdin
@@ -34,5 +47,5 @@ else
 	sed -i "s/NameOfAuthor/$DEFAULT_AUTHOR/" $FILE
 fi
 
-unset FILE TITLE AUTHOR DEFAULT_FILE DEFAULT_TITLE DEFAULT_AUTHOR
+unset TITLE AUTHOR SHORT DEFAULT_TITLE DEFAULT_AUTHOR DEFAULT_SHORT
 exit 0
