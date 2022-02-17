@@ -1,0 +1,42 @@
+\section{Introduction}
+\subsection{Example Applications of Semiconductor Power Electronics}
+\begin{itemize}
+        \item RF Transmission
+        \item Welding Generators
+        \item Uninterruptible Power Supply (UPC)
+        \item Buck-/Boost-Wandler
+        \item Wechselrichter (Power Inverter)
+\end{itemize}
+\subsection{Semiconductor Microsensor, -actuators and -systems}
+\begin{itemize}
+    \item Wandler (Transducer) wandeln nicht-elek. in elek. Energie um bzw. umgekehrt
+    \item Pressure Sensor
+        \begin{itemize}
+            \item Determine altitude by measuring pressure
+            \item $p(\Delta h) = p(h_{0}) \exp\left(-\dfrac{\Delta h}{h_{s}}\right)$
+            \item Determine altitude and, hence floor inside a building (indoor navigation)
+        \end{itemize}
+    \item Micromechanical Mass Air Flow Meter
+        \begin{itemize}
+            \item heater and two pairs of resistive temperature sensors, placed on micromachined bridge
+            \item heater provides temperature profile on thermally insulated bridge
+            \item without mass flow: symmetric temperature profile
+            \item with mass flow: temperature profile distorted
+            \item temperature difference $\Delta T$ is measure for mass flow
+        \end{itemize}
+\end{itemize}
+\begin{tabularx}{.5\textwidth}{XX}
+    \toprule
+    CMOS-Circuits/ICs & Semiconductor Sensors\\
+    \midrule
+    flat, small structure height ($\mu m$) & Larger feature size, depth/height up to wafer thickness ($~300 - \SI{800}{\mu m}$)\\
+    \midrule
+    no mechanically movable parts & mechanically movable parts, cavities, alternative materials $\to$ additional fabrication processes needed\\
+    \midrule
+    Functionality by internal processes in bulk (carrier transport)  & Sensor effect typicall at the surface (contact to environment)\\
+    \midrule
+    Complete protection of dies against environmental impact on wafer level & Structures typically exposed\\
+    \midrule
+    Standardized packaging technology possible & Larger variety of individual packaging solutions\\
+    \bottomrule
+\end{tabularx}
