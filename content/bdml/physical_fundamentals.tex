@@ -75,5 +75,41 @@
 
 \subsection{Charateristic Properties of Semiconductors}
 \begin{itemize}
-        \item Electric conductivity
+  \item Electric conductivity depends on carrier number $n$ or $p$ and mobility $\mu$
+        \begin{equation*}
+          \sigma_{\alpha} = e\alpha \mu_{\alpha}, \quad \alpha = n, p
+        \end{equation*}
+  \item Carrier mobility:
+        \begin{align*}
+          \mu_{\alpha} := \dfrac{|\vec{v}_{\alpha}|}{|\vec{E}|} = e \dfrac{\tau_{\alpha}}{m_{\alpha}}, \quad \alpha = n, p, \quad [\mu] = \dfrac{\si{cm^{2}}}{\si{Vs}}
+        \end{align*}
+  \item Carrier mobility depends on
+        \begin{itemize}
+                \item Temperature $\mu \propto T^{\beta}$ with $\beta \approx \begin{cases}+3/2, \quad \text{for low T (impurity scattering)}\\ -3/2, \quad \text{for high T (phonon scattering)} \end{cases}$
+                \item Doping concentration: scattering throught ionized impurities reduces $\tau_{\alpha}$
+        \end{itemize}
+        \begin{tabular}{cc}
+          \includegraphics[width=.25\textwidth]{content/bdml/pictures/electron_vs_hole_mobility}
+          &
+          \includegraphics[width=.22\textwidth]{content/bdml/pictures/hole_mobility_doping}
+        \end{tabular}
+  \item Scattering of carriers:
+        \begin{enumerate}
+          \item impurity scattering (doping dependence)
+          \item phonon scattering (temperature dependence)
+          \item carrier-carrier scattering
+        \end{enumerate}
+        \item Drift velocity $\vec{v}_{D}$ saturates for high $\vec{E}$ $\implies$ $\lim\limits_{\vec{E} \to \infty} \vec{v}_{D} = const$
+  \item Elec. conductivity
+        \begin{equation*}
+          \sigma = \dfrac{1}{\rho} = q \, (n\mu_{n} + p\mu_{p})
+        \end{equation*}
+  \item Thermal heat flow:
+        \begin{equation*}
+          \vec{J}_{Q} = -\kappa \, \nabla T
+        \end{equation*}
+  \item Elec. and thermal conductivity related by \textbf{Wiedenmann-Franz} law:
+        \begin{equation*}
+          \dfrac{\kappa_{n}}{\sigma_{n}} = L \, T, \quad L = \begin{cases} \dfrac{1}{3}{\left(\dfrac{\pi k_{B}}{e}\right)}^{2} \quad \text{metal}\\ 2{\left(\dfrac{k_{B}}{e}\right)}^{2} \quad \text{semiconducter} \end{cases}
+        \end{equation*}
 \end{itemize}
