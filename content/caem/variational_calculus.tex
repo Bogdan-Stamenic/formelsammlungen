@@ -1,0 +1,35 @@
+\section{Variational Calculus}
+\subsection{Problem Formulation, Euler-Lagrange Equations}
+\begin{itemize}
+  \item Given the functional: $F[y(x), y'(x), x]$
+  \item Determine $y(x)$ such that
+        \begin{align*}
+          I = \int\limits_{x_{1}}^{x_{2}} F[y(x), y'(x), x] \, \mathrm{d}x = \text{extreme}\\
+          \text{with the BCs: } y(x_{1}) = a,\, y(x_{2}) = b
+        \end{align*}
+  $\implies$ Minimizing a functional expression is equivalent to solving a differential equation!
+  \item Variational derivative of a functional:
+        \begin{equation*}
+          \dfrac{\delta F}{\delta y} = \dfrac{\partial F}{\partial y} - \dfrac{\mathrm{d}}{\mathrm{d}x} \left(\dfrac{\partial F}{\partial y'}\right)
+        \end{equation*}
+  \item \textbf{Euler-Langrange} equation for minimizing the first variation in $F[\cdot]$:
+        \begin{equation*}
+          \dfrac{\partial F}{\partial y} - \dfrac{\mathrm{d}}{\mathrm{d}x} \left(\dfrac{\partial F}{\partial y'}\right) = 0
+        \end{equation*}
+\end{itemize}
+
+\subsection{Variational Problems with Side Conditions}
+\todo{Add part about Lagrange multipliers.}
+\subsection{Stationary Representation with Self-Adjoint Differential Operators}
+\begin{itemize}
+\item \textbf{Rayleigh Quotient} (stationary representation of eigenvalues):
+\begin{align*}
+  \lambda &= - \dfrac{\int\limits_{x_{1}}^{x_{2}} f(x) \mathcal{L}\{f(x)\} \, \mathrm{d}x}{\int\limits_{x_{1}}^{x_{2}}w(x)f^{2}(x) \, \mathrm{d}x}\\
+  &= - \dfrac{\left\langle {f(x) \, \mathcal{L}\{f(x)\}} \right\rangle}{\left\langle {w(x) \, f^{2}(x)} \right\rangle}
+\end{align*}
+
+\item \textbf{Schwinger quotient}, stationary for $f(x) = \mathcal{L}^{-1}\{g\}$:
+\begin{equation*}
+R = \dfrac{{\left\langle f \, g \right\rangle}^{2}}{\left\langle f \, \mathcal{L}\{f\} \right\rangle}
+\end{equation*}
+\end{itemize}

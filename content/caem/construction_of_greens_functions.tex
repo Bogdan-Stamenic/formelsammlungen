@@ -99,6 +99,7 @@
     &\text{m: order of the function}\\
     &-n \leq m \leq n
   \end{align*}
+  Link to \href{https://en.wikipedia.org/wiki/Legendre_polynomials}{Legendre} and \href{https://en.wikipedia.org/wiki/Associated_Legendre_polynomials}{associated Legendre} polynomial Wikipedia articles.
 \end{info}
 \begin{recipe}{Sphere harmonics $Y_{n,m}(\cdot)$}
   Given the DE:
@@ -113,6 +114,8 @@
                            &\cdot (P_{n}^{m}(\cos\vartheta)\,e^{jm\varphi}),\\
   \end{align*}
   which build an orthogonal system of functions in $\{Y_{n,m}, Y_{n,m}^{*}\}$.
+
+  Link to \href{https://en.wikipedia.org/wiki/Spherical_harmonics}{Wikipedia} article.
 \end{recipe}
 
 \subsection{Constructing of a Free-Space Green's Function in Spherical Coordinates}
@@ -158,7 +161,7 @@
   \item Generate particular solutions on both sides of the source location
         \begin{align*}
           u_{1}(x) = A_{1} f_{1}(x) + A_{2} f_{2}(x), \quad x < x'\\
-          u_{1}(x) = B_{1} f_{1}(x) + B_{2} f_{2}(x), \quad x > x'\\
+          u_{2}(x) = B_{1} f_{1}(x) + B_{2} f_{2}(x), \quad x > x'\\
         \end{align*}
   \item Choose a Green's function of the form
         \begin{equation*}
@@ -168,7 +171,7 @@
         \begin{equation*}
           h = \dfrac{-1}{p(x) \cdot \mathcal{W}\{u_{1}(x), u_{2}(x)\}}
         \end{equation*}
-        whereas $\mathcal{W}\{\cdot\}$ is the Wronski determinant (``Jump'' equation is automatically fulfilled). $\mathcal{W}\{\cdot\}$ can either be calculated or looked up in textbooks such as \textit{Handbook of Mathematics} by \textsc{Abramowitz and Stegun}.
+        whereas $\mathcal{W}\{\cdot\}$ is the Wronski determinant (``Jump'' equation is automatically fulfilled). $\mathcal{W}\{\cdot\}$ can either be calculated or looked up in textbooks such as \href{http://www.convertit.com/Go/ConvertIt/Reference/AMS55.asp}{\textit{Handbook of Mathematics}} by \textsc{Abramowitz and Stegun} or its \href{https://dlmf.nist.gov/}{online successor}.%, the \href{https://dlmf.nist.gov/}{\textit{NIST Digital Library of Mathematical Functions}}.
 \end{itemize}
 
 \begin{definition}{Wronski Determinant}
