@@ -40,6 +40,9 @@ caem:
 bdml:
 	make bdml_fs.pdf
 
+atuf:
+	make atuf_fs.pdf
+
 #====
 
 template.pdf: FORCE
@@ -76,6 +79,12 @@ bdml_fs.pdf: FORCE
 	pdflatex bdml_fs.tex
 	pdflatex bdml_fs.tex
 	make clean
+
+atuf_fs.pdf: FORCE
+	pdflatex atuf_fs.tex
+	pdflatex atuf_fs.tex
+	make clean
+
 
 clean: FORCE
 	rm -rf *.aux *.log *.nvm *.tic *.toc\
