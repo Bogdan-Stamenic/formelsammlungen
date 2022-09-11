@@ -5,12 +5,18 @@
 \newcommand{\FormelsammlungAutor}{Bogdan Stamenic}
 \setcounter{tocdepth}{2} % Show only sections and subsection in table of contents
 
+%% Custom environments for the many theorems and definitons here
 \newtcbtheorem[number within=section]{boringDef}{Def.}{fonttitle=\bfseries}{def}
+\newtcbtheorem[number within=section]{mytheo}{Theorem}{fonttitle=\bfseries, colframe=blue!35!black}{th}
+
+\newcommand{\defref}[1]{~(Def.~\ref{#1})}
+\newcommand{\thref}[1]{~(Th.~\ref{#1})}
 
 %% Define convenience shortcuts for math mode
 \newcommand{\V}{\mathcal{V}}
 \newcommand{\X}{\mathcal{X}}
-\newcommand{\F}{\mathbb{V}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\F}{\mathbb{F}}
 \renewcommand{\natural}{\mathbb{N}}
 \newcommand{\real}{\mathbb{R}}
 \newcommand{\complex}{\mathbb{C}}

@@ -1,42 +1,42 @@
-		\section{Einführung}
-        \begin{itemize}
-                \item Frames sind eine Verallgemeinerung von Orthogonalbasen $\{s_{n}\}_{n \in \mathbb{Z}} \subset H$
-          \item Signale können in diese Frames entwickelt werden:
-                \begin{equation*}
-                  f(t) = \sum\limits_{n=-\infty}^{\infty} \langle f, s_{n} \rangle s_{n}
-                \end{equation*}
-                \begin{boringDef}{Funktionen endlicher Energie $L^{2}(\mathbb{R})$}{funktionen_endlicher_energie}
-                $L^{2}(\mathbb{R})$ definiert die Menge aller Funktionen endlicher Energie, d.h.\:
-                \begin{equation*}
-                  {\|f(t)\|_{2}}^{2} = \int\limits_{-\infty}^{\infty} |f(t)|^{2}\,\mathrm{d}t < \infty
-                \end{equation*}
-                \end{boringDef}
-          \item Fourier Transformation für $f \in L^{2}(\mathbb{R})$:
-                \begin{align*}
-                  \hat{f}(\omega) &= \int\limits_{-\infty}^{\infty} f(t) \, e^{-i\omega t}\,\mathrm{d}t\\
-                  f(t) &= \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \hat{f}(\omega) \, e^{i\omega t}\,\mathrm{d}\omega
-                \end{align*}
-          \item Parseval'sche Formel:
-                \begin{equation*}
-                  {\|\hat{f}\|_{2}}^{2} = 2\pi {\|f\|_{2}}^{2}
-                \end{equation*}
-                \begin{boringDef}{Bandbegrenzte Funktionen}{bandbegrenzte_funktionen}
-                  \begin{align*}
-                    \mathrm{PW}(\Omega) = \{&f \in L^{2}(\mathbb{R}): \hat{f}(\omega) = 0,\\
-                    &\forall|\omega| > \dfrac{\Omega}{2}\},
-                  \end{align*}
-                  wobei $\Omega$ die Bandbreite ist.
-                \end{boringDef}
-                \begin{boringDef}{Nyquist-Shannon Sampling Theorem}{nyquist_shannon}
-                  \begin{align*}
-                    f(t) &= \sum\limits_{-\infty}^{\infty} f(k\cdot T) \cdot \mathrm{sinc}\left(\dfrac{\Omega}{2} [t - k\,T]\right),\\
-                    &= \sum\limits_{k} f(k\cdot T) \cdot s_{k}(t),\\
-                  \end{align*}
-                  wobei $\Omega$ die Bandbreite, $T$ das Periodendauer ist:
-                  \begin{equation*}
-                    T = \dfrac{2\pi}{\Omega}.
-                  \end{equation*}
-                  Solange $\mathrm{sinc}(t - k\,T)$ eine Orthonormalbasis bildet \textit{und} $f(t)$ zuverlässig zum Zeitpunkt $k\cdot T$ abgetastet wird, kann $f(t)$ vollständig rekonstruieren.
-                \end{boringDef}
-                \item \textbf{Problem:} Wenn ein Signal nicht ideal abgetastet wird bzw. die $\{s_{k}(t)\}$ keine ONB bildet, dann gilt das Nyquist-Shannon Theorem nicht mehr!
-        \end{itemize}
+  \section{Einführung}
+    \begin{itemize}
+            \item Frames sind eine Verallgemeinerung von Orthogonalbasen $\{s_{n}\}_{n \in \mathbb{Z}} \subset H$
+      \item Signale können in diese Frames entwickelt werden:
+            \begin{equation*}
+              f(t) = \sum\limits_{n=-\infty}^{\infty} \langle f, s_{n} \rangle s_{n}
+            \end{equation*}
+            \begin{boringDef}{Funktionen endlicher Energie $L^{2}(\real)$}{funktionen_endlicher_energie}
+            $L^{2}(\real)$ definiert die Menge aller Funktionen endlicher Energie, d.h.\:
+            \begin{equation*}
+              {\|f(t)\|_{2}}^{2} = \int\limits_{-\infty}^{\infty} |f(t)|^{2}\,\mathrm{d}t < \infty
+            \end{equation*}
+            \end{boringDef}
+      \item Fourier Transformation für $f \in L^{2}(\mathbb{R})$:
+            \begin{align*}
+              \hat{f}(\omega) &= \int\limits_{-\infty}^{\infty} f(t) \, e^{-i\omega t}\,\mathrm{d}t\\
+              f(t) &= \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \hat{f}(\omega) \, e^{i\omega t}\,\mathrm{d}\omega
+            \end{align*}
+      \item Parseval'sche Formel:
+            \begin{equation*}
+              {\|\hat{f}\|_{2}}^{2} = 2\pi {\|f\|_{2}}^{2}
+            \end{equation*}
+            \begin{boringDef}{Bandbegrenzte Funktionen}{bandbegrenzte_funktionen}
+              \begin{align*}
+                \mathrm{PW}(\Omega) = \{&f \in L^{2}(\real): \hat{f}(\omega) = 0,\\
+                &\forall|\omega| > \dfrac{\Omega}{2}\},
+              \end{align*}
+              wobei $\Omega$ die Bandbreite ist.
+            \end{boringDef}
+            \begin{mytheo}{Nyquist-Shannon Sampling Theorem}{nyquist_shannon}
+              \begin{align*}
+                f(t) &= \sum\limits_{-\infty}^{\infty} f(k\cdot T) \cdot \mathrm{sinc}\left(\dfrac{\Omega}{2} [t - k\,T]\right),\\
+                &= \sum\limits_{k} f(k\cdot T) \cdot s_{k}(t),\\
+              \end{align*}
+              wobei $\Omega$ die Bandbreite, $T$ das Periodendauer ist:
+              \begin{equation*}
+                T = \dfrac{2\pi}{\Omega}.
+              \end{equation*}
+              Solange $\mathrm{sinc}(t - k\,T)$ eine Orthonormalbasis bildet \textit{und} $f(t)$ zuverlässig zum Zeitpunkt $k\cdot T$ abgetastet wird, kann $f(t)$ vollständig rekonstruieren.
+            \end{mytheo}
+            \item \textbf{Problem:} Wenn ein Signal nicht ideal abgetastet wird bzw. die $\{s_{k}(t)\}$ keine ONB bildet, dann gilt das Nyquist-Shannon Theorem nicht mehr!
+    \end{itemize}

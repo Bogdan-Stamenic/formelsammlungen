@@ -1,3 +1,37 @@
+\section{Cauchy-Schwarz Ungleichung}
 
-		\section{Cauchy-Schwarz Ungleichung}
-        \lipsum[3]
+\begin{mytheo}{Cauchy-Schwarz Ungleichung}{cauchy_schwarz_ungleichung}
+  Sei $\Hilb$ ein Skalarproduktraum\defref{def:hilbertraum}, so gilt für beliebige Vektoren $g, f \in \Hilb$
+  \begin{equation}
+    |\,{\langle f, g \rangle}_{\Hilb}\,| \leq {\|f\|}_{\Hilb} \: {\|g\|}_{\Hilb}.\label{eq:cauchy_schwarz_ungleichung}
+  \end{equation}
+  In \eqref{eq:cauchy_schwarz_ungleichung} gilt Gleichheit, genau dann wenn $f$ und $g$ linear abhängig sind, d.h.\ wenn $f = \alpha g$ für ein $\alpha \in \F$.
+\end{mytheo}
+
+\begin{recipe}{Vertauschung von $\infty$-Summen und Skalarprodukt}
+Vertauchung von $\infty$-Summen und Limit mit Skalarprodukt kann mithilfe der Cauchy-Schwarz Ungleichung\thref{th:cauchy_schwarz_ungleichung} bewiesen werden:
+        \begin{itemize}
+                \item Sie $f = \sum\limits_{n=1}^{N} \alpha_{n}\cdot s_{n}$ so gilt wegen der Linearität des Skalarproduktes
+                \begin{align*}
+                \langle f, g \rangle &= \left\langle \sum\limits_{n=1}^{N} \alpha_{n}s_{n}, g \right\rangle\\
+                &= \sum\limits_{n=1}^{N} \alpha_{n} \langle s_{n}, g \rangle
+                \end{align*}
+                \item Sei $s = \lim\limits_{n\to\infty} s_{n}$ gilt dann
+                \begin{equation*}
+                  \langle s, g\rangle = \left\langle \lim\limits_{n\to\infty} s_{n}, g \right\rangle = \lim\limits_{n\to\infty} \langle s, g \rangle
+                \end{equation*}
+        \end{itemize}
+\end{recipe}
+
+\begin{recipe}{Norm-Darstellung als Maximierungsproblem}
+  Sei $\Hilb$ ein Hilbertraum und $f\in\Hilb$ beliebig, so gilt
+  \begin{equation*}
+    \|f\|_{\Hilb} = \sup_{\substack{g\in\Hilb\\ \|g\| \leq 1}}|\langle f, g \rangle|.
+  \end{equation*}
+  \textbf{Beweis:}
+  \begin{align*}
+    &|\langle f, g \rangle| \leq \| f\| \cdot \underbrace{\|g\|}_{\leq 1}\\
+    \implies &\sup_{\substack{g\in\Hilb\\ \|g\| \leq 1}} |\langle f, g \rangle| \leq \|f\|_{\Hilb}
+  \end{align*}
+  Laut Cauchy Schwarz gibt es immer ein $g$ mit Gleichheit.  $\square$
+\end{recipe}
