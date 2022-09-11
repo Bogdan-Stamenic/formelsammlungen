@@ -1,0 +1,71 @@
+\section{Orthogonalität}
+
+\begin{boringDef}{Othogonalität}{orthogonalitaet}
+  Sei $\Hilb$ ein Hilbertraum\defref{def:hilbertraum}.
+  Zwei Vektoren $f, g \in \Hilb$ heißen orthogonal zueinander ($f \perp g$) falls ${\langle f, g \rangle}_{\Hilb} = 0$.
+
+  Eine Folge $s = \{s_{n}\}_{n=1}^{\infty} \subset \Hilb$ heißt \textbf{Orthogonalfolge} falls $\langle s_{n}, s_{m} \rangle = 0$ für alle $n \neq m$.
+
+  Eine Orthogonalfolge $s$ heißt \textbf{Orthonormalfolge} falls $\| s_{n}\|_{\Hilb} = 1$ für alle $n \in \natural$.
+\end{boringDef}
+
+\begin{recipe}{Innere Produkt und Orthogonalität}
+Sei $s = \{s_{n}\}_{n=1}^{N}$ eine endliche Orthonormalfolge in einem Hilbertraum $\Hilb$, seien $c = \{c_{n}\}_{n=1}^{N} \subset \F$  und $d = \{d_{n}\}_{n=1}^{N} \subset \F$ zwei Zahlenfolgen, und seien
+\begin{align*}
+  f = \sum\limits_{n=1}^{N} c_{n} s_{n} \quad g = \sum\limits_{n=1}^{N} d_{n} s_{n},
+\end{align*}
+
+dann gilt
+
+\begin{align}
+  {\|f\|}_{\Hilb}^{2} = \sum\limits_{n=1}^{N} | c_{n}|^{2},\\
+  \langle f, g \rangle = \sum\limits_{n=1}^{N} c_{n} \overline{d_{n}},
+\end{align}
+\end{recipe}
+
+\paragraph{Beste Approximation in einer Orthonormalfolge}
+Sei $\Hilb$ ein Hilbertraum und $\{s_{n}\}_{n=1}^{N}\subset \Hilb$ eine Orthonormalfolge.
+Sei $f \in \Hilb$ beliebig.
+Wir suchen eine Approximation $\tilde{f}$ von $f$ mit der Form
+\begin{equation}
+  \tilde{f} = \sum\limits_{n=1}^{N}c_{n}s_{n}, \quad c_{n} \in \F
+\end{equation}
+so dass
+\begin{equation*}
+  \| f - \tilde{f} \|_{\Hilb}
+\end{equation*}
+so klein wie möglich wird.
+
+\begin{equation*}
+  \|f - \tilde{f}\|^{2} = \langle f - \tilde{f}, f - \tilde{f} \rangle
+\end{equation*}
+\begin{align*}
+  &= \|f\|_{\Hilb}^{2} - \sum\limits_{n=1}^{N}\overline{c_{n}} \langle f, s_{n} \rangle - \sum\limits_{n=1}^{N}c_{n} \overline{\langle f, s_{n}\rangle}  + {\left\|\sum\limits_{n=1}^{N}\langle c_{n}, s_{n} \rangle \right\|}^{2}\\
+  &= \|f\|_{\Hilb}^{2} + \sum\limits_{n=1}^{N}\left|\langle f, s_{n} \rangle - c_{n}\right|^{2} - \sum\limits_{n=1}^{N}|\langle f, s_{n} \rangle |^{2}
+\end{align*}
+
+$f - \tilde{f}$ minimieren:
+\begin{tcolorbox}[title={Kooeffizienten für die Approximation}, colback=white!, colframe=black!40]
+\begin{equation}
+  c_{n} = \langle f, s_{n} \rangle_{\Hilb}, \quad f \in \Hilb
+\end{equation}
+mit einer quadratischen Fehler von:
+\begin{equation}
+  \|f - \tilde{f}\|^{2} = \|f\|^{2} - \sum\limits_{n=1}^{N}|\langle f,s_{n} \rangle |^{2}.
+\end{equation}
+\end{tcolorbox}
+
+\begin{mytheo}{Bessel Gleichungen}{bessel}
+  Sei $\{s_{n}\}_{n=1}^{N}$ eine Orthonormalfolge in einem Hilbertraum $\Hilb$, so gilt für alle $f \in \Hilb$
+  \begin{enumerate}
+    \item \textbf{Bessel'sche Ungleichung}
+          \begin{equation}
+            \sum\limits_{n=1}^{N} |\langle f, s_{n} \rangle|^{2} \leq \| f \|^{2}\label{eq:besselsche_ungleichung}
+          \end{equation}
+          \item \textbf{Bessel'sche Gleichung}
+          \begin{align}
+            &\left\| f - \sum\limits_{n=1}^{N} \langle f, s_{n} \rangle  s_{n}\right\|^{2}\nonumber\\
+            = &\|f\|^{2} - \sum\limits_{n=1}^{N} |\langle f, s_{n} \rangle|^{2} \geq 0\label{eq:besselsche_gleichung}
+          \end{align}
+  \end{enumerate}
+\end{mytheo}
