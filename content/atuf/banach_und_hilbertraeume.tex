@@ -6,10 +6,118 @@ Wir betrachten immer Mengen $\mathcal{A}$ von Signalen (Funktionen), die folgend
         \item Sie besitzen eine Möglichkeit Signale zu vergleichen und den ``Abstand'' zweier Signale zu quantifizieren.
 \end{itemize}
 
-\begin{definition}{Vektorraum\, linearer Raum}
+\begin{boringDef}{Vektorraum\, linearer Raum}{vektorraum_linearer_raum}
   Ein Vektorraum $V$ über dem Zahlenkörper $\mathbb{F}$ ist eine Menge (deren Elemente ``Vektoren'' heißen) auf der zwei Operationen wie folgt definiert sind:
   \begin{enumerate}
-          \item Addition
-          \item Skalare Multiplikation
+          \item \textbf{Addition:} Zu jedem Paar $f, g \in \mathcal{V}$ exisitiert ein Vektor $f + g \in \mathcal{V}$, so dass
+          \begin{itemize}
+            \item $f + g = g + f$
+            \item $f + (g + h) = (f + g) + h$
+            \item $\mathcal{V}$ enthält ein eindeutiger Nullvektor $\underbar{0}$, so dass
+                  \begin{equation*}
+                    f + 0 = f \quad \forall f \in \mathcal{V}
+                  \end{equation*}
+            \item Zu jedem $f \in \mathcal{V}$ existiert ein $(-f) \in \mathcal{V}$, so dass
+                  \begin{equation*}
+                    f + (-f) = 0
+                  \end{equation*}
+          \end{itemize}
+    \item \textbf{Skalare Multiplikation:} Zu jedem Paar $\alpha \in \mathbb{F}$ (skalar) und $f \in \mathcal{V}$ existiert ein $(\alpha f) \in \mathcal{V}$, so dass
+          \begin{itemize}
+            \item $\alpha \, (\beta f) = (\alpha\,\beta) \, f$
+            \item $1\cdot f = f$
+            \item $\alpha \, (f + g) = \alpha f + \alpha g$
+            \item $(\alpha + \beta) \, f = \alpha f + \beta f$
+          \end{itemize}
   \end{enumerate}
-\end{definition}
+\end{boringDef}
+
+\begin{boringDef}{Unterraum}{unterraum}
+  Sei $\mathcal{W} \subset \mathcal{V}$ eine Teilmenge von $\mathcal{V}$, so heißt $\mathcal{W}$ Unterraum von $\mathcal{V}$ falls für beliebige $f, g \in \mathcal{W}$ und $\alpha, \beta \in \mathbb{F}$ gilt, dass
+  \begin{equation*}
+    \alpha f + \beta g \in \mathcal{W}
+  \end{equation*}
+\end{boringDef}
+
+
+\begin{boringDef}{Metrik, Metrischer Raum}{metrik}
+  Sei $\mathcal{X}$ eine (nicht-leere) Menge.
+  Eine nicht-negative, reelle Funktion $d:\mathcal{X}\times\mathcal{X} \to \mathcal{R}$ heißt Metrik auf $\mathcal{X}$, falls für alle $x_{1},x_{2},x_{3} \in \mathcal{X}$ gilt:
+  \begin{enumerate}
+          \item $d(x_{1}, x_{2}) \geq 0$
+          \item $d(x_{1}, x_{2}) = 0$ genau\\ dann wenn $x_{1} = x_{2}$
+          \item $d(x_{1}, x_{2}) = d(x_{2}, x_{1})$
+          \item $d(x_{1}, x_{3}) \leq d(x_{1}, x_{2}) + d(x_{2}, x_{3})$ (Dreiecksungleichung)
+  \end{enumerate}
+  \textbf{Bemerkung:} Eigentschaft 1--4 benötigen keine algbraische Operationen der Elemente $x_{1},x_{2},x_{3} \in \mathcal{X}$, weshalb $\mathcal{X}$ kein Vektorraum sein muss!
+\end{boringDef}
+
+
+\begin{boringDef}{Norm, normierter Raum}{norm}
+  Sei $\mathcal{X}$ ein Vektorraum über $\mathbb{F}$. Ein nicht-negatives Funktional $\|\cdot\| : \mathcal{V} \to \mathbb{R}$ heißt Norm auf $\mathcal{V}$ falls
+  \begin{enumerate}
+    \item $\|x\| \geq 0 \quad \forall x \in \mathcal{V}$\\ und $\|x\| = 0 \implies x = 0$
+    \item $\|\alpha x\| = |\alpha| \| x\| \quad \forall x \in \mathcal{V}, \alpha \in \mathbb{F}$
+    \item $\|x_{1} + x_{2}\| \leq \|x_{1}\| + \|x_{2}\| \quad \forall x_{1},x_{2} \in \mathcal{V}$. (Dreiecksungleichung)
+  \end{enumerate}
+  Ein Vektorraum $\mathcal{V}$ zusammen mit einer Norm $\|\cdot\|$, heißt normierter Raum $(\mathcal{V}, \|\cdot\|)$.
+
+  \textbf{Bemerkung:} Jeder normierte Raum ist ein metrischer Raum.
+\end{boringDef}
+
+\begin{recipe}{Metrik im normierten Raum}
+  Sei $(\mathcal{V}, \|\cdot\|)$ ein normierter Raum, so definiert
+  \begin{equation*}
+    d(x,y) = \| x - y \|, x, y \in \mathcal{V}
+  \end{equation*}
+  eine Metrik auf $\mathcal{V}$.
+\end{recipe}
+
+\begin{boringDef}{Konvergenz}{konvergenz}
+  Sei $(\X, d)$  ein metrischer Raum und sei $\{x_{n}\}_{n\in\natural}$ eine Folge in $\X$.
+  Die Folge $\{x_{n}\}_{n\in\natural}$ konvergiert in $(\X, d)$ falls es ein $x \in \X$ gibt, so dass zu jedem $\epsilon > 0$ ein $N_{0} = N_{0}(\epsilon) \in \natural$ existiert so dass
+  \begin{equation*}
+    d(x, x_{n}) < \epsilon, \quad \forall n \geq N_{0}.
+  \end{equation*}
+  Der Vektor heißt Grenzwert der Folge $\{x_{n}\}_{n\in\natural}$ und wir schreiben $\lim\limits_{n\to\infty} x_{n} \to x$.
+
+  \textbf{Bemerkung:} unterschiedliche Metriken (Normen) implizieren unterschiedliche Konvergenz.
+\end{boringDef}
+
+\begin{boringDef}{Cauchy-Folge}{cauchy_folge}
+  Sei $\{x_{n}\}_{n\in\natural}$ eine Folge in einem metrischen Raum $(\X, d)$.
+  Die Folge heißt Cauchy-Folge, falls zu jedem $\epsilon > 0$ ein $N_{0} = N_{0}(\epsilon) \in \natural$ existiert, so dass
+  \begin{equation*}
+    d(x_{n}, x_{m}) < \epsilon, \quad \forall n,m \geq N_{0}.
+  \end{equation*}
+  \textbf{Lemma:} Jede konvergente Folge in einem metrischen Raum~\ref{def:metrik} ist eine Cauchy-Folge.
+\end{boringDef}
+
+\todo{Beispiel, dass Cauchy-Folgen nicht zwingend konvergierende Folgen sind.}
+
+\begin{boringDef}{Banachraum, Vollständige Räume}{banachraum}
+  Ein metrischer (normierter) Raum~\ref{def:norm} heißt vollständig, falls jede Cauchy-Folge~\ref{def:cauchy_folge} in diesem Raum konvergiert~\ref{def:konvergenz}.\\
+  Ein vollständiger, normierter Raum heißt \textbf{Banachraum}.
+\end{boringDef}
+
+
+\begin{boringDef}{Inneres Produkt, Hilbertraum}{hilbertraum}
+  Sei $\V$ ein Vektorraum über $\F$.
+  Eine Abbildung $\langle\cdot, \cdot\rangle : \V\times\V \to \complex$ heißt Skalarprodukt oder inneres Produkt in $\V$ falls für alle $x_{1},x_{2},x_{3} \in \V$ und alle $\alpha,\beta \in \F$ das Folgende gilt
+  \begin{enumerate}
+          \item $\langle x_{1}, x_{2}\rangle = \overline{\langle x_{2}, x_{1}\rangle}$
+          \item $\langle \alpha x_{1} + \beta x_{2}, x_{3} \rangle = \alpha\,\langle x_{1}, x_{3}\rangle + \beta \, \langle x_{2}, x_{3} \rangle$
+          \item $\langle x_{1}, x_{1} \rangle \geq 0$ und\\ $\langle x_{1}, x_{1} \rangle = 0 \implies x_{1} = 0$.
+  \end{enumerate}
+  Ein Vektorraum $\V$ zusammen mit einem inneren Produkt $\langle \cdot, \cdot \rangle$ heißt \textbf{Skalarproduktraum} $\mathcal{H} = (\V, \langle \cdot, \cdot \rangle \,)$.
+
+  Jedes Skalarprodukt induziert durch
+  \begin{equation}
+    \|f\| = \sqrt{\langle f, f \rangle}, \quad f \in \V,\label{eq:norm}
+  \end{equation}
+  bildet eine Norm in $\V$.
+
+  Ein vollständiger~\ref{def:banachraum} (bzgl. der Norm \eqref{eq:norm}) Skalarproduktraum heißt \textbf{Hilbertraum}.
+\end{boringDef}
+
+\textbf{Bemerkung:} Jeder Hilbertraum~[\ref{def:hilbertraum}] ist ein Banachraum mit Norm \eqref{eq:norm}.
