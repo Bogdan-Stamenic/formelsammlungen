@@ -1,0 +1,80 @@
+\section{Schauder-Basen}
+
+\subsection{N-Dimensionale Räume}
+
+\paragraph{Was ist eine Basis?} Die wesentlichen Merkmalen (im N-dimensionalen Raum) sind dass
+\begin{itemize}
+  \item man einen Vektorraum $\V$ über Zahlenkörper $\F$ hat,
+  \item man eine Menge von abzählbaren Atomen $\{s_n\}$ in diesem Vektorraum $\V$ hat,
+  \item jeder Vektor in $\V$ als Linearkombination der Atome darstellbar sein soll
+  \begin{equation*}
+    f = \sum_n c_n s_n
+  \end{equation*}
+  mit Koeffizienten $\{c_n\} \subset \F$ (Vollständigkeit).
+  \item die Darstellung eindeutig sein soll (Lineare Unabhängigkeit).
+\end{itemize}
+
+\begin{boringDef}{Eigenschaften von Basen}{eigenschaften_von_basen}
+  Sei $\V$ ein Vektorraum über einem Zahlenkörper $\F$ (z.B.\ $\real$ oder $\complex$), und sei
+  $\{s_n\}_{n=1}^N$ eine endliche Folge in $\V$.
+  \begin{enumerate}
+    \item Wir sagen $\{s_n\}_{n=1}^N$ ist \textbf{vollständig} in $\V$ (bzw. ein \textbf{Frame} für $\V$)falls zu jedem $f \in \V$ eine Folge $\{c_n\}_{n=1}^N \subset \F$ existiert, so dass
+    \begin{equation}
+      f = \sum\limits_{n=1}^{N} c_n s_n.\label{eq:basis_darstellung}
+    \end{equation}
+    \item Die Vektoren ${s_n}_{n=1}^{N}$ heißen \textbf{linear unabhängig}, falls aus $\sum\limits_{n=1}^{N} c_{n} s_n = 0$ folgt, dass $c_1 = c_2 = \dots = c_N = 0$.
+    \item Die Folge $\{s_n\}_{n=1}^N$ heißt \textbf{Basis} für $\V$ falls sie vollständig und linear unabhängig ist.
+    \item $\V$ hat die \textbf{Dimension} $M$, wenn $\V$ eine Basis mit $M$ Elementen hat.
+  \end{enumerate}
+  \textbf{Bemerkung:} die Koeffizienten in \eqref{eq:basis_darstellung} müssen nicht eindeutig sein.
+\end{boringDef}
+
+\subsection{Undendlich-Dimensionale Räume}
+
+Wir brauchen eine Norm\defref{def:norm} bzw. Metrik\defref{def:metrik} für $\infty$-Summen.
+
+\begin{boringDef}{Lineare Hülle}{lineare_huelle}
+  Eine lineare Hülle definiert sich wie folgt
+  \begin{equation}
+    \mathrm{span}\{s_n\} := \left\{ \sum\limits_{n=1}^N c_n s_n : c_n \in \F, N \in \natural \right\}
+  \end{equation}
+  was die Menge aller \textit{endlichen Linearkombinationen} von $\{s_n\}_{n=1}^N$ bildet.
+
+  \textbf{Bemerkung:} Der Abschluss von linearen Hüllen $\overline{\mathrm{span}}\{s_n\}$ enthält alle Grenzwerte von Folgen $\{s_n\}$.
+\end{boringDef}
+
+\begin{boringDef}{Schauder-Basis}{schauder_basis}
+  Sei $\B$ ein Banachraum und $s = \{s_n\}_{n=1}^\infty$ eine abzählbare Folge in $\B$.
+  Die Folge $s$ ist
+  \begin{enumerate}
+    \item \textbf{vollständig} in $\B$, falls
+    \begin{equation*}
+      \B = \overline{\mathrm{span}}\{s_n\}.
+    \end{equation*}
+    \item eine \textbf{Quasibasis} für $\B$, falls zu jedem $f\in\B$ eine Folge $\{c_n(f)\}_{n=1}{\infty} \subset \F$  existiert so dass
+    \begin{equation}
+      f = \sum\limits_{n=1}^\infty c_n(f) s_n\label{eq:quasibasis}
+    \end{equation}
+    und so dass für jedes $n \in \natural$ die Abbildung
+    \begin{equation*}
+       c_n : \B \to \F \quad c_n : f \to c_n(f)
+    \end{equation*}
+    ein stetiges (beschränktes) lineares Funktional ist.
+    \item ein \textbf{(Schauder- )Basis} für $\B$, falls zu jedem $f\in\V$ eine eindeutige Folge $\{c_n(f)\}_{n=1}^\infty \subset \F$ existiert, so dass \eqref{eq:quasibasis} gilt.
+  \end{enumerate}
+\end{boringDef}
+
+\begin{mytheo}{Test für Vollständigkeit in einem Hilbertraum}{vollstaendigkeit_hilbertraum}
+  Sei $\Hilb$ ein Hilbertraum.
+  Eine Folge ${\{s_n\}}_{n=1}^\infty$ ist vollständig in $\Hilb$ genau dann wenn aus
+  \begin{equation*}
+    \langle f, s_n \rangle = 0, \quad \forall n\in\natural
+  \end{equation*}
+  immer folgt, dass $f = 0$ ist.
+\end{mytheo}
+
+\begin{mytheo}{Orthonormalbasis in $\Hilb$}{orthonormalbasis_in_h}
+  Sei $\Hilb$ ein Hilbertraum und ${\{s_n\}}_{n=1}^{\infty}$ eine vollständige Folge in $\Hilb$.
+
+  Ist ${\{s_n\}}_{n=1}^\infty$ eine Orthonormalfolge\defref{def:orthonormalbasis}, so ist ${\{s_n\}}_{n=1}^\infty$ eine (orthonormal) Basis für $\Hilb$.
+\end{mytheo}

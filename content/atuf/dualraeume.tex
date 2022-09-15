@@ -1,0 +1,68 @@
+\section{Dualräume}
+
+Seien $\X$ und $\Y$ zwei Banachräume.
+Wir bezeichnen mit $\B(\X,\Y)$ die \textbf{Menge aller beschränkten, linearen Operatoren} von $\X$ nach $\Y$.
+Wir schreiben $\B(\X)$ für $\B(\X, \X)$.
+
+\begin{enumerate}
+  \item Wir definieren auf $\B(\X, \Y)$ eine Vektorraumstruktur, d.h.\ wir definieren eine Addition und eine Multiplikation mit Skalaren auf $\BXY$:
+
+  Seien $A_1, A_2 \in \BXY$ und $\alpha \in \complex$ beliebig
+  \begin{align*}
+    &(A_1 + A_2)(x) := A_1(x) + A_2(x) \quad \forall x \in \X\\
+    &(\alpha A_1) := \alpha A_1(x) \quad \forall x \in \X
+  \end{align*}
+  Das Nullelement in $\BXY$ sei $O:\X \to \Y$
+  \begin{equation*}
+  O(x) = 0 \quad \forall x \in \X
+  \end{equation*}
+
+  \item Wir definieren eine Norm auf $\BXY$.
+\end{enumerate}
+
+\begin{mytheo}{Operatornorm}{operatornorm}
+Sei $A \in \BXY$ beliebig, so definiert
+\begin{equation}
+    \|A\| = \sup_{\substack{x\in\X\\ x\neq 0}} \dfrac{{\|A x\|}_{\Y}}{{\|x\|}_{\X}}\label{eq:operatornorm}
+\end{equation}
+eine Norm (die \textbf{Operatornorm}) auf $\BXY$.
+\end{mytheo}
+
+\begin{mytheo}{$\BXY$ ist ein Banachraum}{bxy_ist_banachraum}
+$\BXY$ (die Menge aller beschränkten linearen Operator von $\X$ nach $\Y$) zusammen mit der Operatornorm \eqref{eq:operatornorm} ist ein vollständig normierter Vektorraum, d.h.\ ein Banachraum\defref{def:banachraum}.
+\end{mytheo}
+
+\begin{boringDef}{Dualraum}{dualraum}
+  Sei $\X$ ein Banachraum über den komplexen Zahlen $\complex$, so heißt $\B(\X, \complex)$ der \textbf{Dualraum} von $\X$ und wird mit $\Xd$ bezeichnet.
+\end{boringDef}
+
+\begin{recipe}{Eigenschaften von Dualräume}
+Die Eigenschaften von Dualräume sind, u.a.\ dass
+  \begin{itemize}
+    \item $\Xd$ alle stetigen (beschränkten) linearen Funkionale auf $\X$ enthält,
+    \item $\Xd$ auch ein Banachraum ist. Sei $\varphi \in \Xd$, so ist
+    \begin{equation*}
+      \|\varphi\| = \sup_{\substack{x\in\X}} \dfrac{|\varphi(x)|}{{\|x\|}_{\X}}.
+    \end{equation*}
+    \item wenn wir ein $f\in\X$ für ein Banachraum $\X$ ``abtasten'' möchten, d.h.\ $f$ durch eine Zahlenfolge ${\{c_n(f)\}} \subset \complex$ darstellen, folgendes gilt:
+    \begin{itemize}
+      \item Linearität:
+      \begin{equation*}
+          c_n(f+g) = c_n(f) + c_n(g)
+      \end{equation*}
+      \item Beschränkheit:
+      \begin{equation*}
+        |c_n(f)| \leq C\|f\| \quad \forall n
+      \end{equation*}
+    \end{itemize}
+  \end{itemize}
+    $\implies$ Abtastung wird durch Folge $\varphi_n : f \mapsto c_n(f)$ aus dem Dualraum $\varphi_n \in \Xd$ beschrieben.
+\end{recipe}
+
+\begin{mytheo}{Riesz-Representations Theorem}{riesz_representation}
+  Sei $\varphi \in \Hd$ ein beliebiges, stetiges lineaeres Funkional auf einem Hilbertraum $\Hilb$, so existiert ein eindeutiger Vektor $s\in\Hilb$, so dass
+  \begin{equation*}
+    \varphi(x) = \langle x, s\rangle \quad \forall x\in\Hilb
+  \end{equation*}
+  und es gilt $\|\varphi\| = {\|s\|}_{\Hilb}$.
+\end{mytheo}

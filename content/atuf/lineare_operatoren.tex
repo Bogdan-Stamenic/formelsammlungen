@@ -25,8 +25,38 @@ Lass $A : \X \to \Y$:
 
 \begin{boringDef}{Lineare Abbildung}{lineare_abbildungen}
   Eine Abbildung $A : \X \to \Y$ heißt linear, falls $A(\alpha x_{1} + \beta x_{2}) = \alpha A(x_{1}) + \beta A(x_{2}) $ für alle $x_{1}, x_{2} \in \X$ und alle $\alpha, \beta \in \complex$.
+  \textbf{Bemerkung:} Lineare Abbildungen werden auch als \textit{Operatoren} bezeichnet.
 \end{boringDef}
 
 \begin{mytheo}{Lineare Abbildungen}{lineare_abbildungen}
   Sei $A : \X \to \Y$ linear, so ist $A$ genau dann injektiv, wenn $\mathcal{N}(A) = \{0\}$.
 \end{mytheo}
+
+\begin{boringDef}{Beschränktheit und Stetigkeit}{beschraenkheit_und_stetigkeit}
+Seien $\X$ und $\Y$ zwei normierte Räume und $A: \X \to \Y$  eine Abbildung.
+\begin{itemize}
+  \item $A$ heißt \textbf{beschränkt} falls eine Konstante $C < \infty$ existiert, so dass
+  \begin{equation*}
+  \|A(x)\|_{\Y} \leq C, \quad \forall \|x\|_{\X} \leq 1
+  \end{equation*}
+  \item $A$ heißt \textbf{stetig am Punkt} $x_0 \in \X$ falls zu jedem $\epsilon > 0$ ein $\delta > 0$ existiert, so dass
+  \begin{align*}
+  &{\|A(x) - A(x_0)\|}_{\Y} < \epsilon,\\
+  &\forall x \in \X \text{ mit } {\|x - x_0\|}_{\X} < \delta.
+  \end{align*}
+\end{itemize}
+  $A$ heißt \textbf{stetig}, wenn $A$ an allen $x \in \X$ stetig ist.
+\end{boringDef}
+
+\paragraph{Lemma}
+Seien $\X$ und $\Y$ normierte Räume und $A: \X \to \Y$.
+Wenn $A$ \textit{linear} ist, so sind die folgenden Aussagen äquivalent:
+\begin{itemize}
+  \item $A$ ist stetig am Punkt $0$,
+  \item $A$ ist stetig,
+  \item $A$ ist beschränkt,
+  \item Es existiert eine positive Konstante $C$, so dass
+  \begin{equation*}
+    {\|Ax\|}_{\Y} \leq C {\|x\|}_{\X} \quad x \in \X.
+  \end{equation*}
+\end{itemize}
