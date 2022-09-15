@@ -1,0 +1,31 @@
+\section{Besselfolgen}
+
+Eine Frame ${\{s_n\}}_{n=1}^\infty$ ist eine verallgemeinerte (Quasi- )Basis.
+
+\begin{boringDef}{Besselfolge}{besselfolge}
+  Eine Folge $\{s_n\}_{n=1}^\infty \subset \Hilb$ in einem Hilbertraum $\Hilb$ heißt \textbf{Besselfolge}, falls zu eine Konstante $B > 0$ existiert, so dass
+  \begin{equation}
+    \sum\limits_{n=1}^\infty \left|\langle f, s_n \rangle\right|^2 \leq B {\|f\|}_{\Hilb}^{2} \quad \forall f \in \Hilb.\label{eq:besselfolge}
+  \end{equation}
+  Die Konstante $B$ heißt \textbf{Besselschranke} von ${\{s_n\}}_{n=1}^\infty$, und die kleinste Konstante $B$, für die \eqref{eq:besselfolge} gilt ist die \textbf{optimale} Besselschranke von ${\{s_n\}}_{n=1}^\infty$.
+
+  \textbf{Bemerkung:} Jede ONB ist Besselfolge mit opt.\ Besselschranke 1.
+\end{boringDef}
+
+\begin{mytheo}{Beschränkter Operator auf Besselfolgen}{beschraenkter_operator_aus_besselfolgen}
+  Sei $s = {\{s_n\}}_{n=1}^\infty$ eine Besselfolge in $\Hilb$ mit Besselschranke $B_s$, so ist
+  \begin{equation*}
+    T_s : {\{c_n\}}_{n=1}^\infty \mapsto \sum\limits_{n=1}^\infty c_n s_n
+  \end{equation*}
+  ein beschränkter Operator $T_s : l^2 \to \Hilb$ mit Norm $\|T_s\| \leq \sqrt{B_s}$.
+\end{mytheo}
+
+\begin{boringDef}{Operatoren auf Besselfolgen}{operatoren_auf_besselfolgen}
+  Sei $s = {\{s_n\}}_{n=1}^\infty$ eine Besselfolge\defref{def:besselfolge} in $\Hilb$, so assozieren wir mit $s$ die folgenden Operatoren:
+  \begin{enumerate}
+    \item \textbf{Analysisoperator} $S_s : \Hilb \to l^2$
+    \item \textbf{Syntheseoperator}
+    \item \textbf{Frameoperator}
+    \item \textbf{Gramoperator}
+  \end{enumerate}
+\end{boringDef}
