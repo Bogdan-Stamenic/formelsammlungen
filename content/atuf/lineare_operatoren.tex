@@ -1,0 +1,32 @@
+\section{Lineare Operatoren}
+Im Folgenden sind $X$ und $Y$ beliebige Banachräume\defref{def:banachraum} über $\complex$.
+
+Wir betrachten Abbildungen:
+\begin{align*}
+  &A: \mathcal{M} \to \mathcal{Y}\\
+  &A: x \to y
+\end{align*}
+
+die Elemente $x \in \mathcal{M}$ ein Element $y \in \mathcal{Y}$ zuordnen.
+\begin{itemize}
+        \item $\mathcal{M}$ heißt \textbf{Domain} von $A$,
+        \item $R(A) = \{y \in \mathcal{Y}: y = A(x), x \in \mathcal{M}\} \subset \mathcal{Y}$ heißt \textbf{Bildraum} (Range) von $A$.,
+        \item $N(A) = \{x \in \mathcal{M} : A(x) = 0\} \subset \mathcal{M}$ heißt \textbf{Nullraum} (Kern) von A.
+\end{itemize}
+
+Wir betrachten meist Abbildungen mit $\mathcal{M} = \mathcal{X}$.
+
+Lass $A : \X \to \Y$:
+\begin{description}
+        \item[Injektiv] Zu jedem $y \in R(A)$ existiert ein $x \in \X$, so dass $y = A(x)$ (eindeutige Abbildung).
+        \item[Surjektiv] Wenn $R(A) = \Y$ (vollständige Abbildung).
+        \item[Bijektiv] wenn injektiv und surjektiv.
+\end{description}
+
+\begin{boringDef}{Lineare Abbildung}{lineare_abbildungen}
+  Eine Abbildung $A : \X \to \Y$ heißt linear, falls $A(\alpha x_{1} + \beta x_{2}) = \alpha A(x_{1}) + \beta A(x_{2}) $ für alle $x_{1}, x_{2} \in \X$ und alle $\alpha, \beta \in \complex$.
+\end{boringDef}
+
+\begin{mytheo}{Lineare Abbildungen}{lineare_abbildungen}
+  Sei $A : \X \to \Y$ linear, so ist $A$ genau dann injektiv, wenn $\mathcal{N}(A) = \{0\}$.
+\end{mytheo}

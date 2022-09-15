@@ -69,3 +69,71 @@ mit einer quadratischen Fehler von:
           \end{align}
   \end{enumerate}
 \end{mytheo}
+
+Sei $\{s_{n}\}_{n=1}^{N}$ eine Orthonormalfolge\defref{def:orthogonalitaet} in einem Hilbertraum $\Hilb$, und sei
+\begin{equation}
+S_{n} = \mathrm{span}\{s_{n}\}_{n=1}^{N} = \left\{f = \sum\limits_{n=1}^{N} c_{n}s_{n} : c_{n} \in \F\right\} \subset \Hilb \label{eq:hilbert_subspace}
+\end{equation}
+
+der lineare Unterraum\defref{def:unterraum} aller Linearkombinationen von $\{s_{n}\}_{n=1}^{N}$.
+
+Wir hatten gesehen, dass $\tilde{f} = \sum\limits_{n=1}^{N} \langle f, s_{n} \rangle s_{n}$ erfüllt
+\begin{equation}
+  \tilde{f} = \mathrm{arg}\min_{\substack{g\in S_{n}}} \| f - g \|. \label{eq:approximation}
+\end{equation}
+
+Sei $v = f - \tilde{f}$ der minimale Fehler, so gilt
+\begin{align*}
+  \langle v, s_{n} \rangle &= \langle f - \tilde{f}, s_{n} \rangle =\langle f, s_{n} \rangle - \langle \tilde{f}, s_{n} \rangle\\
+  &= \langle f, s_{n} \rangle - \left\langle \sum\limits_{k=1}^{N}\langle f, s_{k} \rangle , s_{n} \right\rangle\\
+  &= \langle f, s_{n} \rangle -  \sum\limits_{k=1}^{N}\langle f, s_{k} \rangle  \langle s_{k}, s_{n} \rangle\\
+  &= \langle f, s_{n} \rangle - \langle f, s_{n} \rangle\\
+  &= 0, \quad \forall n=1,2,\dots,N
+\end{align*}
+
+\paragraph{Orthogonalitätsprinzip}
+Sei $\Hilb$ ein Hilbertraum\defref{def:hilbertraum} und $s = \{s_{n}\}_{n=1}^{N}$ eine Orthonormalfolge, und sei $S_{n} \subset \Hilb$ durch \eqref{eq:hilbert_subspace} gegeben.
+Zu jedem beliegen $f \in \Hilb$ sei $\tilde{f}$ durch~\eqref{eq:approximation} gegeben, dann gilt
+\begin{equation}
+  \langle f - \tilde{f}, s \rangle  = 0, \quad \forall s \in S_{n}
+\end{equation}
+
+\begin{boringDef}{Dimension eines Hilbertraumes}{dimension_eines_hilbertraumes}
+  Sei $\Hilb$ ein Hilbertraum\defref{def:hilbertraum}. Wir sagen, $\Hilb$ ist $N$-dimensional, falls ein $N \in \natural$ und ein Orthogonalsystem ${\{s_{n}\}}_{n=1}^{N} \subset \Hilb$ existiert, so dass für alle $f \in \Hilb$ gilt
+  \begin{align}
+    &\left\| f - \sum\limits_{n=1}^{N} \langle f, s_{n} \rangle s_{n} \right\|_{\Hilb} = 0\\
+    \implies &f = \sum\limits_{n=1}^{N} \langle f, s_{n} \rangle s_{n}
+  \end{align}
+  In diesem Fall heißt ${\{s_{n}\}}_{n=1}^{N}$ \textbf{Orthonormalbasis (ONB)} für $\Hilb$.
+  Andernfalls, falls keine Orthonormalbasis mit Dimension $N<\infty$ existiert, sagen wir, dass $\Hilb$ $\infty$-dimensional ist.
+\end{boringDef}
+
+\begin{recipe}{Nützliche Lemma}
+Sei $s = \{s_{n}\}_{k=1}^{N}$ eine Orthonormalfolge in einem Hilbertraum $\Hilb$. Zu jedem $f \in \Hilb$ existiert ein $\tilde{f}$ so dass
+\begin{align}
+  \lim_{\substack{N \to \infty}} &\left\| \tilde{f} - \sum\limits_{n=1}^{N} \langle f, s_{n} \rangle s_{n} \right\| = 0\\
+  &\implies \sum\limits_{n=1}^{N} \langle f, s_{n} \rangle s_{n} = \tilde{f}.
+\end{align}
+
+\textbf{Bemerkung:} Im Allgemeinen ist $\tilde{f} \neq f$.
+\end{recipe}
+
+\begin{boringDef}{Orthonormalbasis}{orthonormalbasis}
+  Eine Orthonormalfolge $s = {\{s_{n}\}}_{n=1}^{\infty}$ in einem Hilbertraum $\Hilb$ heißt \textbf{vollständige Orthonormalfolge} oder \textbf{Orthonormalbasis} falls
+  \begin{equation}
+    \lim_{\substack{N \to \infty}} {\left\| f - \sum\limits_{n=1}^{N} \langle f, s_{n} \rangle s_{n} \right\|}_{\Hilb}= 0, \quad \forall f \in \Hilb.
+  \end{equation}
+\end{boringDef}
+
+
+\begin{mytheo}{Parseval'sche Gleichung}{parseval}
+  Eine Orthogonalfolge $s = {\{s_{n}\}}_{n=1}^{\infty}$ in einem Hilbertraum $\Hilb$ ist genau dann vollständig, wenn
+  \begin{equation}
+    \| f \|_{\Hilb}^{2} = \sum\limits_{n=1}^{\infty} | f, s_{n} |_{\Hilb}^{2}, \quad \forall f \in \Hilb.
+  \end{equation}
+  \textbf{Bemerkung:} Nicht jeder ($\infty$-dimensionale) Hilbertraum besitzt eine Orthonormalbasis.
+\end{mytheo}
+
+\begin{boringDef}{Ich brauche einen Namen}{balh}
+  Ein Hilbertraum $\Hilb$ heißt \textbf{seperabel}, wenn es ein vollständiges Orthogonalsystem (eine ONB) besitzt.
+\end{boringDef}
