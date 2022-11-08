@@ -43,6 +43,9 @@ bdml:
 atuf:
 	make atuf_fs.pdf
 
+at_meas:
+	make at_meas_fs.pdf
+
 #====
 
 template.pdf: FORCE
@@ -83,6 +86,11 @@ bdml_fs.pdf: FORCE
 atuf_fs.pdf: FORCE
 	pdflatex atuf_fs.tex
 	pdflatex atuf_fs.tex
+	make clean
+
+at_meas_fs.pdf: FORCE
+	pdflatex at_meas_fs.tex
+	pdflatex at_meas_fs.tex
 	make clean
 
 
