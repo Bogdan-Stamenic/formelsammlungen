@@ -1,0 +1,18 @@
+\section{Adjungierte Operator}
+
+\begin{mytheo}{Adjungierte Operator}{adj_operator}
+  Seien $\mathcal{K}$ und $\Hilb$ Hilberträume und $A \in \mathcal{B}(\mathcal{K}, \Hilb)$ beliebig, so existiert ein eindeutiger Operator $A^{*} \in \mathcal{B}(\Hilb, \mathcal{K})$ so dass
+  \begin{equation}
+    {\langle Af, g \rangle}_{\Hilb} = {\langle f, A^{*}g \rangle}_{\mathcal{K}}, \quad \forall f \in \mathcal{K}, g \in \Hilb\label{eq:adj_operator}
+  \end{equation}
+  und $\| A^{*} \| = \| A \|$.
+  $A^{*}$ heißt der zu $A$ adjungierte Operator.
+\end{mytheo}
+
+\begin{boringDef}{Postiver Operator}{pos_operator}
+  Sei $A \in \B(\Hilb)$ selbstadjungiert, so heitßt $A$ \textbf{positiv} falls
+  \begin{equation}
+    \langle Af, f \rangle \geq 0, \quad \forall f \in \Hilb.\label{eq:pos_operator}
+  \end{equation}
+  In dem Fall, schreibt man auch $A \geq 0$.
+\end{boringDef}

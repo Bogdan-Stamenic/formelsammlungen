@@ -1,0 +1,21 @@
+\section{Fejer Reihen}
+
+\begin{boringDef}{Approximative Identität}{approx_identitaet}
+  Eine Folge ${\{K_{N}\}}_{N\in\natural} \subset C(\pi)$ heißt \textbf{approximative Identität}, falls sie die folgenden 3 Eigenschaften besitzt
+  \begin{enumerate}
+          \item $K_{N}(\tau) \geq 0 \quad \forall \tau\in\mathbb{T}, \quad \forall N \in \natural$
+          \item $\dfrac{1}{2\pi} \int\limits_{-\pi}^{\pi} K_{N}(\tau) \, \mathrm{d}\tau = {\|K_{n}\|}_{1} = 1$
+          \item $\lim\limits_{N\to\infty} K_{n}(\tau) = 0, \quad 0 < |\tau| \leq \T$
+  \end{enumerate}
+\end{boringDef}
+
+\begin{mytheo}{blah}{name_me}
+  Sei ${\{K_{N}\}}_{N\in\natural}$ eine approximative Identität und sei
+  \begin{equation*}
+    f_{N}(t) = \dfrac{1}{2\pi} \int\limits_{-\pi}^{\pi} f(\tau) K_{N}(t - \tau) \, \mathrm{d}\tau, \quad N \in \natural,
+  \end{equation*}
+  so gilt für alle $f \in C(\T)$
+  \begin{equation*}
+    \lim\limits_{N\to\infty} \|f - f_{N}\| = 0.
+  \end{equation*}
+\end{mytheo}
