@@ -5,6 +5,9 @@
 \newcommand{\FormelsammlungAutor}{Bogdan Stamenic}
 \setcounter{tocdepth}{2} % Show only sections and subsection in table of contents
 
+%% Custom commands for this FS
+\newcommand{\EqImplies}[1]{\overset{\mathrm{\eqref{#1}}}{\implies}}
+
 \begin{document}
 	\title{\FormelsammlungTitel}
 	\author{\FormelsammlungAutor}
@@ -16,7 +19,7 @@
 %		\end{minipage}
 		\input{content/at_meas/antenna_basics}
 		%%
-		%\input{content/at_meas/gain_measurement}
+		\input{content/at_meas/gain_measurement}
 		%\input{content/at_meas/reverberation_chamber}
 		%\input{content/at_meas/radar_cross_section}
 		%\input{content/at_meas/polarization}

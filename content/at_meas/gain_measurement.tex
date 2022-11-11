@@ -1,0 +1,56 @@
+\section{Gain Measurement}
+Antenna gain measurements often make use of the Friis equation \eqref{eq:friis}.
+
+\subsection{Two identical unknown antennas}
+
+Absolute gain measure with two identical antennas.
+Their characteristics don't have to be known, however they must be \textbf{as close to identical as possible}.
+\begin{align}
+  &G_{\text{TX}} = G_{\text{RX}} = G\nonumber\\
+  \EqImplies{eq:friis} &G^{2}(\vartheta, \varphi) = \dfrac{P_{0,\text{RX}}}{P_{\text{A,TX}}} {\left(\dfrac{4\pi R}{\lambda}\right)}^{2}
+\end{align}
+
+\subsection{Three unknown antennas}
+Abs.\ gain measure for three unknown antennas.
+The procedure is as follows:
+\begin{enumerate}
+  \item Measure the antennas pairwise for transmitted power to use in Friis' equation.
+  \item Solve the 3 resulting equations for the respective antenna gains.
+\end{enumerate}
+
+\begin{align*}
+  &G_{{i,\text{dB}}} + G_{{j,\text{dB}}} = 20 \log_{10}\left(\dfrac{4\pi R}{\lambda}\right) + 10\,\log_{10}\left(\dfrac{P_{\text{RX},i}}{P_{\text{TX},j}}\right)\\
+  &(i,j) = \{(1,2), (1,3), (2,3)\}
+\end{align*}
+
+\subsection{Gain Comparison}
+Use a standard gain horn fo gain comparison to figure out the gain.
+They're accurately reproducable, robust, ship with their gain curve and they have a low return loss.
+
+\subsection{Direct Gain Measurement}
+The idea is to measure an unknown AUT with a known probe, e.g.\ a standard gain horn.
+
+\begin{equation*}
+  G_{\text{AUT,dB}} = 20\log_{10}\left(\dfrac{4\pi R}{\lambda}\right) + 10\log_{10}\left(\dfrac{P_{\text{RX}}}{P_{\text{TX}}}\right) - G_{\text{probe,dB}}
+\end{equation*}
+
+\subsection{Measurement of Directivity and Efficiency}
+Measure the relative intensity $U(\vartheta, \varphi)$ for all AUT orientations $(\vartheta, \varphi)$ in order to compute the directivity $D(\vartheta, \varphi)$:
+\begin{equation}
+  D(\vartheta, \varphi) = 4\pi \dfrac{U(\vartheta,\varphi)}{\oiint\limits_{\Omega}U(\vartheta, \varphi) \sin\vartheta\,\mathrm{d}\vartheta\mathrm{d}\varphi}.
+\end{equation}
+
+Then, measure the efficiency seperately, e.g.\ with a \textbf{Wheeler cap} or a \textbf{reverberation chamber} to get the gain:
+\begin{equation*}
+  G(\vartheta, \varphi) = \eta_{a} D(\vartheta, \varphi).
+\end{equation*}
+
+\subsection{Efficiency Measurement with a Wheeler Cap}
+The idea is to make two antenna impedance measurements: one in free space and one with a Wheeler cap.
+
+Und the assumption that the losses are mostly from internal antenna losses:
+\begin{equation}
+  \eta_{\text{AUT}} = \dfrac{P_{\text{free}} - P_{\text{cap}}}{P_{\text{free}}} = \dfrac{R_{\text{free}} - R_{\text{cap}}}{R_{\text{free}}}
+\end{equation}
+
+The radius of the cap is typically small, around $\lambda / (2\pi)$, roughly at the boundary between reactive and radiating near field.

@@ -104,7 +104,7 @@ Total efficiency $\eta_{\mathrm{tot}}$ takes all losses from the generator to th
   \eta_{{\mathrm{tot}}} = \underbrace{(1 - |\Gamma|^{2})}_{\text{mismatch loss}} \, \eta_{\mathrm{a}}, \quad \eta_{\mathrm{a}}:\text{antenna eff.}
 \end{equation*}
 
-As for the gain, there are two definitions: IEEE or maximum gain $G$ and realized gain $G_{\mathrm{realized}}$
+As for the gain, there are two definitions: IEEE or absolute gain $G$ and realized gain $G_{\mathrm{realized}}$
 \begin{align*}
   &G = \eta_{\mathrm{a}}D,\\
   &G_{\mathrm{realized}} = \eta_{\mathrm{tot}}D = (1 - |\Gamma|^{2})\,G.
@@ -126,13 +126,13 @@ Notice that $G \geq G_{\mathrm{realized}}$.
         \end{align*}
     \includegraphics[width=.3\paperheight]{content/aawp/pictures/friis_transmission.png}
     \item \textbf{Friis Transmission Formula} for a radio link under far-field conditions:
-        \begin{align*}
-            &\dfrac{P_{r,max}}{P_{t0}} = G_1 G_2 \left(\dfrac{\lambda_0}{4\pi r} \right)^2,\\
-            &r: \text{distance between antennas},\\
-            &\lambda_0: \text{transmission wavelength},\\
-            &G_1: \text{transmission antenna gain},\\
-            &G_2: \text{receiving antenna gain}
-        \end{align*}
+        \begin{align}
+            &\dfrac{P_{0,\text{RX}}}{P_{\text{A,TX}}} = G_{\text{TX}} G_{\text{RX}} \left(\dfrac{\lambda_0}{4\pi r} \right)^2,\label{eq:friis}\\
+            &r: \text{distance between antennas},\nonumber\\
+            &\lambda_0: \text{transmission wavelength},\nonumber\\
+            &G_{\text{TX}}: \text{transmission antenna gain},\nonumber\\
+            &G_{\text{RX}}: \text{receiving antenna gain}\nonumber
+        \end{align}
     \item Radio Link Attenuation (\textit{Pathloss of free space}):\\
         \(\dfrac{a_0}{\si{dB}} = 10 \log_{10}^2\left(\dfrac{4 \pi r}{\lambda_0}\right) =\
         22 + 20 \log_{10}\left(\dfrac{r}{\lambda_0}\right)\)
