@@ -1,0 +1,35 @@
+\section{Radar Cross Section}
+
+\begin{definition}{Radar Cross Section}
+    Effective area which intercepts the transmitted radar and then scatters that power isotropically back to the radar receiver.
+\end{definition}
+
+\subsection{Scattering described by Dyadics}
+
+Scattering object eclosed by arbitrary Huygens suface $\mathcal{S}$:
+\begin{itemize}
+        \item Incident fields uniquely determined by tangential fields $\bs{n}\times\bs{E}_{\mathrm{inc}}$ (and $\bs{n}\times\bs{H}_{\mathrm{inc}}$) on $\mathcal{S}$
+        \item Scattered fields determined by equivalent surface currents $\bs{J}_{\mathrm{sca}}$, $\bs{M}_{\mathrm{sca}}$
+        \item $\bs{J}_{\mathrm{sca}}$, $\bs{M}_{\mathrm{sca}}$ = linear function of $\bs{n}\times\bs{E}_{\mathrm{inc}}$, $\bs{n}\times\bs{H}_{\mathrm{inc}}$
+\end{itemize}
+
+General linear function by integral involving scattering dyadics $\DyadicS{E}{J}$, $\DyadicS{H}{J}$, $\DyadicS{E}{M}$, $\DyadicS{H}{M}$
+
+\begin{align}
+  \bs{J}_{\mathrm{sca}}(\bs{r}) = \oiint_{\mathcal{S}} \Big[ &\DyadicS{E}{J}\GreenRs \cdot \bs{E}(\bs{r}')\nonumber\\
+  &+ \DyadicS{H}{J}\GreenRs\cdot\bs{H}(\bs{r}') \Big]\,\mathrm{d}a'
+\end{align}
+
+\begin{align}
+  \bs{M}_{\mathrm{sca}}(\bs{r}) = \oiint_{\mathcal{S}} \Big[ &\DyadicS{E}{M}\GreenRs \cdot \bs{E}(\bs{r}')\nonumber\\
+  &+ \DyadicS{H}{M}\GreenRs\cdot\bs{H}(\bs{r}') \Big]\,\mathrm{d}a'
+\end{align}
+
+\paragraph{Redundancy} Incident fields are completely determined by tangential electric or magnetic fields alone (except resonant edge cases) $\implies$ we can discard, e.g.\, $\DyadicS{H}{J}$ and $\DyadicS{H}{M}$.
+
+Furthermore, scattered fields can be represented by electric or magnetic currents alone, therefore e.g.\ only $\DyadicS{E}{J}$ is required.
+
+\subsection{Polarization Scattering Matrix}
+Models an incident plane wave from $\vartheta'$, $\varphi'$-direction and a scattered far-field $\bs{F}^{\mathrm{sca}}(\vartheta, \varphi) = \lim\limits_{r\to\infty} \frac{r}{e^{-jkr}} \, \bs{E}^{\mathrm{sca}}(r, \vartheta, \varphi)$.
+
+Decomposed into co- and cross-polar components:
