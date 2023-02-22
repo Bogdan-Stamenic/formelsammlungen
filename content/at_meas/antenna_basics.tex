@@ -10,11 +10,11 @@
         &a = \dfrac{U_{in} + I_{in}Z_0}{2\sqrt{Z_0}} & U_{in} = \sqrt{Z_0} (a + b)\\
         &b = \dfrac{U_{in} - I_{in}Z_0}{2\sqrt{Z_0}} & I_{in} = \dfrac{a - b}{\sqrt{Z_0}}
     \end{align*}
-    \item Much like Current and Voltage, Impedance Matrices also stop making sense at higher frequencies\\
-    $\implies$ Scattering matrix $S$:
-        \[\begin{bmatrix}b_1\\ b_2\end{bmatrix} =\
-            \begin{bmatrix}S_{11} & S_{12}\\ S_{21} & S_{22}\end{bmatrix} \
-            \begin{bmatrix}a_1\\ a_2\end{bmatrix}\]
+%    \item Much like Current and Voltage, Impedance Matrices also stop making sense at higher frequencies\\
+%    $\implies$ Scattering matrix $S$:
+%        \[\begin{bmatrix}b_1\\ b_2\end{bmatrix} =\
+%            \begin{bmatrix}S_{11} & S_{12}\\ S_{21} & S_{22}\end{bmatrix} \
+%            \begin{bmatrix}a_1\\ a_2\end{bmatrix}\]
     \item Characteristics of the far-field:
         \begin{itemize}
             \itemsep0pt
@@ -78,7 +78,7 @@ and for reciprocal antennas:
 \subsubsection{Radiation Intensity}
 Radiation intensity in a given direction is the power radiated from an antenna per unit solid angle, i.e.\ it's a far-field value:
 \begin{equation*}
-  U(r) = r^{2}\,S(r) = r^{2} \dfrac{{|E(r)|}^{2}}{2 Z_{F0}}.
+  U(r) = r^{2}\,S(r) = r^{2} \dfrac{{|\vec{E}(r)|}^{2}}{2 Z_{F0}} \overset{FF}{=} \dfrac{{|\vec{F}(\vartheta, \varphi)|}^{2}}{2 Z_{F0}}.
 \end{equation*}
 
 The total radiated power can be calculated from the radiation intensity as follows:

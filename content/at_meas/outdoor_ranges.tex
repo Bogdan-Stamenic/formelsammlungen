@@ -1,0 +1,40 @@
+\section{Outdoor Ranges}
+
+\subsection{Elevated Outdoor Range}
+\includegraphics[width=7cm]{content/at_meas/pictures/elevated_antenna_range}
+
+\begin{itemize}
+  \item Mutual interaction $< -\SI{45}{dB}$
+  \item $d < \frac{0.3761\lambda}{D}$, $d > 1.5\frac{R\lambda}{h_{r}}$
+  \item $R \geq 10L$, $R > 10\lambda$, $R \geq \frac{2D^{2}}{\lambda}$
+  \item $\frac{|E_{R}|}{|E_{D}|} = \frac{\sigma - 1}{\sigma + 1}$, $\sigma = \frac{U_{\text{max}}}{U_{\text{min}}}$
+  \item Period of interference pattern $P = \frac{\lambda}{\sin \vartheta_{R}}$
+  \item (Metallic) diffraction fences block block direct reflections; serrations along top
+\end{itemize}
+
+\subsubsection{Fresnel Ellipses}
+\includegraphics[width=7cm]{content/at_meas/pictures/nth_fresnel_ellipse}
+\begin{align*}
+  &d_{\text{direct}} = \sqrt{R^{2} + {(h_{r} - h_{t})}^{2}} : \quad \text{direct path length}\\
+  &d_{0} = \sqrt{R^{2} + {(h_{r} + h_{t})}^{2}} : \quad \text{shortest refl.\ path}\\
+  &d_{N}-d_{0} = \frac{N\lambda}{2} : \quad \text{path length of refl.\ at Nth ellipse}
+\end{align*}
+\begin{equation*}
+  \rho_{c,N} = \dfrac{R}{2} \left(1 + \dfrac{h_{t}^{2} - h_{r}^{2}}{d_{N}^{2} - R}\right)
+\end{equation*}
+\begin{equation*}
+  \ell_{N} = d_{N}\sqrt{\left(\dfrac{h_{t}^{2} - h_{r}^{2}}{d_{N}^{2} - R^{2}}\right) - 2 \dfrac{h_{t}^{2} + h_{r}^{2}}{d_{N}^{2} - R^{2}} + 1}
+\end{equation*}
+\begin{align*}
+  &w_{N} = \dfrac{\sqrt{{(a - b)}^{2} - 2 d_{N}^{2}(a + b) + d_{N}^{4}}}{d_{N}}\\
+  &a = \rho_{c,N}^{2} + h_{t}^{2}\\
+  &b = {(R - \rho_{c,N})}^{2} + h_{r}^{2}
+\end{align*}
+
+\subsection{Ground Reflection Range}
+
+\includegraphics[width=7cm]{content/at_meas/pictures/ground_reflection_range}
+Height of apparent phase center:
+\begin{equation*}
+  h_{t}' = \dfrac{1 - |\Gamma|}{1 + |\Gamma|} h_{t}
+\end{equation*}

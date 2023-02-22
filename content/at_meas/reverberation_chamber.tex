@@ -23,4 +23,15 @@ It can be described by a plane wave expansion:
   \bs{E}(\bs{r}) \oiint\limits_{\Omega} \bs{F}(\hat{\bs{k}}) \, e^{-j\bs{k}\cdot\bs{r}}\, \mathrm{d}^{2}\hat{\bs{k}}.
 \end{equation}
 
- \todo{chamber statistics}
+\begin{enumerate}
+  \item Bias correct
+        \begin{equation*}
+          \langle{|S_{21}|}^{2}\rangle \to \langle{|\tilde{S}_{21}|}^{2}\rangle = \langle{|S_{21} - \langle S_{21}\rangle|}^{2}\rangle
+        \end{equation*}
+  \item Basis equation for efficiency measurements
+        \begin{align*}
+          &\dfrac{{\langle b\rangle}^{2}}{a^{2}} = \langle {|S_{21}|}^{2} \rangle = \dfrac{Q}{16 \pi^{2}} \dfrac{\lambda^{3}}{V} \eta_{\text{RX}}^{\text{tot}} \, \eta_{\text{TX}}^{\text{tot}}\\
+          &Q = \omega \tau : \quad \text{quality factor}\\
+          &V : \quad \text{Chamber volume}
+        \end{align*}
+\end{enumerate}

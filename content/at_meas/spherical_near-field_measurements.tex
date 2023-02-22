@@ -1,0 +1,130 @@
+\section{Antenna Near-Field Measurements}
+\begin{align*}
+  &\nabla \times \nabla \times \vec{E}(\bs{r}) - k^{2}\vec{E}(\bs{r}) = \bs{0},\\
+  &\Delta f(\bs{r}) + k^{2}f(\bs{r}) = 0,\\
+  &\bs{M}(\bs{r}) = \nabla \times \left(f(\bs{r}) \, r \, \vec{e}_{r}\right)\text{: TE-modes},\\
+  &\bs{N}(\bs{r}) = \frac{1}{k} \nabla \times \nabla \times \left[f(\bs{r}) \, r \, \vec{e}_{r}\right]\text{: TM-modes},\\
+\end{align*}
+
+\begin{align*}
+  &f_{\ell m}^{(c)} = \dfrac{z_{\ell}^{(c)}(kr)}{\sqrt{\ell (\ell + 1)}} Y_{\ell m}(\vartheta, \varphi),\\
+  &z_{\ell}^{(c)}(kr) =
+  \begin{cases}
+    j_{\ell}(kr)\text{ : Sph. Bessel}, \quad c = 1,\\
+    n_{\ell}(kr)\text{ : Sph. Neumann}, \quad c = 2,\\
+    h_{\ell}^{(1)}(kr)\text{ : Sph. 1\textsuperscript{st} Hankel}, \quad c = 3,\\
+    h_{\ell}^{(2)}(kr)\text{ : Sph. 2\textsuperscript{nd} Hankel}, \quad c = 4,
+  \end{cases}\\
+  &Y_{\ell m}(\vartheta,\varphi) =
+  \begin{cases}
+    \frac{1}{\sqrt{2\pi}} \bar{P}_{\ell}^{m}(\cos \vartheta) e^{jm\varphi}, &|m| \leq \ell\\
+    0, &\text{else}
+  \end{cases}
+\end{align*}
+
+Vector spherical mode expansion:
+\begin{align*}
+  &\bs{E}(r,\vartheta, \varphi) = k\sqrt{Z_{F}} \sum\limits_{c}\sum\limits_{\ell = 1}^{\infty}\sum\limits_{m=-\ell}^{\ell}\alpha_{s\ell m}^{(c)} \bs{F}_{s\ell m}^{(c)}(r,\vartheta,\varphi),\\
+  &\bs{H}(r,\vartheta, \varphi) = \dfrac{jk}{\sqrt{Z_{F}}} \sum\limits_{c}\sum\limits_{\ell = 1}^{\infty}\sum\limits_{m=-\ell}^{\ell}\alpha_{s\ell m}^{(c)} \bs{F}_{3-s,\ell, m}^{(c)}(r,\vartheta,\varphi),\\
+  &\bs{F}_{s\ell m}^{(c)} =
+  \begin{cases}
+    \bs{M}_{\ell m}^{(c)}, &s=1,\\
+    \bs{N}_{\ell m}^{(c)}, &s=2.
+  \end{cases}
+%\end{equation*}
+\end{align*}
+
+\subsection{Far field vectors of the vector spherical mode functions}
+\begin{equation*}
+  \bs{K}_{s\ell m}^{(4)} = \lim\limits_{r\to\infty} \dfrac{kr}{e^{-jkr}} \bs{F}_{s\ell m}^{(4)}
+\end{equation*}
+\begin{align*}
+  \bs{K}_{1\ell m}^{(4)}(\vartheta,\varphi) = \dfrac{1}{\sqrt{2\pi}} \dfrac{j^{\ell + 1}}{\sqrt{\ell (\ell + 1)}}
+  \Bigg[\dfrac{jm \bar{P}_{\ell}^{m}(\cos \vartheta)}{\sin \vartheta}e^{jm\varphi}\bs{e}\vartheta\\
+  - \dfrac{\mathrm{d}\bar{P}_{\ell}^{m}(\cos \vartheta)}{\mathrm{d}\vartheta} e^{jm\varphi}\bs{e}_{\varphi}\Bigg]\\
+\end{align*}
+\begin{align*}
+  \bs{K}_{2\ell m}^{(4)}(\vartheta,\varphi) = \dfrac{1}{\sqrt{2\pi}} \dfrac{j^{\ell}}{\sqrt{\ell (\ell + 1)}}
+  \Bigg[\dfrac{\mathrm{d}\bar{P}_{\ell}^{m}(\cos \vartheta)}{\mathrm{d}\vartheta} e^{jm\varphi}\bs{e}_{\vartheta}\\
+  + \dfrac{jm\,\bar{P}_{\ell}^{m}(\cos \vartheta)}{\sin \vartheta}e^{jm\varphi}\bs{e}_{\varphi} \Bigg]\\
+\end{align*}
+
+
+\begin{align*}
+  \alpha_{s\ell m}^{(c)} &= \dfrac{{(-1)}^{m}}{k\sqrt{Z_{F}}\,R_{s\ell}^{(c)}(kr) \, R_{s\ell}^{(\gamma)}(kr)}\\
+  &\int\limits_{0}^{2\pi}\int\limits_{0}^{\pi} [\bs{n}\times\bs{E}(r,\vartheta,\varphi)]\cdot\left[\bs{n}\times\bs{F}_{s,\ell,-m}^{(\gamma)}\right] \sin\vartheta \,\mathrm{d}\vartheta\mathrm{d}\varphi
+\end{align*}
+
+\begin{equation*}
+  R_{s\ell}^{(c)} =
+  \begin{cases}
+    z_{\ell}^{(c)}(kr), &s=1\\
+    \dfrac{1}{kr} \dfrac{\mathrm{d}\{kr z_{\ell}^{(c)}(kr)\}}{\mathrm{d}(kr)}, &s=2
+  \end{cases}
+\end{equation*}
+
+\begin{align*}
+  \alpha_{s\ell m}^{(4)}{(-1)}^{m+1} \iint\limits_{V}&\Bigg[ k\sqrt{Z_{F}}\bs{F}_{s,\ell,-m}^{(1)}(\bs{r})\cdot\bs{J}(\bs{r})\\
+  &- \dfrac{jk}{\sqrt{Z_{F}}} \bs{F}_{3-s,\ell,-m}^{(1)}(\bs{r})\cdot\bs{M}(\bs{r}) \Bigg]\text{d}v
+\end{align*}
+
+Fields can be truncated for $\ell \gg kr \implies \bs{F}_{s\ell m}^{(1)}(r,\vartheta,\varphi) \approx \bs{0}$. The coeficients $\alpha_{s\ell m}^{(4)}\approx0$ for $\ell > L_{\max}\,kr_{0} + \ell_{\text{buffer}}$ and $\ell = 10$ is a common choice.
+
+\subsubsection{Translation of spherical modes within the same volume}
+\begin{align*}
+  T_{s\ell m}^{\sigma\lambda\mu}(\bs{R}) = {(-1)}^{\sigma+\lambda+\mu} \oiint &\bs{K}_{s\ell m}^{(4)}(\hat{\bs{k}})\,e^{-jk_{0}\hat{\bs{k}}\cdot\bs{R}}\\
+  &\bs{K}_{\sigma,\lambda,-\mu}^{(4)}(\hat{\bs{k}})\,\mathrm{d^{2}}\hat{\bs{k}}
+\end{align*}
+
+\subsubsection{Translation of spherical modes into other volume}
+\begin{align*}
+  \mathscr{T}_{s\ell m}^{\sigma\lambda\mu}(\bs{R})= -\sum\limits_{\ell'=0}^{\infty}{(-1)}^{\sigma+\lambda+\mu}
+  \oiint {(-j)}^{\ell'} (2\ell'+1) \, h_{\ell'}^{(2)}(k_{0}\,|\bs{R}|)\\
+  P_{\ell'}(\hat{\bs{k}}\cdot\bs{R}) \, \bs{K}_{s\ell m}^{(4)}(\hat{\bs{k}}) \cdot \bs{K}_{\sigma,\lambda,-\mu}^{(4)}(\hat{\bs{k}}) \, \mathrm{d^{2}}\hat{\bs{k}}
+\end{align*}
+
+\subsubsection{Rotation of spherical modes}
+\begin{align*}
+  &\bs{F}_{s\ell m}^{(c)}\\
+  &\overset{\varphi_{0}\text{ ar.\ $z$-axis}}{\to} e^{jm\varphi_{0}}\bs{F}_{s\ell m}^{(c)}\\
+  &\overset{\vartheta_{0}\text{ ar.\ $y'$-axis}}{\to} \sum\limits_{\mu=-\ell}^{\ell}e^{jm\varphi_{0}} d_{\mu m}^{\ell}(\vartheta_{0}) \, \bs{F}_{s\ell m}^{(c)}\\
+  &\overset{\chi_{0}\text{ ar.\ $z''$-axis}}{\to} \sum\limits_{\mu=-\ell}^{\ell}e^{jm\varphi_{0}} d_{\mu m}^{\ell}(\vartheta_{0}) \, e^{j\mu\chi_{0}} \bs{F}_{s\ell m}^{(c)}\\
+\end{align*}
+
+Whereas $d_{\mu m}^{\ell}(\vartheta)$ is the Wigner $d$-function:
+\begin{align*}
+  d_{\mu m}^{\ell}(\vartheta) = &\sqrt{\dfrac{(\ell + \mu)! (\ell - \mu)!}{(\ell + m)! (\ell - m)!}}\\
+  &\times \sum\limits_{p=0}^{\ell - \mu}
+  \begin{pmatrix}
+    \ell + m\\
+    \ell - \mu - p
+  \end{pmatrix}
+  \begin{pmatrix}
+    \ell - m\\
+    p
+  \end{pmatrix}\\
+  &{(-1)}^{\ell-\mu-p}
+  {(\cos \frac{\vartheta}{2})}^{2p+\mu+m} {(\sin \frac{\vartheta}{2})}^{2n-2p-\mu-m}
+\end{align*}
+
+\subsubsection{Antenna transmission equation based on spherical modes}
+\begin{align*}
+  &S_{21} = \dfrac{b2}{a1} = \sum\limits_{\sigma\lambda\mu}\hat{\beta}_{\sigma\lambda\mu}^{(1),\text{ant2}}\left(\sum\limits_{s\ell m}\mathscr{T}_{s\ell m}^{\sigma\lambda\mu}(\bs{R}) \hat{\alpha}_{s\ell m}^{(4),\text{ant1}}\right),\\
+  &\hat{\beta}_{\sigma\lambda\mu}^{(1),\text{ant2}} = \dfrac{{(-1)}^{\mu}}{2} \hat{\alpha}_{\sigma,\lambda,-\mu}^{(4),\text{ant2}}:\text{receive coefs 2}
+\end{align*}
+
+\subsection{Spherical near-field to far-field transformation: The Wacker algorithm}
+\begin{align*}
+  S_{12}(\vartheta,\varphi,\chi) = \sum\limits_{s=1}^{2}\sum\limits_{\ell=1}^{L}\sum\limits_{m=-\ell}^{\ell}\sum\limits_{\mu=-\ell}^{\ell} \hat{\beta}_{s\ell m}^{\text{aut}}\\
+  e^{-j\mu\varphi}\,d_{m,\mu}^{\ell}(\vartheta) \, e^{-jm\chi}\alpha_{s\ell \mu}^{(1),\text{pro}}
+\end{align*}
+Calculate $S_{12}$ by using Fast Fourier Transforms.
+
+\subsection{Sampling for spherical near-field measurements}
+Sampling radiated fields with max.\ mode order L:
+\begin{itemize}
+        \item On circles with constant $\vartheta$: $2L+1$ $\varphi$-samples
+        \item On circles with constant $\varphi$: $2L+1$ $\vartheta$-samples
+        \item For two polarizations total of $2(2L + 1)(L + 1) = 4L^{2}+6L + 2$ samples.
+        \item Number of individual modes $\bs{F}_{s\ell m}$ with $\ell < L$: $2L(L + 2) = 2L^{2} + 4L$
+\end{itemize}
